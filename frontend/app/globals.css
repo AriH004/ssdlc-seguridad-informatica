@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Marca — primitivos */
+  --color-navy: #0F2338;
+  --color-navy-light: #1E3A5F;
+  --color-navy-mid: #162d4a;
+  --color-navy-deep: #182338;
+
+  /* Semánticos de estado */
+  --color-danger: #B91C1C;
+  --color-danger-bg: #FEE2E2;
+  --color-warning: #92400E;
+  --color-warning-bg: #FEF3C7;
+  --color-warning-strong: #92400E;
+  --color-success: #166534;
+  --color-success-bg: #DCFCE7;
+  --color-info: #1D4ED8;
+  --color-info-bg: #DBEAFE;
+  --color-info-bg-soft: #EFF6FF;
+
+  /* Acento exclusivo del hito "Secado" (reproductivo) */
+  --color-accent-secado: #7C3AED;
+  --color-accent-secado-bg: #F3E8FF;
+
+  /* Superficie */
+  --color-surface: #F0F4F8;
+
+  /* Mapeo de tokens shadcn/ui a utilidades de Tailwind v4 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radios */
+  --radius-sm: 0.5rem;   /* 8px  — inputs, chips pequeños */
+  --radius-md: 0.75rem;  /* 12px — botones, tarjetas pequeñas */
+  --radius-lg: 0.875rem; /* 14px — tarjetas, modales internos */
+  --radius-xl: 1rem;     /* 16px — tarjetas principales, modal exterior */
+  --radius-2xl: 1rem;    /* 16px — según design.md: rounded-2xl = 16px */
+  --radius-full: 9999px; /* badges, avatares, pills */
+}
+
+:root {
+  --background: var(--color-surface);
+  --foreground: var(--color-navy);
+
+  --card: #FFFFFF;
+  --card-foreground: var(--color-navy);
+
+  --popover: #FFFFFF;
+  --popover-foreground: var(--color-navy);
+
+  --primary: var(--color-navy);
+  --primary-foreground: #FFFFFF;
+
+  --secondary: var(--color-navy-light);
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F1F5F9;              /* slate-100 */
+  --muted-foreground: #475569;   /* slate-600: AA también sobre slate-100 */
+
+  --accent: var(--color-info-bg-soft);
+  --accent-foreground: var(--color-info);
+
+  --destructive: var(--color-danger);
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;             /* slate-200 */
+  --input: #E2E8F0;
+  --ring: var(--color-navy-light);
+
+  --radius: var(--radius-md);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+}
