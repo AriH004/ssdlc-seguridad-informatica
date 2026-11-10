@@ -41,6 +41,15 @@ corepack pnpm dev:frontend
 
 Comandos específicos: corepack pnpm --dir backend test:integration o corepack pnpm --dir frontend test:e2e. Estos requieren sus ambientes de prueba; no están implícitos en las pruebas unitarias.
 
+## Cómo ejecutar las comprobaciones
+
+```sh
+corepack pnpm install:apps
+bash scripts/verify.sh
+```
+
+`scripts/verify.sh` ejecuta lint, typecheck, pruebas unitarias, build y Gitleaks (historial y cambios en staging) con el pnpm fijado por Corepack. Si falta una herramienta o dependencia termina con `INCOMPLETO: <herramienta>`; si algún paso falla, con `NO APROBADO`. Solo el mensaje `RESULTADO: APROBADO` cuenta como verde. No incluye integración con base de datos, e2e ni replay de migraciones (requieren Docker/PostgreSQL; el CI los ejecuta aparte). Gitleaks se descarga y verifica por checksum desde `tooling/security-tools.mjs`.
+
 ## Colaboración
 
 - main: entrega.

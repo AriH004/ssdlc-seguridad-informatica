@@ -98,6 +98,42 @@ describe('derivarLactancia', () => {
   });
 });
 
+describe('derivarLactancia: valores límite de fecha', () => {
+  const parto = [ev('p1', 'PARTO', '2026-08-01')];
+
+  it('el día anterior al parto aún no está en lactancia; el mismo día sí', () => {
+    expect(derivarLactancia(parto, '2026-07-31').enLactancia).toBe(false);
+    expect(derivarLactancia(parto, '2026-08-01').enLactancia).toBe(true);
+  });
+
+  it('la fecha de referencia con hora se compara solo por día', () => {
+    expect(derivarLactancia(parto, '2026-08-01T00:00:00Z').enLactancia).toBe(true);
+    expect(derivarLactancia(parto, '2026-07-31T23:59:59Z').enLactancia).toBe(false);
+  });
+
+  it('el secado el mismo día de la referencia ya cierra la lactancia; el día anterior no', () => {
+    const eventos = [...parto, ev('s1', 'SECADO', '2026-09-15')];
+    expect(derivarLactancia(eventos, '2026-09-14').enLactancia).toBe(true);
+    expect(derivarLactancia(eventos, '2026-09-15').enLactancia).toBe(false);
+  });
+
+  it('un parto revertido deja a la lactancia anterior como la vigente', () => {
+    const eventos = [
+      ev('p1', 'PARTO', '2026-01-10'),
+      ev('p2', 'PARTO', '2026-08-01', { revertido: true }),
+    ];
+    expect(derivarLactancia(eventos, '2026-09-01').eventoInicioId).toBe('p1');
+  });
+});
+
+describe('tienePartoPrevio: límite de fecha', () => {
+  it('un parto en la misma fecha de referencia cuenta; al día siguiente no', () => {
+    const eventos = [ev('p1', 'PARTO', '2026-09-01')];
+    expect(tienePartoPrevio(eventos, '2026-09-01')).toBe(true);
+    expect(tienePartoPrevio(eventos, '2026-08-31')).toBe(false);
+  });
+});
+
 describe('tienePartoPrevio', () => {
   it('un parto viable o un aborto cuentan; un inicio de lactancia no', () => {
     expect(tienePartoPrevio([ev('p1', 'PARTO', '2026-08-01')], '2026-09-01')).toBe(true);

@@ -73,12 +73,21 @@ async function main() {
     if (existsSync(resolve(root, '.gitleaks.toml'))) args.push('--config', '.gitleaks.toml');
     const binary = await install('gitleaks');
     execFileSync(binary, args, { cwd: root, env: scannerEnvironment(binary), stdio: 'inherit' });
+  } else if (command === 'gitleaks-tree') {
+    // Escanea lo versionado: todo el historial y los cambios en staging
+    // (lo usa scripts/verify.sh). No usa `dir`, que ignora .gitignore y
+    // marcaría salida de build como .next/.
+    const config = existsSync(resolve(root, '.gitleaks.toml')) ? ['--config', '.gitleaks.toml'] : [];
+    const binary = await install('gitleaks');
+    const env = scannerEnvironment(binary);
+    execFileSync(binary, ['git', '--redact', '--exit-code=1', ...config, '.'], { cwd: root, env, stdio: 'inherit' });
+    execFileSync(binary, ['git', '--staged', '--redact', '--exit-code=1', ...config, '.'], { cwd: root, env, stdio: 'inherit' });
   } else if (command === 'gitleaks-ci') {
     const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
     const commits = process.env.GITHUB_EVENT_NAME === 'workflow_dispatch' ? [execFileSync('git', ['rev-parse', 'HEAD^'], { cwd: root, encoding: 'utf8' }).trim(), execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim()] : [];
     const range = resolveScanRange(event, process.env.GITHUB_EVENT_NAME, commits);
     const binary = await install('gitleaks');
     execFileSync(binary, ['git', '--redact', `--log-opts=${range}`, '--exit-code=1', '.'], { cwd: root, env: scannerEnvironment(binary), stdio: 'inherit' });
-  } else throw new Error('Comando esperado: actionlint | gitleaks-protect | gitleaks-ci.');
+  } else throw new Error('Comando esperado: actionlint | gitleaks-protect | gitleaks-tree | gitleaks-ci.');
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) main().catch((error) => { process.stderr.write(`Herramienta de seguridad bloqueó la operación: ${error.message}\n`); process.exitCode = 1; });
