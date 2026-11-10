@@ -124,7 +124,7 @@ La fecha "de hoy" se calcula en la zona de la finca, `America/Costa_Rica` (UTC�
 
 ## Git y CI
 
-- `main` y `dev` reciben cambios por PR, con revisión de otro integrante, CODEOWNERS y todos los checks requeridos.
+- `main` y `development` reciben cambios por PR, con revisión de otro integrante, CODEOWNERS y todos los checks requeridos.
 - Node `24.14.x` y pnpm `10.32.1` son las versiones fijadas. No se añaden dependencias para estas barreras.
 - Husky usa el pre-commit para escanear el index con Gitleaks y bloquear si el scanner falta o falla; el auto-fix anterior de `lint-staged` ya no cambia archivos durante commit.
 - `pnpm git:setup-hooks` configura hooks solo en este clon; `pnpm git:workflows` valida YAML/actions con SHA. Los binarios se guardan dentro del directorio Git con SHA-256 verificado.

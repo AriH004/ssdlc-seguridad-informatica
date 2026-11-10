@@ -1,5 +1,15 @@
 # Migración a monorepositorio
 
+## Base definitiva acordada
+
+Por decisión de Danny, la importación de Ari en el PR #7 (`feature/Ari`, commit `a2647e1825d37f63615872861d92ee9b219a9e15`) reemplaza la propuesta de importación del PR #1. Se conservan sus cambios de `dev` a `development` y todos sus archivos de aplicación. El historial que sigue documenta el trabajo anterior; no implica que el PR #1 sea la base de integración actual.
+
+El CI raíz y los comandos comunes se trasladan a `feature/Danny-ci-base-ari`, construida directamente desde la base de Ari. Los aportes de hallazgos y Docker incorporan esta base mediante merges normales, sin reescribir los commits previos ni perder evidencia.
+
+Orden de integración: PR #7 hacia `development`; después el PR de CI sobre la base de Ari; finalmente los PR #5 (registro) y #6 (Docker), cambiando sus bases a `development` cuando sus dependencias estén integradas. La revisión de otro integrante y las comprobaciones obligatorias siguen pendientes; no se omiten por el cambio de base.
+
+La importación de Ari contiene además `1792700000000-IsolateNewEventDetailTables.ts`, junto a `1793300000000-IsolateNewEventDetailTables.ts`: la comparación confirma el mismo SQL con distinto identificador. Se conserva la base sin editar migraciones existentes. El equipo debe revisar esta duplicación antes de ejecutar migraciones; esta adopción no acredita un replay de base de datos aprobado.
+
 ## Procedencia
 
 Se importaron únicamente los archivos versionados de las copias locales, sin modificar los originales. No se copió el historial Git antiguo, node_modules, .env, logs ni archivos generados. Los repositorios originales conservan el historial y la atribución previa.

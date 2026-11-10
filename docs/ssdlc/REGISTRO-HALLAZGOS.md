@@ -2,6 +2,8 @@
 
 Responsable de implementación: Danny (`DannyOr94`). Revisión humana: Ari (`AriiH08`), pendiente; no se atribuye una aprobación que no haya ocurrido.
 
+Base acordada: importación de Ari en PR #7 y CI raíz de Danny en PR #8. El PR #5 incorpora ambas ramas sin reescribir su historial. El PR #1 se conserva solo como evidencia histórica de la propuesta reemplazada. Integrar primero las dependencias y después cambiar la base de #5 a `development` antes de fusionar.
+
 ## Fuente única
 
 [GitHub Issues con etiqueta hallazgo](https://github.com/AriiH08/ssdlc-seguridad-informatica/issues?q=is%3Aissue%20label%3Ahallazgo) es el registro único para calidad, seguridad y operación de todas las etapas. Los datos del hallazgo y su estado se mantienen en el Issue, no se copian aquí.

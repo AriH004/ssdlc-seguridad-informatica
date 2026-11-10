@@ -2,10 +2,10 @@ name: Frontend CI
 
 on:
   pull_request:
-    branches: [main, dev]
+    branches: [main, development]
     types: [opened, synchronize, reopened, ready_for_review, edited]
   push:
-    branches: [main, dev]
+    branches: [main, development]
   workflow_dispatch:
 
 permissions:

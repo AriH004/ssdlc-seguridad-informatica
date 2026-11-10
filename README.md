@@ -2,6 +2,8 @@
 
 Equipo: Ariana, Cristhian y Danny. Monorepositorio del proyecto de Seguridad informática.
 
+Base de aplicación acordada: importación de Ari en el [PR #7](https://github.com/AriiH08/ssdlc-seguridad-informatica/pull/7). La importación alternativa del PR #1 queda reemplazada; el CI, los hallazgos y Docker se conservan como aportes separados sobre esa base.
+
 ## Estructura
 
 - backend/: API NestJS, TypeORM, PostgreSQL/Supabase.
