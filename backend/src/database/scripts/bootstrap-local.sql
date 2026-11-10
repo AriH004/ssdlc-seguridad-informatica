@@ -12,9 +12,9 @@
 --
 -- Uso:
 --   docker run -d --name resdigital-test -e POSTGRES_PASSWORD=test -p 5433:5432 postgres:15
---   psql postgresql://postgres:test@localhost:5433/postgres -f src/database/scripts/bootstrap-local.sql
+--   PGPASSWORD=test psql postgresql://postgres@localhost:5433/postgres -f src/database/scripts/bootstrap-local.sql
 --   pnpm build
---   DATABASE_URL=postgresql://postgres:test@localhost:5433/postgres pnpm migration:run
+--   PGPASSWORD=test DATABASE_URL=postgresql://postgres@localhost:5433/postgres pnpm migration:run
 
 -- 1. Extensiones que usan las migraciones
 CREATE EXTENSION IF NOT EXISTS pgcrypto;    -- gen_random_uuid()
