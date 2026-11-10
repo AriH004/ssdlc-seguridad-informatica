@@ -1,0 +1,39 @@
+# Compiled output
+/dist
+/build
+*.tsbuildinfo
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Environment variables
+.env*
+!.env.example
+
+# Certificados TLS locales para hablarle al pooler de Supabase
+/.certs
+
+# Scripts sueltos en la raíz. Históricamente se usaron para tocar la base a mano
+# y terminaron con credenciales de producción en texto plano dentro del repo.
+# Todo script de base de datos va en src/database/scripts/ y lee del entorno.
+/*.cjs
+/*.mjs
+
+# Testing and coverage
+/coverage
+/test-results
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
