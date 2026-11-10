@@ -35,3 +35,12 @@ Cada nuevo aporte académico debe tener PR y evidencia propios; la importación 
 - Los tipos OpenAPI se regeneraron para normalizar finales de línea; se define LF en la raíz para evitar diferencias Windows/Linux.
 - Replay de migraciones: no ejecutado localmente, motor Docker apagado. Pendiente comprobar el job en GitHub.
 - E2E, despliegue, autorización contra ambiente real y protecciones remotas: no verificados por estas pruebas locales.
+
+## Primera ejecución remota
+
+PR: https://github.com/AriiH08/ssdlc-seguridad-informatica/pull/1
+
+Ejecución: https://github.com/AriiH08/ssdlc-seguridad-informatica/actions/runs/42838594931
+
+GitHub no inició ninguno de los jobs y registró: "The job was not started because your account is locked due to a billing issue."
+La validación remota está incompleta. El propietario del repositorio debe resolver el bloqueo de facturación y volver a ejecutar CI; no se debe presentar esta ejecución como una comprobación técnica aprobada ni desactivar controles para omitirla.
