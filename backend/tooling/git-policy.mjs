@@ -82,7 +82,7 @@ function main() {
       if (event.pull_request) {
         const errors = validatePullRequest(event);
         if (errors.length) throw new Error(errors.join('\n'));
-      } else if (event.ref !== 'refs/heads/main' && event.ref !== 'refs/heads/dev') throw new Error('El push debe corresponder a main o dev.');
+      } else if (event.ref !== 'refs/heads/main' && event.ref !== 'refs/heads/development') throw new Error('El push debe corresponder a main o development.');
       if (event.before && !/^0+$/.test(event.before)) git(['diff', '--check', `${event.before}..${event.after}`]);
     }
     process.stdout.write('Política Git verificada.\n');
