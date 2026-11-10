@@ -10,3 +10,13 @@ coverage/
 Thumbs.db
 .idea/
 .vscode/
+
+.next/
+out/
+playwright-report/
+test-results/
+blob-report/
+*.tsbuildinfo
+.certs/
+.codex-tools/
+logs/

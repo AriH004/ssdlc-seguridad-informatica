@@ -1,0 +1,3974 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/auth/perfil": {
+      "get": {
+        "operationId": "AuthController_getPerfil",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Perfil de usuario y finca",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProfileResponseDto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Token ausente o inválido"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar el perfil del usuario autenticado",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/auth/invitar": {
+      "post": {
+        "operationId": "AuthController_invitarUsuario",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteUserDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteUserResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Invitar un usuario a la finca del propietario",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/auth/invitaciones": {
+      "get": {
+        "operationId": "AuthController_listarInvitaciones",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InvitationSummaryResponseDto"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Solo el propietario puede ver invitaciones"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar invitaciones de la finca del propietario",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/auth/confirmar-invitacion": {
+      "post": {
+        "operationId": "AuthController_confirmarInvitacion",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmInvitationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/catalogos/razas": {
+      "get": {
+        "description": "Devuelve las razas globales del sistema más las propias de la finca. Cada raza trae sus días de gestación, que es lo que MOD-03 usa para calcular la FPP.",
+        "operationId": "CatalogosController_findAllRazas",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Listado de razas ordenado por nombre"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Catálogo de razas disponible para la finca",
+        "tags": [
+          "Catálogos"
+        ]
+      }
+    },
+    "/animales": {
+      "get": {
+        "operationId": "AnimalesController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Animales"
+        ]
+      },
+      "post": {
+        "operationId": "AnimalesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnimalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}": {
+      "get": {
+        "operationId": "AnimalesController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Animales"
+        ]
+      },
+      "patch": {
+        "operationId": "AnimalesController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAnimalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/descendencia": {
+      "get": {
+        "operationId": "AnimalesController_findDescendencia",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar descendencia registrada del animal en la finca",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/baja": {
+      "post": {
+        "operationId": "AnimalesController_darDeBaja",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BajaAnimalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Animales"
+        ]
+      },
+      "get": {
+        "operationId": "AnimalesController_getBaja",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Evento histórico de baja del animal"
+          },
+          "404": {
+            "description": "Animal no encontrado o sin registro de baja"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar el evento de baja histórico del animal",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/historial-bajas": {
+      "get": {
+        "operationId": "AnimalesController_getHistorialBajas",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar episodios de baja y retorno sin perder historia",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/reactivar": {
+      "post": {
+        "operationId": "AnimalesController_reactivar",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactivarAnimalDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Animal reactivado exitosamente en el hato"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          },
+          "409": {
+            "description": "El animal ya está activo o su arete interno está en uso por otro animal activo"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Reactivar un animal dado de baja si su arete interno está libre",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/documentos": {
+      "get": {
+        "operationId": "AnimalesController_getDocumentos",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DocumentoAnimalResponseDto"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Listar los documentos privados de un animal",
+        "tags": [
+          "Animales"
+        ]
+      },
+      "post": {
+        "operationId": "AnimalesController_createDocumento",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDocumentoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DocumentoAnimalResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Ruta, categoría o archivo inválido"
+          },
+          "403": {
+            "description": "Rol o ruta de archivo no autorizados"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          },
+          "409": {
+            "description": "El objeto ya está registrado"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Registrar metadatos de un documento ya cargado",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/composicion-genetica": {
+      "get": {
+        "operationId": "AnimalesController_getComposicionGenetica",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComposicionGeneticaResponseDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Calcular la composición genética ponderada del animal",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/animales/{id}/crias": {
+      "get": {
+        "operationId": "AnimalesController_getCrias",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de crías del animal"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Listar la descendencia directa registrada (crías) del animal",
+        "tags": [
+          "Animales"
+        ]
+      }
+    },
+    "/pesajes": {
+      "post": {
+        "operationId": "PesajesController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePesajeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Pesajes"
+        ]
+      }
+    },
+    "/pesajes/animal/{animalId}": {
+      "get": {
+        "operationId": "PesajesController_findAllByAnimal",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Pesajes"
+        ]
+      }
+    },
+    "/tratamientos": {
+      "post": {
+        "operationId": "TratamientosController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTratamientoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/tratamientos/retiros-activos": {
+      "get": {
+        "operationId": "TratamientosController_getRetirosActivos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/tratamientos/animal/{animalId}/estado-sanitario": {
+      "get": {
+        "operationId": "TratamientosController_getEstadoSanitario",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/tratamientos/animal/{animalId}": {
+      "get": {
+        "operationId": "TratamientosController_findAllByAnimal",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/tratamientos/{id}/correccion": {
+      "post": {
+        "operationId": "TratamientosController_corregir",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CorregirTratamientoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/tratamientos/{id}/anulacion": {
+      "post": {
+        "operationId": "TratamientosController_anular",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnularTratamientoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Tratamientos Sanitarios"
+        ]
+      }
+    },
+    "/catalogos/medicamentos": {
+      "get": {
+        "operationId": "SanitaryController_getMedicamentos",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Obtener catálogo de medicamentos veterinarios del tenant",
+        "tags": [
+          "Catálogos Sanitarios"
+        ]
+      }
+    },
+    "/catalogos/padecimientos": {
+      "get": {
+        "operationId": "SanitaryController_getPadecimientos",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Obtener catálogo de padecimientos del tenant con fármaco sugerido",
+        "tags": [
+          "Catálogos Sanitarios"
+        ]
+      }
+    },
+    "/potreros": {
+      "post": {
+        "operationId": "PotrerosController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePotreroDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      },
+      "get": {
+        "operationId": "PotrerosController_findAll",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      }
+    },
+    "/potreros/{id}": {
+      "get": {
+        "operationId": "PotrerosController_findOne",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      },
+      "patch": {
+        "operationId": "PotrerosController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePotreroDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      },
+      "delete": {
+        "operationId": "PotrerosController_remove",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      }
+    },
+    "/potreros/{id}/asignar": {
+      "post": {
+        "operationId": "PotrerosController_asignarAnimales",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AsignarAnimalesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      }
+    },
+    "/potreros/animal/{animalId}/movimientos": {
+      "get": {
+        "operationId": "PotrerosController_obtenerMovimientosAnimal",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      }
+    },
+    "/potreros/{id}/movimientos": {
+      "get": {
+        "operationId": "PotrerosController_obtenerMovimientosPotrero",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Potreros"
+        ]
+      }
+    },
+    "/animales/{id}/servicios": {
+      "post": {
+        "description": "Registra un servicio (Inseminación Artificial o Monta Natural) y calcula los 5 hitos usando los días de gestación de la raza del animal, nunca una constante fija.",
+        "operationId": "ReproductiveController_registrarServicio",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID del animal hembra",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarServicioDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Servicio registrado. Devuelve el evento, su detalle y los hitos calculados.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrarServicioResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Animal macho, raza sin días de gestación configurados, fecha futura o datos inválidos"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "403": {
+            "description": "El rol autenticado no está autorizado para registrar servicios"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Registrar servicio reproductivo para un animal hembra",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/animales/{id}/diagnosticos": {
+      "post": {
+        "description": "Registra el resultado (Preñada o Vacía) asociado a un servicio previo. Es lo único que confirma una preñez: un servicio por sí solo no cuenta como gestante.",
+        "operationId": "ReproductiveController_registrarDiagnostico",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID del animal hembra",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarDiagnosticoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Diagnóstico registrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrarDiagnosticoResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Animal macho, fecha futura, o método/resultado inválido"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "403": {
+            "description": "El rol peón no puede registrar diagnósticos"
+          },
+          "404": {
+            "description": "Animal o servicio previo no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Registrar diagnóstico de preñez",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/animales/{id}/partos": {
+      "post": {
+        "description": "Cierra el ciclo reproductivo y devuelve el animal a Vacía. Requiere que el animal esté en estado Preñada o En Secado. Un aborto se registra con facilidadParto = \"Aborto\".",
+        "operationId": "ReproductiveController_registrarParto",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID de la madre",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarPartoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Parto registrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrarPartoResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Animal macho, fecha futura, o el animal no está en estado Preñada / En Secado"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "403": {
+            "description": "El rol autenticado no está autorizado para registrar partos"
+          },
+          "404": {
+            "description": "Madre, cría o servicio asociado no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Registrar parto",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/animales/{id}/secados": {
+      "post": {
+        "description": "Registra la suspensión real del ordeño, que puede diferir de la fecha de secado calculada (FPP - 60 días).",
+        "operationId": "ReproductiveController_registrarSecado",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID del animal hembra",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarSecadoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Secado registrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrarSecadoResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Animal macho, fecha futura o datos inválidos"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "403": {
+            "description": "El rol peón no puede registrar secados"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Registrar secado",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/animales/{id}/estado-reproductivo": {
+      "get": {
+        "description": "Deriva al vuelo el estado (Vacía, Servida, Preñada, En Secado) recorriendo el historial de eventos y devuelve los próximos hitos del ciclo activo. El estado nunca se guarda ni se edita a mano.",
+        "operationId": "ReproductiveController_obtenerEstadoReproductivo",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID del animal",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado reproductivo derivado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoReproductivoResponseDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "El animal es macho y no tiene ciclo reproductivo"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Consultar estado reproductivo e hitos calculados",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/animales/{id}/eventos-reproductivos": {
+      "get": {
+        "description": "Lista cronológica de todos los eventos reproductivos del animal, con su detalle correspondiente. Incluye los eventos revertidos, marcados con revertido = true: el historial es append-only y una corrección tiene que poder verse.",
+        "operationId": "ReproductiveController_obtenerHistorialReproductivo",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "description": "ID del animal",
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Historial en orden cronológico ascendente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EventoReproductivoHistorialDto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          },
+          "404": {
+            "description": "Animal no encontrado en esta finca"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Historial reproductivo completo del animal",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/reproductivo/proximos-eventos": {
+      "get": {
+        "description": "Hitos próximos de todas las hembras activas, ordenados por urgencia. Tipos posibles: Palpación, Secado, Aviso Parto (FPP-15), Aviso Parto Urgente (FPP-3) y Parto. Incluye los hitos vencidos en los últimos 7 días, porque siguen siendo tareas pendientes.",
+        "operationId": "ReproductiveController_obtenerProximosEventos",
+        "parameters": [
+          {
+            "name": "diasVentana",
+            "required": false,
+            "in": "query",
+            "description": "Cuántos días hacia adelante mirar. El feed incluye además los hitos vencidos en los últimos 7 días, porque siguen siendo tareas pendientes.",
+            "schema": {
+              "minimum": 1,
+              "maximum": 365,
+              "default": 60,
+              "example": 30,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista ordenada por días restantes, ascendente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProximoEventoReproductivoDto"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "diasVentana fuera del rango permitido (1-365)"
+          },
+          "401": {
+            "description": "Token ausente, inválido o sin claims de tenant"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Calendario reproductivo de toda la finca",
+        "tags": [
+          "Reproductivo"
+        ]
+      }
+    },
+    "/produccion-leche/lote": {
+      "post": {
+        "operationId": "ProduccionLecheController_importarLote",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportarProduccionLecheLoteDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportarLoteResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche": {
+      "post": {
+        "operationId": "ProduccionLecheController_create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProduccionLecheDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionLecheResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche/resumen": {
+      "get": {
+        "operationId": "ProduccionLecheController_resumen",
+        "parameters": [
+          {
+            "name": "desde",
+            "required": false,
+            "in": "query",
+            "description": "Inicio del rango (YYYY-MM-DD). Por defecto, 29 días antes de `hasta`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasta",
+            "required": false,
+            "in": "query",
+            "description": "Fin del rango (YYYY-MM-DD). Por defecto, hoy en la zona horaria de la finca.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResumenProduccionDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche/registros": {
+      "get": {
+        "operationId": "ProduccionLecheController_registros",
+        "parameters": [
+          {
+            "name": "desde",
+            "required": false,
+            "in": "query",
+            "description": "Inicio del rango (YYYY-MM-DD). Por defecto, 29 días antes de `hasta`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasta",
+            "required": false,
+            "in": "query",
+            "description": "Fin del rango (YYYY-MM-DD). Por defecto, hoy en la zona horaria de la finca.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduccionLecheResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche/animal/{animalId}": {
+      "get": {
+        "operationId": "ProduccionLecheController_findAllByAnimal",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduccionLecheResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche/{id}": {
+      "patch": {
+        "operationId": "ProduccionLecheController_update",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProduccionLecheDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionLecheResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/produccion-leche/{id}/anulacion": {
+      "post": {
+        "operationId": "ProduccionLecheController_anular",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnularProduccionDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnulacionProduccionResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Producción de Leche"
+        ]
+      }
+    },
+    "/lactancia/activas": {
+      "get": {
+        "operationId": "LactanciaController_getActivas",
+        "parameters": [
+          {
+            "name": "fecha",
+            "required": false,
+            "in": "query",
+            "description": "Fecha de referencia (YYYY-MM-DD). Por defecto, hoy en la zona horaria de la finca.",
+            "schema": {
+              "example": "2026-10-06",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HembraEnLactanciaDto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Lactancia"
+        ]
+      }
+    },
+    "/lactancia/animal/{animalId}": {
+      "get": {
+        "operationId": "LactanciaController_getEstado",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "required": false,
+            "in": "query",
+            "description": "Fecha de referencia (YYYY-MM-DD). Por defecto, hoy en la zona horaria de la finca.",
+            "schema": {
+              "example": "2026-10-06",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoLactanciaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Lactancia"
+        ]
+      }
+    },
+    "/lactancia/animal/{animalId}/inicio": {
+      "post": {
+        "operationId": "LactanciaController_registrarInicio",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarEventoLactanciaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventoLactanciaResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Lactancia"
+        ]
+      }
+    },
+    "/lactancia/animal/{animalId}/fin": {
+      "post": {
+        "operationId": "LactanciaController_registrarFin",
+        "parameters": [
+          {
+            "name": "animalId",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrarEventoLactanciaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventoLactanciaResponseDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "Lactancia"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "ResDigital API",
+    "description": "API del sistema de gestión ganadera ResDigital",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "UserProfileResponseDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tenantId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "rol": {
+            "type": "string",
+            "enum": [
+              "propietario",
+              "administrador",
+              "peon",
+              "veterinario"
+            ]
+          },
+          "nombreCompleto": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string",
+            "format": "email"
+          },
+          "nombreFinca": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "tenantId",
+          "rol",
+          "nombreCompleto",
+          "correo",
+          "nombreFinca"
+        ]
+      },
+      "InviteUserDto": {
+        "type": "object",
+        "properties": {
+          "correo": {
+            "type": "string",
+            "format": "email"
+          },
+          "rol": {
+            "type": "string",
+            "enum": [
+              "administrador",
+              "peon",
+              "veterinario"
+            ]
+          },
+          "nombreCompleto": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "correo",
+          "rol"
+        ]
+      },
+      "InviteUserResponseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "invitacionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "rolAsignado": {
+            "type": "string",
+            "enum": [
+              "administrador",
+              "peon",
+              "veterinario"
+            ]
+          },
+          "emailSent": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "success",
+          "invitacionId",
+          "rolAsignado",
+          "emailSent",
+          "expiresAt"
+        ]
+      },
+      "InvitationSummaryResponseDto": {
+        "type": "object",
+        "properties": {
+          "invitacionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "correo": {
+            "type": "string",
+            "format": "email"
+          },
+          "rol": {
+            "type": "string",
+            "enum": [
+              "administrador",
+              "peon",
+              "veterinario"
+            ]
+          },
+          "estado": {
+            "type": "string",
+            "enum": [
+              "PENDIENTE",
+              "ACEPTADA",
+              "CANCELADA",
+              "EXPIRADA"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "invitacionId",
+          "correo",
+          "rol",
+          "estado",
+          "createdAt",
+          "expiresAt"
+        ]
+      },
+      "ConfirmInvitationDto": {
+        "type": "object",
+        "properties": {
+          "nombreCompleto": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "invitacionId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "nombreCompleto",
+          "invitacionId"
+        ]
+      },
+      "CreateAnimalDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdateAnimalDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "BajaAnimalDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "ReactivarAnimalDto": {
+        "type": "object",
+        "properties": {
+          "modalidad": {
+            "type": "string",
+            "enum": [
+              "RETORNO",
+              "CORRECCION"
+            ]
+          },
+          "eventoBajaId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fechaEvento": {
+            "type": "string",
+            "example": "2026-10-22"
+          },
+          "motivo": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 500
+          },
+          "areteInterno": {
+            "type": "string",
+            "description": "Nuevo arete interno si el original ya está asignado."
+          }
+        },
+        "required": [
+          "modalidad",
+          "eventoBajaId",
+          "fechaEvento",
+          "motivo"
+        ]
+      },
+      "DocumentoAnimalResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tenantId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipo": {
+            "type": "string"
+          },
+          "archivoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "objectPath": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "tenantId",
+          "animalId",
+          "tipo",
+          "archivoUrl",
+          "objectPath",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "CreateDocumentoDto": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "description": "Categoría legible del documento",
+            "example": "Cartilla sanitaria"
+          },
+          "objectPath": {
+            "type": "string",
+            "description": "Ruta del objeto privado dentro del bucket animal_docs",
+            "example": "a0b9432d-cf48-4be7-a2f0-1a76c66cfcb1/b7a544c0-2ff6-4299-bbca-46fe87588386/cartilla-sanitaria/e1d67412-21d9-482f-870d-f55da282b810.pdf"
+          }
+        },
+        "required": [
+          "tipo",
+          "objectPath"
+        ]
+      },
+      "ComposicionRazaItemDto": {
+        "type": "object",
+        "properties": {
+          "razaId": {
+            "type": "string",
+            "description": "Identificador ├║nico de la raza en el cat├ílogo",
+            "format": "uuid",
+            "example": "a0b9432d-cf48-4be7-a2f0-1a76c66cfcb1"
+          },
+          "nombre": {
+            "type": "string",
+            "description": "Nombre de la raza oficial",
+            "example": "Holstein"
+          },
+          "porcentaje": {
+            "type": "number",
+            "description": "Porcentaje gen├®tico de la raza (0 a 100)",
+            "example": 50
+          }
+        },
+        "required": [
+          "razaId",
+          "nombre",
+          "porcentaje"
+        ]
+      },
+      "ProgenitoresAnalizadosDto": {
+        "type": "object",
+        "properties": {
+          "madreId": {
+            "type": "string",
+            "description": "ID de la madre si est├í registrada en el hato",
+            "format": "uuid",
+            "nullable": true
+          },
+          "padreId": {
+            "type": "string",
+            "description": "ID del padre si es un toro registrado en el hato",
+            "format": "uuid",
+            "nullable": true
+          },
+          "padreExternoDescripcion": {
+            "type": "string",
+            "description": "Descripci├│n o pajilla del padre externo",
+            "nullable": true
+          }
+        }
+      },
+      "ComposicionGeneticaResponseDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string",
+            "description": "ID del animal evaluado",
+            "format": "uuid"
+          },
+          "areteInterno": {
+            "type": "string",
+            "description": "Arete interno del animal",
+            "example": "101"
+          },
+          "composicion": {
+            "description": "Desglose ponderado de la composici├│n gen├®tica por raza",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComposicionRazaItemDto"
+            }
+          },
+          "metodo": {
+            "type": "string",
+            "description": "M├®todo zoot├®cnico utilizado para determinar la composici├│n",
+            "enum": [
+              "DIRECTO",
+              "PROMEDIO_PROGENITORES",
+              "PROGENITOR_UNICO",
+              "DESCONOCIDO"
+            ],
+            "example": "PROMEDIO_PROGENITORES"
+          },
+          "progenitoresAnalizados": {
+            "description": "Informaci├│n de los progenitores analizados",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProgenitoresAnalizadosDto"
+              }
+            ]
+          }
+        },
+        "required": [
+          "animalId",
+          "areteInterno",
+          "composicion",
+          "metodo",
+          "progenitoresAnalizados"
+        ]
+      },
+      "CreatePesajeDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fecha": {
+            "type": "string",
+            "description": "Fecha del pesaje (YYYY-MM-DD). No puede ser futura.",
+            "example": "2026-10-06"
+          },
+          "pesoActualKg": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 2000,
+            "example": 485
+          }
+        },
+        "required": [
+          "animalId",
+          "fecha",
+          "pesoActualKg"
+        ]
+      },
+      "CreateTratamientoDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CorregirTratamientoDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "AnularTratamientoDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "CreatePotreroDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "UpdatePotreroDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "AsignarAnimalesDto": {
+        "type": "object",
+        "properties": {}
+      },
+      "DetalleServicioDto": {
+        "type": "object",
+        "properties": {
+          "tipoServicio": {
+            "type": "string",
+            "enum": [
+              "Inseminación Artificial",
+              "Monta Natural"
+            ]
+          },
+          "toroOPajilla": {
+            "type": "string",
+            "example": "Titan (CRC-B-001)"
+          },
+          "responsable": {
+            "type": "string",
+            "nullable": true
+          },
+          "fpp": {
+            "type": "string",
+            "example": "2026-06-24"
+          },
+          "palpacionFecha": {
+            "type": "string",
+            "example": "2026-10-26"
+          },
+          "secadoFecha": {
+            "type": "string",
+            "example": "2026-04-25"
+          },
+          "avisoPartoFecha": {
+            "type": "string",
+            "example": "2026-06-09"
+          },
+          "avisoPartoUrgenteFecha": {
+            "type": "string",
+            "example": "2026-06-21"
+          }
+        },
+        "required": [
+          "tipoServicio",
+          "toroOPajilla",
+          "responsable",
+          "fpp",
+          "palpacionFecha",
+          "secadoFecha",
+          "avisoPartoFecha",
+          "avisoPartoUrgenteFecha"
+        ]
+      },
+      "DetalleDiagnosticoDto": {
+        "type": "object",
+        "properties": {
+          "metodo": {
+            "type": "string",
+            "enum": [
+              "Palpación",
+              "Ecografía",
+              "PAG"
+            ]
+          },
+          "resultado": {
+            "type": "string",
+            "enum": [
+              "Preñada",
+              "Vacía"
+            ]
+          },
+          "eventoServicioId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "metodo",
+          "resultado",
+          "eventoServicioId"
+        ]
+      },
+      "DetallePartoDto": {
+        "type": "object",
+        "properties": {
+          "criaAnteriorId": {
+            "type": "string",
+            "nullable": true,
+            "format": "uuid"
+          },
+          "accionFiliacionAnterior": {
+            "type": "string",
+            "enum": [
+              "CONSERVAR",
+              "DESVINCULAR"
+            ],
+            "nullable": true
+          },
+          "eventoServicioId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "criaAnimalId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "criaAreteInterno": {
+            "type": "string",
+            "nullable": true,
+            "description": "Arete interno de la cría vinculada, si se pudo resolver en esta finca."
+          },
+          "facilidadParto": {
+            "type": "string",
+            "enum": [
+              "Normal",
+              "Distocia",
+              "Cesárea",
+              "Aborto"
+            ],
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "eventoServicioId",
+          "criaAnimalId",
+          "criaAreteInterno",
+          "facilidadParto",
+          "observaciones"
+        ]
+      },
+      "RegistrarServicioDto": {
+        "type": "object",
+        "properties": {
+          "fechaEvento": {
+            "type": "string",
+            "description": "Fecha en que se realizó el servicio (YYYY-MM-DD). No puede ser futura. Es la base del cálculo de la FPP.",
+            "example": "2026-09-16"
+          },
+          "tipoServicio": {
+            "type": "string",
+            "description": "Tipo de servicio reproductivo",
+            "enum": [
+              "Inseminación Artificial",
+              "Monta Natural"
+            ],
+            "example": "Inseminación Artificial"
+          },
+          "toroOPajilla": {
+            "type": "string",
+            "description": "Nombre o código del toro, o código de pajilla utilizado",
+            "example": "Titan (CRC-B-001)"
+          },
+          "responsable": {
+            "type": "string",
+            "description": "Responsable de la inseminación o técnico veterinario",
+            "example": "Dr. Roberto García"
+          },
+          "notas": {
+            "type": "string",
+            "description": "Observaciones adicionales sobre el servicio",
+            "example": "Celo detectado a las 6:00 AM, servicio aplicado 4:00 PM (regla AM/PM)"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "description": "ID del evento anterior que este nuevo evento corrige (marcará el original como revertido = true)",
+            "example": "b7a544c0-2ff6-4299-bbca-46fe87588386"
+          }
+        },
+        "required": [
+          "fechaEvento",
+          "tipoServicio",
+          "toroOPajilla"
+        ]
+      },
+      "EventoWriteResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tenantId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "SERVICIO",
+              "DIAGNOSTICO",
+              "PARTO",
+              "SECADO"
+            ]
+          },
+          "fechaEvento": {
+            "type": "string",
+            "format": "date"
+          },
+          "fechaRegistro": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "usuarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "revertido": {
+            "type": "boolean"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "id",
+          "tenantId",
+          "animalId",
+          "tipo",
+          "fechaEvento",
+          "fechaRegistro",
+          "usuarioId",
+          "revertido",
+          "eventoCorrigeId",
+          "notas"
+        ]
+      },
+      "EventoServicioWriteResponseDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipoServicio": {
+            "type": "string",
+            "enum": [
+              "Inseminación Artificial",
+              "Monta Natural"
+            ]
+          },
+          "toroOPajilla": {
+            "type": "string"
+          },
+          "responsable": {
+            "type": "string",
+            "nullable": true
+          },
+          "palpacionFecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "secadoFecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "avisoPartoFecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "avisoPartoUrgenteFecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "fpp": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "required": [
+          "eventoId",
+          "tipoServicio",
+          "toroOPajilla",
+          "responsable",
+          "palpacionFecha",
+          "secadoFecha",
+          "avisoPartoFecha",
+          "avisoPartoUrgenteFecha",
+          "fpp"
+        ]
+      },
+      "HitosReproductivosDto": {
+        "type": "object",
+        "properties": {
+          "fpp": {
+            "type": "string",
+            "example": "2026-06-24"
+          },
+          "palpacionFecha": {
+            "type": "string",
+            "example": "2026-10-26"
+          },
+          "secadoFecha": {
+            "type": "string",
+            "example": "2026-04-25"
+          },
+          "avisoPartoFecha": {
+            "type": "string",
+            "example": "2026-06-09"
+          },
+          "avisoPartoUrgenteFecha": {
+            "type": "string",
+            "example": "2026-06-21"
+          }
+        },
+        "required": [
+          "fpp",
+          "palpacionFecha",
+          "secadoFecha",
+          "avisoPartoFecha",
+          "avisoPartoUrgenteFecha"
+        ]
+      },
+      "RegistrarServicioResponseDto": {
+        "type": "object",
+        "properties": {
+          "evento": {
+            "$ref": "#/components/schemas/EventoWriteResponseDto"
+          },
+          "servicio": {
+            "$ref": "#/components/schemas/EventoServicioWriteResponseDto"
+          },
+          "hitos": {
+            "$ref": "#/components/schemas/HitosReproductivosDto"
+          }
+        },
+        "required": [
+          "evento",
+          "servicio",
+          "hitos"
+        ]
+      },
+      "RegistrarDiagnosticoDto": {
+        "type": "object",
+        "properties": {
+          "fechaEvento": {
+            "type": "string",
+            "description": "Fecha en que se realizó el diagnóstico (YYYY-MM-DD). No puede ser futura.",
+            "example": "2026-09-10"
+          },
+          "eventoServicioId": {
+            "type": "string",
+            "description": "ID del evento de servicio al que corresponde este diagnóstico",
+            "example": "a0b9432d-cf48-4be7-a2f0-1a76c66cfcb1"
+          },
+          "metodo": {
+            "type": "string",
+            "description": "Método diagnóstico utilizado",
+            "enum": [
+              "Palpación",
+              "Ecografía",
+              "PAG"
+            ],
+            "example": "Palpación"
+          },
+          "resultado": {
+            "type": "string",
+            "description": "Resultado del diagnóstico de preñez",
+            "enum": [
+              "Preñada",
+              "Vacía"
+            ],
+            "example": "Preñada"
+          },
+          "notas": {
+            "type": "string",
+            "description": "Notas o comentarios del veterinario sobre el diagnóstico",
+            "example": "Cuerpo lúteo palpable en cuerno derecho, ~40 días de desarrollo"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "description": "ID de evento anterior si este diagnóstico es una corrección"
+          }
+        },
+        "required": [
+          "fechaEvento",
+          "eventoServicioId",
+          "metodo",
+          "resultado"
+        ]
+      },
+      "EventoDiagnosticoWriteResponseDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoServicioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "metodo": {
+            "type": "string",
+            "enum": [
+              "Palpación",
+              "Ecografía",
+              "PAG"
+            ]
+          },
+          "resultado": {
+            "type": "string",
+            "enum": [
+              "Preñada",
+              "Vacía"
+            ]
+          }
+        },
+        "required": [
+          "eventoId",
+          "eventoServicioId",
+          "metodo",
+          "resultado"
+        ]
+      },
+      "RegistrarDiagnosticoResponseDto": {
+        "type": "object",
+        "properties": {
+          "evento": {
+            "$ref": "#/components/schemas/EventoWriteResponseDto"
+          },
+          "diagnostico": {
+            "$ref": "#/components/schemas/EventoDiagnosticoWriteResponseDto"
+          }
+        },
+        "required": [
+          "evento",
+          "diagnostico"
+        ]
+      },
+      "DatosNuevaCriaPartoDto": {
+        "type": "object",
+        "properties": {
+          "areteInterno": {
+            "type": "string",
+            "description": "Identificador único interno o arete de la cría en la finca.",
+            "example": "CR-2026-001"
+          },
+          "nombre": {
+            "type": "string",
+            "description": "Nombre de la cría. Si se omite, se asigna el mismo valor de areteInterno.",
+            "example": "Lucero"
+          },
+          "sexo": {
+            "type": "string",
+            "description": "Sexo obligatorio de la cría recién nacida ('Hembra' o 'Macho').",
+            "enum": [
+              "Hembra",
+              "Macho"
+            ],
+            "example": "Hembra"
+          },
+          "razaId": {
+            "type": "string",
+            "description": "ID de la raza en catálogo. Si se omite, hereda automáticamente la raza de la madre.",
+            "example": "b1a2c3d4-0000-0000-0000-000000000001"
+          },
+          "razaOtra": {
+            "type": "string",
+            "description": "Descripción personalizada de la raza si aplica. Si se omite y la madre tiene razaOtra, la hereda.",
+            "example": "Cruce Jersey x Girolando"
+          },
+          "numeroOficialDiio": {
+            "type": "string",
+            "description": "Número oficial de arete DIIO del MAG/SENASA. Debe ser único en la finca si se especifica.",
+            "example": "DIIO-CR-998822"
+          },
+          "categoria": {
+            "type": "string",
+            "description": "Categoría de la cría. Si se omite, se auto-asigna 'Ternera' para hembras o 'Ternero' para machos.",
+            "enum": [
+              "Ternero",
+              "Ternera",
+              "Novillo",
+              "Novillo mayor",
+              "Novilla",
+              "Vaca",
+              "Toro"
+            ],
+            "example": "Ternera"
+          },
+          "potreroId": {
+            "type": "string",
+            "description": "ID del potrero donde se ubicará la cría. Si se omite, hereda el potrero de la madre.",
+            "example": "c2b3a4d5-1111-2222-3333-444455556666"
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "description": "Fecha de nacimiento de la cría (YYYY-MM-DD). Si se omite, se utiliza la fecha del parto.",
+            "example": "2026-10-21"
+          },
+          "pesoNacimientoKg": {
+            "type": "number",
+            "description": "Peso al nacer en kilogramos (peso de nacimiento).",
+            "example": 38.5
+          },
+          "fotoUrl": {
+            "type": "string",
+            "description": "URL de la fotografía inicial de la cría (opcional).",
+            "example": "https://storage.resdigital.cr/fotos/cria-001.jpg"
+          },
+          "padreId": {
+            "type": "string",
+            "description": "ID del toro padre si está registrado en la misma finca (opcional).",
+            "example": "a1b2c3d4-5555-6666-7777-888899990000"
+          },
+          "padreExternoDescripcion": {
+            "type": "string",
+            "description": "Descripción del toro padre si provino de inseminación artificial externa o monta externa.",
+            "example": "Toro Holstein Canadiense Semen Pajilla #4410"
+          }
+        },
+        "required": [
+          "areteInterno",
+          "sexo"
+        ]
+      },
+      "RegistrarPartoDto": {
+        "type": "object",
+        "properties": {
+          "fechaEvento": {
+            "type": "string",
+            "description": "Fecha en que ocurrió el parto (YYYY-MM-DD). No puede ser futura.",
+            "example": "2026-09-10"
+          },
+          "eventoServicioId": {
+            "type": "string",
+            "description": "ID del evento de servicio del cual se originó esta preñez",
+            "example": "a0b9432d-cf48-4be7-a2f0-1a76c66cfcb1"
+          },
+          "criaAnimalId": {
+            "type": "string",
+            "description": "ID del animal registrado como cría recién nacida (si ya fue registrado en el hato). Mutuamente excluyente con nuevaCria.",
+            "example": "e1d67412-21d9-482f-870d-f55da282b810"
+          },
+          "confirmarFechaNacimiento": {
+            "type": "boolean",
+            "description": "Confirma que una ficha sin fecha de nacimiento corresponde a esta cría; se registrará la fecha del parto."
+          },
+          "nuevaCria": {
+            "description": "Datos para dar de alta la cría en la misma transacción del parto. Mutuamente excluyente con criaAnimalId.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DatosNuevaCriaPartoDto"
+              }
+            ]
+          },
+          "facilidadParto": {
+            "type": "string",
+            "description": "Desenlace del parto. \"Aborto\" es el valor que la máquina de estados usa para cerrar la preñez sin cría viable.",
+            "enum": [
+              "Normal",
+              "Distocia",
+              "Cesárea",
+              "Aborto"
+            ],
+            "example": "Normal"
+          },
+          "observaciones": {
+            "type": "string",
+            "description": "Observaciones del parto y estado de la cría y la madre",
+            "example": "Cría hembra nacida vigorosa, 38 kg de peso al nacer"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "description": "ID de evento anterior si este registro es una corrección"
+          },
+          "accionFiliacionAnterior": {
+            "type": "string",
+            "enum": [
+              "CONSERVAR",
+              "DESVINCULAR"
+            ]
+          }
+        },
+        "required": [
+          "fechaEvento"
+        ]
+      },
+      "EventoPartoWriteResponseDto": {
+        "type": "object",
+        "properties": {
+          "criaAnteriorId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "accionFiliacionAnterior": {
+            "type": "string",
+            "enum": [
+              "CONSERVAR",
+              "DESVINCULAR"
+            ],
+            "nullable": true
+          },
+          "eventoId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoServicioId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "criaAnimalId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "facilidadParto": {
+            "type": "string",
+            "enum": [
+              "Normal",
+              "Distocia",
+              "Cesárea",
+              "Aborto"
+            ],
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "criaAnteriorId",
+          "accionFiliacionAnterior",
+          "eventoId",
+          "eventoServicioId",
+          "criaAnimalId",
+          "facilidadParto",
+          "observaciones"
+        ]
+      },
+      "RegistrarPartoResponseDto": {
+        "type": "object",
+        "properties": {
+          "evento": {
+            "$ref": "#/components/schemas/EventoWriteResponseDto"
+          },
+          "parto": {
+            "$ref": "#/components/schemas/EventoPartoWriteResponseDto"
+          }
+        },
+        "required": [
+          "evento",
+          "parto"
+        ]
+      },
+      "RegistrarSecadoDto": {
+        "type": "object",
+        "properties": {
+          "fechaEvento": {
+            "type": "string",
+            "description": "Fecha de la suspensión real del ordeño (YYYY-MM-DD). No puede ser futura; puede diferir de la fecha de secado calculada.",
+            "example": "2026-08-10"
+          },
+          "notas": {
+            "type": "string",
+            "description": "Observaciones o tratamiento de sellado/terapia de secado intramamaria aplicada",
+            "example": "Aplicada infusión de secado en los 4 cuartos + sellador de pezones"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "description": "ID de evento anterior si este secado es una corrección"
+          }
+        },
+        "required": [
+          "fechaEvento"
+        ]
+      },
+      "EventoSecadoWriteResponseDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "eventoId"
+        ]
+      },
+      "RegistrarSecadoResponseDto": {
+        "type": "object",
+        "properties": {
+          "evento": {
+            "$ref": "#/components/schemas/EventoWriteResponseDto"
+          },
+          "secado": {
+            "$ref": "#/components/schemas/EventoSecadoWriteResponseDto"
+          }
+        },
+        "required": [
+          "evento",
+          "secado"
+        ]
+      },
+      "ResumenServicioActivoDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string"
+          },
+          "fechaServicio": {
+            "type": "string",
+            "example": "2026-09-16"
+          },
+          "tipoServicio": {
+            "type": "string",
+            "example": "Inseminación Artificial"
+          },
+          "toroOPajilla": {
+            "type": "string",
+            "example": "Titan (CRC-B-001)"
+          },
+          "responsable": {
+            "type": "string",
+            "nullable": true
+          },
+          "fpp": {
+            "type": "string",
+            "example": "2026-06-24",
+            "description": "Fecha probable de parto"
+          },
+          "palpacionFecha": {
+            "type": "string",
+            "example": "2026-10-26",
+            "description": "Servicio + 40 días"
+          },
+          "secadoFecha": {
+            "type": "string",
+            "example": "2026-04-25",
+            "description": "FPP - 60 días"
+          },
+          "avisoPartoFecha": {
+            "type": "string",
+            "example": "2026-06-09",
+            "description": "FPP - 15 días"
+          },
+          "avisoPartoUrgenteFecha": {
+            "type": "string",
+            "example": "2026-06-21",
+            "description": "FPP - 3 días"
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "eventoId",
+          "fechaServicio",
+          "tipoServicio",
+          "toroOPajilla",
+          "responsable",
+          "fpp",
+          "palpacionFecha",
+          "secadoFecha",
+          "avisoPartoFecha",
+          "avisoPartoUrgenteFecha",
+          "notas"
+        ]
+      },
+      "ResumenDiagnosticoActivoDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-10-26"
+          },
+          "metodo": {
+            "type": "string",
+            "enum": [
+              "Palpación",
+              "Ecografía",
+              "PAG"
+            ]
+          },
+          "resultado": {
+            "type": "string",
+            "enum": [
+              "Preñada",
+              "Vacía"
+            ]
+          },
+          "eventoServicioId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "eventoId",
+          "fecha",
+          "metodo",
+          "resultado",
+          "eventoServicioId"
+        ]
+      },
+      "ResumenPartoActivoDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-06-22"
+          },
+          "criaAnimalId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "facilidadParto": {
+            "type": "string",
+            "enum": [
+              "Normal",
+              "Distocia",
+              "Cesárea",
+              "Aborto"
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "eventoId",
+          "fecha",
+          "criaAnimalId",
+          "facilidadParto"
+        ]
+      },
+      "ResumenSecadoActivoDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string"
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-04-25"
+          }
+        },
+        "required": [
+          "eventoId",
+          "fecha"
+        ]
+      },
+      "HitoReproductivoDto": {
+        "type": "object",
+        "properties": {
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "Palpación",
+              "Secado",
+              "Aviso Parto",
+              "Aviso Parto Urgente",
+              "Parto FPP"
+            ],
+            "description": "\"Aviso Parto\" es FPP-15 y \"Aviso Parto Urgente\" es FPP-3. Son dos alertas distintas a propósito."
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-10-15",
+            "description": "Fecha del hito (YYYY-MM-DD)"
+          },
+          "diasRestantes": {
+            "type": "number",
+            "example": 12,
+            "description": "Días desde hoy. Negativo si el hito ya venció."
+          },
+          "urgente": {
+            "type": "boolean",
+            "example": false,
+            "description": "true solo en el aviso de FPP-3 días"
+          }
+        },
+        "required": [
+          "tipo",
+          "fecha",
+          "diasRestantes",
+          "urgente"
+        ]
+      },
+      "EstadoReproductivoResponseDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string"
+          },
+          "areteInterno": {
+            "type": "string",
+            "example": "101"
+          },
+          "sexo": {
+            "type": "string",
+            "example": "Hembra"
+          },
+          "razaNombre": {
+            "type": "string",
+            "example": "Holstein"
+          },
+          "diasGestacionRaza": {
+            "type": "number",
+            "example": 281,
+            "description": "Días de gestación de la raza; base del cálculo de la FPP"
+          },
+          "estadoActual": {
+            "type": "string",
+            "enum": [
+              "Vacía",
+              "Servida",
+              "Preñada",
+              "En Secado"
+            ],
+            "description": "Estado derivado del historial de eventos. Nunca se guarda ni se edita a mano."
+          },
+          "diasEnEstado": {
+            "type": "number",
+            "example": 15,
+            "description": "Días transcurridos desde el evento que dejó al animal en este estado"
+          },
+          "servicioActivo": {
+            "$ref": "#/components/schemas/ResumenServicioActivoDto"
+          },
+          "ultimoDiagnostico": {
+            "$ref": "#/components/schemas/ResumenDiagnosticoActivoDto"
+          },
+          "ultimoParto": {
+            "$ref": "#/components/schemas/ResumenPartoActivoDto"
+          },
+          "ultimoSecado": {
+            "$ref": "#/components/schemas/ResumenSecadoActivoDto"
+          },
+          "proximosHitos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HitoReproductivoDto"
+            }
+          },
+          "aptoParaPreniez": {
+            "type": "boolean",
+            "example": true,
+            "description": "False si la hembra aún no cumple 15 meses o su categoría es Ternera. Sin fecha de nacimiento ni categoría no se afirma lo contrario."
+          },
+          "advertencias": {
+            "description": "Inconsistencias detectadas al derivar el estado, por ejemplo un evento sin su fila de detalle.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "animalId",
+          "areteInterno",
+          "sexo",
+          "estadoActual",
+          "proximosHitos",
+          "aptoParaPreniez",
+          "advertencias"
+        ]
+      },
+      "EventoReproductivoHistorialDto": {
+        "type": "object",
+        "properties": {
+          "eventoId": {
+            "type": "string"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "SERVICIO",
+              "DIAGNOSTICO",
+              "PARTO",
+              "SECADO"
+            ]
+          },
+          "fechaEvento": {
+            "type": "string",
+            "example": "2026-09-16",
+            "description": "Cuándo ocurrió en la realidad"
+          },
+          "fechaRegistro": {
+            "format": "date-time",
+            "type": "string",
+            "description": "Cuándo se escribió en el sistema"
+          },
+          "usuarioId": {
+            "type": "string"
+          },
+          "revertido": {
+            "type": "boolean",
+            "example": false,
+            "description": "true si un evento posterior lo corrigió. Los eventos revertidos se incluyen en el historial, marcados: el registro es append-only y una corrección tiene que poder verse."
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Si este evento corrige a otro, el id del corregido."
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          },
+          "detalle": {
+            "description": "Detalle propio del tipo de evento. SECADO no tiene detalle adicional, por eso puede venir nulo.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DetalleServicioDto"
+              },
+              {
+                "$ref": "#/components/schemas/DetalleDiagnosticoDto"
+              },
+              {
+                "$ref": "#/components/schemas/DetallePartoDto"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "required": [
+          "eventoId",
+          "tipo",
+          "fechaEvento",
+          "fechaRegistro",
+          "usuarioId",
+          "revertido",
+          "eventoCorrigeId",
+          "notas",
+          "detalle"
+        ]
+      },
+      "ProximoEventoReproductivoDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string"
+          },
+          "arete": {
+            "type": "string",
+            "example": "101"
+          },
+          "nombre": {
+            "type": "string",
+            "example": "Paloma"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "Palpación",
+              "Secado",
+              "Aviso Parto",
+              "Aviso Parto Urgente",
+              "Parto"
+            ],
+            "description": "\"Parto FPP\" se publica como \"Parto\" en este feed."
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-10-26"
+          },
+          "diasRestantes": {
+            "type": "number",
+            "example": 12
+          },
+          "urgente": {
+            "type": "boolean",
+            "example": false
+          }
+        },
+        "required": [
+          "animalId",
+          "arete",
+          "nombre",
+          "tipo",
+          "fecha",
+          "diasRestantes",
+          "urgente"
+        ]
+      },
+      "FilaImportarProduccionLecheDto": {
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "description": "Fecha del ordeño (YYYY-MM-DD)",
+            "example": "2026-10-21"
+          },
+          "turno": {
+            "type": "string",
+            "enum": [
+              "MANANA",
+              "TARDE"
+            ],
+            "example": "MANANA"
+          },
+          "areteInterno": {
+            "type": "string",
+            "description": "Arete interno del animal activo",
+            "example": "101"
+          },
+          "litros": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 60,
+            "example": 12.5
+          },
+          "notas": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "fecha",
+          "turno",
+          "areteInterno",
+          "litros"
+        ]
+      },
+      "ImportarProduccionLecheLoteDto": {
+        "type": "object",
+        "properties": {
+          "filas": {
+            "description": "Lista de registros a importar (máximo 200)",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FilaImportarProduccionLecheDto"
+            }
+          }
+        },
+        "required": [
+          "filas"
+        ]
+      },
+      "ProduccionLecheResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoCorrigeId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-10-06"
+          },
+          "turno": {
+            "type": "string",
+            "enum": [
+              "MANANA",
+              "TARDE"
+            ]
+          },
+          "litros": {
+            "type": "number",
+            "example": 12.5
+          },
+          "disposicion": {
+            "type": "string",
+            "enum": [
+              "COMERCIALIZABLE",
+              "DESCARTE"
+            ]
+          },
+          "tratamientoEventoId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Tratamiento cuyo retiro de leche originó el descarte."
+          },
+          "fechaLiberacionLeche": {
+            "type": "string",
+            "nullable": true,
+            "example": "2026-10-09"
+          },
+          "revertido": {
+            "type": "boolean"
+          },
+          "usuarioId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "eventoCorrigeId",
+          "animalId",
+          "fecha",
+          "turno",
+          "litros",
+          "disposicion",
+          "tratamientoEventoId",
+          "fechaLiberacionLeche",
+          "revertido",
+          "usuarioId",
+          "notas",
+          "fechaRegistro"
+        ]
+      },
+      "ImportarLoteResponseDto": {
+        "type": "object",
+        "properties": {
+          "totalImportados": {
+            "type": "number",
+            "example": 5
+          },
+          "litrosTotales": {
+            "type": "number",
+            "example": 62.5
+          },
+          "litrosComercializables": {
+            "type": "number",
+            "example": 50
+          },
+          "litrosDescarte": {
+            "type": "number",
+            "example": 12.5
+          },
+          "registros": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProduccionLecheResponseDto"
+            }
+          }
+        },
+        "required": [
+          "totalImportados",
+          "litrosTotales",
+          "litrosComercializables",
+          "litrosDescarte",
+          "registros"
+        ]
+      },
+      "CreateProduccionLecheDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fecha": {
+            "type": "string",
+            "description": "Fecha del ordeño (YYYY-MM-DD). No puede ser futura.",
+            "example": "2026-10-06"
+          },
+          "turno": {
+            "type": "string",
+            "enum": [
+              "MANANA",
+              "TARDE"
+            ]
+          },
+          "litros": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 60,
+            "example": 12.5
+          },
+          "notas": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "animalId",
+          "fecha",
+          "turno",
+          "litros"
+        ]
+      },
+      "ResumenProduccionDiaDto": {
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "example": "2026-10-06"
+          },
+          "litrosProducidos": {
+            "type": "number"
+          },
+          "litrosComercializables": {
+            "type": "number"
+          },
+          "litrosDescarte": {
+            "type": "number"
+          },
+          "registros": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "fecha",
+          "litrosProducidos",
+          "litrosComercializables",
+          "litrosDescarte",
+          "registros"
+        ]
+      },
+      "ResumenProduccionDto": {
+        "type": "object",
+        "properties": {
+          "desde": {
+            "type": "string",
+            "example": "2026-09-07"
+          },
+          "hasta": {
+            "type": "string",
+            "example": "2026-10-06"
+          },
+          "litrosProducidos": {
+            "type": "number"
+          },
+          "litrosComercializables": {
+            "type": "number"
+          },
+          "litrosDescarte": {
+            "type": "number"
+          },
+          "registros": {
+            "type": "number"
+          },
+          "porFecha": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResumenProduccionDiaDto"
+            }
+          }
+        },
+        "required": [
+          "desde",
+          "hasta",
+          "litrosProducidos",
+          "litrosComercializables",
+          "litrosDescarte",
+          "registros",
+          "porFecha"
+        ]
+      },
+      "UpdateProduccionLecheDto": {
+        "type": "object",
+        "properties": {
+          "litros": {
+            "type": "number",
+            "minimum": 0.1,
+            "maximum": 60,
+            "example": 14.5
+          },
+          "notas": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "motivo": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "litros"
+        ]
+      },
+      "AnularProduccionDto": {
+        "type": "object",
+        "properties": {
+          "motivo": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "motivo"
+        ]
+      },
+      "AnulacionProduccionResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "eventoAnulacionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "motivo": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "eventoAnulacionId",
+          "motivo"
+        ]
+      },
+      "HembraEnLactanciaDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "arete": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "example": "2026-08-01"
+          }
+        },
+        "required": [
+          "animalId",
+          "arete",
+          "nombre",
+          "fechaInicio"
+        ]
+      },
+      "EstadoLactanciaDto": {
+        "type": "object",
+        "properties": {
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "enLactancia": {
+            "type": "boolean"
+          },
+          "fechaInicio": {
+            "type": "string",
+            "nullable": true,
+            "example": "2026-08-01"
+          },
+          "eventoInicioId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "tienePartoPrevio": {
+            "type": "boolean",
+            "description": "True si hay un parto (incluido aborto) no revertido en o antes de la fecha de referencia. Sin eso no se ordeña ni se inicia lactancia a mano."
+          },
+          "fechaReferencia": {
+            "type": "string",
+            "example": "2026-10-06"
+          }
+        },
+        "required": [
+          "animalId",
+          "enLactancia",
+          "fechaInicio",
+          "eventoInicioId",
+          "tienePartoPrevio",
+          "fechaReferencia"
+        ]
+      },
+      "RegistrarEventoLactanciaDto": {
+        "type": "object",
+        "properties": {
+          "fecha": {
+            "type": "string",
+            "description": "Fecha del evento (YYYY-MM-DD). No puede ser futura.",
+            "example": "2026-09-01"
+          },
+          "notas": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "fecha"
+        ]
+      },
+      "EventoLactanciaResponseDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "animalId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "tipo": {
+            "type": "string",
+            "enum": [
+              "INICIO_LACTANCIA",
+              "FIN_LACTANCIA"
+            ]
+          },
+          "fecha": {
+            "type": "string",
+            "example": "2026-09-01"
+          },
+          "notas": {
+            "type": "string",
+            "nullable": true
+          },
+          "usuarioId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "id",
+          "animalId",
+          "tipo",
+          "fecha",
+          "notas",
+          "usuarioId"
+        ]
+      }
+    }
+  }
+}

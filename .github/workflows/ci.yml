@@ -1,0 +1,119 @@
+name: Monorepo CI
+on:
+  pull_request:
+    branches: [main, development]
+  push:
+    branches: [main, development]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: monorepo-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality:
+    name: Quality (${{ matrix.app }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [backend, frontend]
+    defaults:
+      run:
+        working-directory: ${{ matrix.app }}
+    env:
+      HUSKY: '0'
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320
+        with:
+          version: 10.32.1
+          run_install: false
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - if: matrix.app == 'frontend'
+        run: pnpm openapi:check
+      - run: pnpm build
+  security:
+    name: Secrets and workflows
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - run: node tooling/security-tools.mjs gitleaks-ci
+      - run: node tooling/security-tools.mjs actionlint
+  dependencies:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294
+        with:
+          fail-on-severity: high
+  migration-replay:
+    name: Backend migration replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+    env:
+      HUSKY: '0'
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320
+        with:
+          version: 10.32.1
+          run_install: false
+      - run: pnpm install --frozen-lockfile
+      - run: node tooling/migration-replay.mjs
+  required:
+    name: Monorepo required
+    if: always()
+    needs: [quality, security, dependencies, migration-replay]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require successful checks
+        env:
+          RESULTS: ${{ toJson(needs) }}
+          EVENT_NAME: ${{ github.event_name }}
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          const jobs = JSON.parse(process.env.RESULTS);
+          for (const [name, job] of Object.entries(jobs)) {
+            if (name === 'dependencies' && process.env.EVENT_NAME !== 'pull_request' && job.result === 'skipped') continue;
+            if (job.result !== 'success') throw new Error(name + ': ' + job.result);
+          }
+          NODE
