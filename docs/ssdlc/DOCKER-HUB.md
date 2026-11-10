@@ -1,5 +1,9 @@
 # Publicación de candidatos aprobados — Danny, ítem 5.5
 
+## Base de integración actualizada
+
+Se adopta la importación de Ari (PR #7) y el CI raíz compartido (PR #8). El PR #6 incorpora ambos mediante merge, conserva los Dockerfiles y controles de publicación, y ya no depende de fusionar la importación reemplazada del PR #1. Integrar #7 y #8, cambiar la base de #6 a `development` y obtener revisión de otro integrante antes de fusionar. El bloqueo remoto y los requisitos de configuración siguen pendientes.
+
 ## Estado y límites
 
 Se implementan Dockerfiles, verificaciones de contenedores y publicación condicionada en CI. La publicación remota no está demostrada: el CI está bloqueado por la cuenta de GitHub (H-2) y faltan la configuración pública del frontend y el secreto de publicación. Las imágenes locales `local-demo` usan valores ficticios y el script impide publicarlas. No confundir preparación con cumplimiento completo de 5.5.
