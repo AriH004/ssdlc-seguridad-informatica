@@ -54,6 +54,7 @@ La migración se propone en una rama separada para revisar antes de integrarla.
 - [Lineamientos del profesor](docs/ssdlc/lineamientos_proyecto.md)
 - [Procedencia, automatización y pendientes](docs/ssdlc/MIGRACION-MONOREPO.md)
 - [Candidatos y publicación en Docker Hub — 5.5](docs/ssdlc/DOCKER-HUB.md)
+- [Registro único de hallazgos — 7.5](docs/ssdlc/REGISTRO-HALLAZGOS.md)
 - [Prompt existente para Claude Code](docs/ssdlc/PROMPT_CLAUDE_CODE.md)
 
 El CI importado no demuestra todavía publicación en Docker Hub ni despliegue. Estos necesitan configuración y evidencia propias.
