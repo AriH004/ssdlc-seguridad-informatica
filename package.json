@@ -1,0 +1,18 @@
+{
+  "name": "resdigital-ssdlc",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=24.14.0 <25"
+  },
+  "scripts": {
+    "install:apps": "pnpm --dir backend install --frozen-lockfile && pnpm --dir frontend install --frozen-lockfile",
+    "lint": "pnpm --dir backend lint && pnpm --dir frontend lint",
+    "typecheck": "pnpm --dir backend typecheck && pnpm --dir frontend typecheck",
+    "test": "pnpm --dir backend test && pnpm --dir frontend test",
+    "build": "pnpm --dir backend build && pnpm --dir frontend build",
+    "dev:backend": "pnpm --dir backend start:dev",
+    "dev:frontend": "pnpm --dir frontend dev",
+    "check:workflows": "node tooling/security-tools.mjs actionlint"
+  }
+}
