@@ -1,0 +1,7 @@
+# Excepción acotada (ítem 5.6). Solo estos 2 fingerprints exactos; no cubre otros archivos ni líneas.
+# Hallazgo: regla postgres-connection-string en comentarios de bootstrap-local.sql (commit histórico 450a07ec).
+# Contenido: URL de ejemplo con la contraseña ficticia "test" de un contenedor local desechable; no es una credencial real.
+# El archivo actual ya usa PGPASSWORD. El commit está en origin/development y no se reescribe el historial.
+# Aprobación humana: PENDIENTE (Danny). Vence: 2026-12-11 (revisar o retirar).
+450a07ec32ff74581cd9b2596a7a94ab20e7cb9c:backend/src/database/scripts/bootstrap-local.sql:postgres-connection-string:15
+450a07ec32ff74581cd9b2596a7a94ab20e7cb9c:backend/src/database/scripts/bootstrap-local.sql:postgres-connection-string:17
