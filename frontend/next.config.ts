@@ -20,6 +20,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   // El browser de Cursor entra por 127.0.0.1; sin esto Next 16 bloquea los chunks.
   allowedDevOrigins: ["127.0.0.1"],
   async headers() {
