@@ -1,0 +1,14 @@
+ backend/src/tratamientos/tratamientos.controller.ts | 1 -
+ 1 file changed, 1 deletion(-)
+diff --git a/backend/src/tratamientos/tratamientos.controller.ts b/backend/src/tratamientos/tratamientos.controller.ts
+index 57bd6c7..7f7b93a 100644
+--- a/backend/src/tratamientos/tratamientos.controller.ts
++++ b/backend/src/tratamientos/tratamientos.controller.ts
+@@ -101,7 +101,6 @@ export class TratamientosController {
+ 
+   @Post(':id/anulacion')
+   @HttpCode(200)
+-  @Roles('propietario', 'administrador', 'veterinario')
+   anular(
+     @Param('id', ParseUUIDPipe) id: string,
+     @Body() dto: AnularTratamientoDto,

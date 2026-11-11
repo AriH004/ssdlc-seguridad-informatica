@@ -1,0 +1,200 @@
+# Comando: pnpm test:authz --reporter=verbose
+# Fecha: 2026-11-11T05:44:47Z
+# Commit: 8446fce
+
+> backend@0.0.1 test:authz C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> vitest run --config ./vitest.config.authz.ts "--reporter=verbose"
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] se descubrieron las rutas de la API (la prueba no puede quedar vacía) 2ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01] GET / es pública y responde sin sesión 30ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /auth/perfil responde 401 y no toca ningún dato 35ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /auth/invitar responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /auth/invitaciones responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /auth/confirmar-invitacion responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 10ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] propietario no puede fijar tenantId de otra finca desde el cuerpo de POST /animales 96ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] propietario puede pasar la autorización en POST /auth/invitar 94ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] propietario no puede elevar su rol ni su identidad desde el cuerpo de POST /animales 10ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] propietario no puede fijar tenantId de otra finca desde el cuerpo de POST /potreros 9ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] propietario no puede elevar su rol ni su identidad desde el cuerpo de POST /potreros 8ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede fijar tenantId de otra finca desde el cuerpo de POST /pesajes 8ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede elevar su rol ni su identidad desde el cuerpo de POST /pesajes 7ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-02][T-01][T-04] veterinario no puede fijar tenantId de otra finca desde el cuerpo de POST /tratamientos 7ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-02][T-01][T-04] veterinario no puede elevar su rol ni su identidad desde el cuerpo de POST /tratamientos 8ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede fijar tenantId de otra finca desde el cuerpo de POST /produccion-leche 9ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede elevar su rol ni su identidad desde el cuerpo de POST /produccion-leche 8ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede fijar tenantId de otra finca desde el cuerpo de POST /animales/11111111-1111-4111-8111-111111111111/servicios 6ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-03][T-01][T-03] peon no puede elevar su rol ni su identidad desde el cuerpo de POST /animales/11111111-1111-4111-8111-111111111111/servicios 6ms
+ ✓ test/authz/finca-y-asignacion-masiva.authz.spec.ts > Finca y asignación masiva (4.5) > [F-01][T-03] confirmar-invitacion rechaza un rol o una finca enviados por el invitado 7ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/descendencia responde 401 y no toca ningún dato 6ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: PATCH /animales/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 6ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/baja responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/baja responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/historial-bajas responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/reactivar responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/documentos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/documentos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/composicion-genetica responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/crias responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /catalogos/razas responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /pesajes responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /pesajes/animal/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /potreros responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /potreros responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /potreros/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: PATCH /potreros/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: DELETE /potreros/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /potreros/11111111-1111-4111-8111-111111111111/asignar responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /potreros/animal/11111111-1111-4111-8111-111111111111/movimientos responde 401 y no toca ningún dato 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /potreros/11111111-1111-4111-8111-111111111111/movimientos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /lactancia/activas responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] administrador es rechazado con 403 en POST /auth/invitar y no se toca ningún dato 9ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] peon es rechazado con 403 en POST /auth/invitar y no se toca ningún dato 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] veterinario es rechazado con 403 en POST /auth/invitar y no se toca ningún dato 7ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] propietario puede pasar la autorización en GET /auth/invitaciones 7ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] administrador es rechazado con 403 en GET /auth/invitaciones y no se toca ningún dato 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] peon es rechazado con 403 en GET /auth/invitaciones y no se toca ningún dato 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-01][T-02] veterinario es rechazado con 403 en GET /auth/invitaciones y no se toca ningún dato 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] propietario puede pasar la autorización en POST /tratamientos 11ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] administrador puede pasar la autorización en POST /tratamientos 9ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] peon puede pasar la autorización en POST /tratamientos 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] veterinario puede pasar la autorización en POST /tratamientos 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] propietario puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/correccion 8ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] administrador puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/correccion 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] peon es rechazado con 403 en POST /tratamientos/11111111-1111-4111-8111-111111111111/correccion y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] veterinario puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/correccion 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /lactancia/animal/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 6ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /lactancia/animal/11111111-1111-4111-8111-111111111111/inicio responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /lactancia/animal/11111111-1111-4111-8111-111111111111/fin responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /produccion-leche/lote responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /produccion-leche responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /produccion-leche/resumen responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /produccion-leche/registros responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /produccion-leche/animal/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: PATCH /produccion-leche/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /produccion-leche/11111111-1111-4111-8111-111111111111/anulacion responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/servicios responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/diagnosticos responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/partos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /animales/11111111-1111-4111-8111-111111111111/secados responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/estado-reproductivo responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /animales/11111111-1111-4111-8111-111111111111/eventos-reproductivos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /reproductivo/proximos-eventos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /catalogos/medicamentos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /catalogos/padecimientos responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /tratamientos responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /tratamientos/retiros-activos responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /tratamientos/animal/11111111-1111-4111-8111-111111111111/estado-sanitario responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: GET /tratamientos/animal/11111111-1111-4111-8111-111111111111 responde 401 y no toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /tratamientos/11111111-1111-4111-8111-111111111111/correccion responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > [F-01][T-08] sin sesión: POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion responde 401 y no toca ningún dato 3ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] propietario puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion 7ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] administrador puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] peon es rechazado con 403 en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] veterinario puede pasar la autorización en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] propietario puede pasar la autorización en POST /animales 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] administrador puede pasar la autorización en POST /animales 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] peon es rechazado con 403 en POST /animales y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] veterinario es rechazado con 403 en POST /animales y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] propietario puede pasar la autorización en PATCH /animales/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] administrador puede pasar la autorización en PATCH /animales/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] peon es rechazado con 403 en PATCH /animales/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] veterinario es rechazado con 403 en PATCH /animales/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/baja 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/baja 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] peon es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/baja y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] veterinario es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/baja y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/reactivar 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/reactivar 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] peon es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/reactivar y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02] veterinario es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/reactivar y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-07] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/documentos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-07] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/documentos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-07] peon es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/documentos y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-07] veterinario es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/documentos y no se toca ningún dato 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token vencido 32ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token firmado con una llave que Supabase no publicó 6ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token de otro emisor 6ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token con otra audiencia 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token sin firma (alg none) 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token firmado con HS256 usando la llave pública como secreto 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] cadena que no es un JWT 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] esquema distinto de Bearer 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][R-03] token válido sin tenant_id 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][R-03] token válido sin rol 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-02] token válido con un rol inexistente (superadmin) 4ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01][T-08] token válido sin sub 5ms
+ ✓ test/authz/sin-sesion.authz.spec.ts > Sin sesión y credenciales inválidas (4.5) > credenciales inválidas contra una ruta protegida > [F-01] control: el mismo token válido sí pasa los guards 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /potreros 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /potreros 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en POST /potreros y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /potreros y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en PATCH /potreros/11111111-1111-4111-8111-111111111111 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en PATCH /potreros/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en PATCH /potreros/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en PATCH /potreros/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en DELETE /potreros/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en DELETE /potreros/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en DELETE /potreros/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en DELETE /potreros/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /potreros/11111111-1111-4111-8111-111111111111/asignar 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /potreros/11111111-1111-4111-8111-111111111111/asignar 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /potreros/11111111-1111-4111-8111-111111111111/asignar 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /potreros/11111111-1111-4111-8111-111111111111/asignar y no se toca ningún dato 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /pesajes 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /pesajes 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /pesajes 6ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /pesajes y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /produccion-leche 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /produccion-leche 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /produccion-leche 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /produccion-leche y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /produccion-leche/lote 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /produccion-leche/lote 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /produccion-leche/lote 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /produccion-leche/lote y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en PATCH /produccion-leche/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en PATCH /produccion-leche/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en PATCH /produccion-leche/11111111-1111-4111-8111-111111111111 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en PATCH /produccion-leche/11111111-1111-4111-8111-111111111111 y no se toca ningún dato 3ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /produccion-leche/11111111-1111-4111-8111-111111111111/anulacion 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /produccion-leche/11111111-1111-4111-8111-111111111111/anulacion 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en POST /produccion-leche/11111111-1111-4111-8111-111111111111/anulacion y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /produccion-leche/11111111-1111-4111-8111-111111111111/anulacion y no se toca ningún dato 3ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/inicio 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/inicio 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/inicio y no se toca ningún dato 3ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/inicio y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/fin 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/fin 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/fin y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario es rechazado con 403 en POST /lactancia/animal/11111111-1111-4111-8111-111111111111/fin y no se toca ningún dato 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/servicios 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/servicios 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/servicios 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/servicios 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/diagnosticos 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/diagnosticos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon es rechazado con 403 en POST /animales/11111111-1111-4111-8111-111111111111/diagnosticos y no se toca ningún dato 3ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/diagnosticos 5ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/partos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/partos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/partos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/partos 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] propietario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/secados 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] administrador puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/secados 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] peon puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/secados 4ms
+ ✓ test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-03][T-02] veterinario puede pasar la autorización en POST /animales/11111111-1111-4111-8111-111111111111/secados 4ms
+
+ Test Files  3 passed (3)
+      Tests  182 passed (182)
+   Start at  23:44:49
+   Duration  8.45s (transform 3.30s, setup 0ms, import 20.64s, tests 2.74s, environment 0ms)
+
+# Código de salida: 0
