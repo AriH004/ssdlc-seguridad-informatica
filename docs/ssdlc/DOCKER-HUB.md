@@ -6,7 +6,7 @@ Se adopta la importación de Ari (PR #7) y el CI raíz compartido (PR #8). El PR
 
 ## Estado y límites
 
-Se implementan Dockerfiles, verificaciones de contenedores y publicación condicionada en CI. La publicación remota no está demostrada: el CI está bloqueado por la cuenta de GitHub (H-2) y faltan la configuración pública del frontend y el secreto de publicación. Las imágenes locales `local-demo` usan valores ficticios y el script impide publicarlas. No confundir preparación con cumplimiento completo de 5.5.
+Se implementan Dockerfiles, verificaciones de contenedores y publicación condicionada en CI. GitHub Actions ya ejecuta los jobs. La publicación remota no está demostrada porque todavía faltan la configuración pública real del frontend y el secreto de publicación. Las imágenes locales `local-demo` usan valores ficticios y el script impide publicarlas. No confundir preparación con cumplimiento completo de 5.5.
 
 ## Configuración necesaria en GitHub
 
@@ -18,6 +18,8 @@ En Settings → Secrets and variables → Actions, configurar estas variables de
 - `NEXT_PUBLIC_BACKEND_URL`: URL pública HTTPS del backend de destino.
 
 Configurar `DOCKERHUB_TOKEN` como secreto con permiso de escritura limitado a los repositorios del proyecto. El dueño crea/configura el token por la interfaz segura; no enviarlo por chat, Issues o Git. La sesión de Docker Desktop de la computadora no se transfiere al runner. Si la cuenta no permite ese alcance, documentar el alcance real y quién lo administra.
+
+En pull requests, si faltan las tres variables públicas del frontend, el CI usa valores ficticios no sensibles solamente para construir y probar la imagen; un PR nunca publica. En un `push` a `development` no se aplican esos valores: la construcción exige la configuración pública real antes de permitir la publicación.
 
 La publicación prevista usa `dannyor94/resdigital-backend:<SHA>` y `dannyor94/resdigital-frontend:<SHA>`. No se ha confirmado todavía la autenticación de publicación en Docker Hub.
 

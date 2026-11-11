@@ -120,6 +120,19 @@ jobs:
         with:
           node-version: 24.14.0
           package-manager-cache: false
+      - name: Prepare PR-only public frontend placeholders
+        if: matrix.app == 'frontend' && github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          if [ -z "$NEXT_PUBLIC_SUPABASE_URL" ]; then
+            echo 'NEXT_PUBLIC_SUPABASE_URL=https://ci-placeholder.invalid' >> "$GITHUB_ENV"
+          fi
+          if [ -z "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo 'NEXT_PUBLIC_SUPABASE_ANON_KEY=ci-public-placeholder' >> "$GITHUB_ENV"
+          fi
+          if [ -z "$NEXT_PUBLIC_BACKEND_URL" ]; then
+            echo 'NEXT_PUBLIC_BACKEND_URL=https://api-ci-placeholder.invalid' >> "$GITHUB_ENV"
+          fi
       - name: Build candidate once
         shell: bash
         run: |
