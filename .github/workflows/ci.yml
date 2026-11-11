@@ -179,7 +179,7 @@ jobs:
           docker build --build-arg VCS_REF="$COMMIT" "${args[@]}" -t "resdigital-$APP:$COMMIT" "$APP"
       - name: Check runtime and export the tested image
         run: node tooling/image-candidate.mjs verify "$APP" "$COMMIT"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: candidate-${{ matrix.app }}-${{ github.sha }}
           path: image-artifacts/
@@ -226,7 +226,7 @@ jobs:
         run: |
           node tooling/image-candidate.mjs publish backend "$COMMIT"
           node tooling/image-candidate.mjs publish frontend "$COMMIT"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: published-digests-${{ github.sha }}
           path: image-artifacts/*-published.json
