@@ -1,0 +1,15 @@
+ backend/src/produccion/lactancia-calc.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+diff --git a/backend/src/produccion/lactancia-calc.ts b/backend/src/produccion/lactancia-calc.ts
+index 58cd89d..67f4725 100644
+--- a/backend/src/produccion/lactancia-calc.ts
++++ b/backend/src/produccion/lactancia-calc.ts
+@@ -87,7 +87,7 @@ export function derivarLactancia(
+   const ref = fechaReferencia.slice(0, 10);
+   let ultimo: EventoLactancia | null = null;
+   for (const evento of eventos) {
+-    if (!cuenta(evento) || evento.fechaEvento.slice(0, 10) > ref) continue;
++    if (!cuenta(evento) || evento.fechaEvento.slice(0, 10) >= ref) continue;
+     if (!ultimo || comparar(evento, ultimo) > 0) ultimo = evento;
+   }
+   if (!ultimo || !abreLactancia(ultimo)) return NO_LACTANTE;

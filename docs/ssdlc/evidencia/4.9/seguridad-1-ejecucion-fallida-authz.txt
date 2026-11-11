@@ -1,0 +1,42 @@
+# Comando: pnpm test:authz
+# Fecha: 2026-11-11T05:43:44Z
+
+> backend@0.0.1 test:authz C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> vitest run --config ./vitest.config.authz.ts
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+ ❯ test/authz/acceso-por-rol.authz.spec.ts (100 tests | 1 failed) 1076ms
+     × [F-02][T-02][T-04] peon es rechazado con 403 en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion y no se toca ningún dato 12ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/authz/acceso-por-rol.authz.spec.ts > Autorización por rol directo a la API (4.5) > [F-02][T-02][T-04] peon es rechazado con 403 en POST /tratamientos/11111111-1111-4111-8111-111111111111/anulacion y no se toca ningún dato
+AssertionError: expected 400 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 400
+
+ ❯ test/authz/acceso-por-rol.authz.spec.ts:116:34
+    114|         }
+    115|
+    116|         expect(respuesta.status).toBe(403);
+       |                                  ^
+    117|         // El rechazo no filtra detalles internos.
+    118|         expect(JSON.stringify(respuesta.body)).not.toMatch(/stack|at .…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 181 passed (182)
+   Start at  23:43:46
+   Duration  8.73s (transform 3.37s, setup 0ms, import 21.26s, tests 2.66s, environment 0ms)
+
+ ELIFECYCLE  Command failed with exit code 1.
+# Código de salida: 1
