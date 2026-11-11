@@ -58,6 +58,7 @@ jobs:
           package-manager-cache: false
       - run: node tooling/security-tools.mjs gitleaks-ci
       - run: node tooling/security-tools.mjs actionlint
+      - run: node --test tooling/tests/release-gate.test.mjs
   dependencies:
     name: Dependency review
     if: github.event_name == 'pull_request'
@@ -130,10 +131,114 @@ jobs:
           name: authz-report-${{ github.sha }}
           path: backend/authz-report.txt
           if-no-files-found: error
+  images:
+    name: Candidate image (${{ matrix.app }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [backend, frontend]
+    env:
+      APP: ${{ matrix.app }}
+      COMMIT: ${{ github.sha }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      NEXT_PUBLIC_BACKEND_URL: ${{ vars.NEXT_PUBLIC_BACKEND_URL }}
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - name: Prepare PR-only public frontend placeholders
+        if: matrix.app == 'frontend' && github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          if [ -z "$NEXT_PUBLIC_SUPABASE_URL" ]; then
+            echo 'NEXT_PUBLIC_SUPABASE_URL=https://ci-placeholder.invalid' >> "$GITHUB_ENV"
+          fi
+          if [ -z "$NEXT_PUBLIC_SUPABASE_ANON_KEY" ]; then
+            echo 'NEXT_PUBLIC_SUPABASE_ANON_KEY=ci-public-placeholder' >> "$GITHUB_ENV"
+          fi
+          if [ -z "$NEXT_PUBLIC_BACKEND_URL" ]; then
+            echo 'NEXT_PUBLIC_BACKEND_URL=https://api-ci-placeholder.invalid' >> "$GITHUB_ENV"
+          fi
+      - name: Build candidate once
+        shell: bash
+        run: |
+          args=()
+          if [ "$APP" = frontend ]; then
+            : "${NEXT_PUBLIC_SUPABASE_URL:?Configure public Supabase URL in repository variables}"
+            : "${NEXT_PUBLIC_SUPABASE_ANON_KEY:?Configure public anon key, never service_role}"
+            : "${NEXT_PUBLIC_BACKEND_URL:?Configure public backend URL}"
+            args+=(--build-arg NEXT_PUBLIC_SUPABASE_URL --build-arg NEXT_PUBLIC_SUPABASE_ANON_KEY --build-arg NEXT_PUBLIC_BACKEND_URL)
+          fi
+          docker build --build-arg VCS_REF="$COMMIT" "${args[@]}" -t "resdigital-$APP:$COMMIT" "$APP"
+      - name: Check runtime and export the tested image
+        run: node tooling/image-candidate.mjs verify "$APP" "$COMMIT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: candidate-${{ matrix.app }}-${{ github.sha }}
+          path: image-artifacts/
+          if-no-files-found: error
+          retention-days: 7
+  publish:
+    name: Publish tested images
+    if: always() && !cancelled() && github.event_name == 'push' && github.ref == 'refs/heads/development'
+    needs: [quality, security, dependencies, migration-replay, images]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        with:
+          node-version: 24.14.0
+          package-manager-cache: false
+      - name: Enforce all required results before publication
+        env:
+          RELEASE_GATE_CLI: 'true'
+          RESULTS: ${{ toJson(needs) }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: node tooling/release-gate.mjs
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: candidate-*-${{ github.sha }}
+          path: image-artifacts/
+          merge-multiple: true
+      - name: Authenticate to Docker Hub
+        env:
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        shell: bash
+        run: |
+          : "${DOCKERHUB_USERNAME:?Configure Docker Hub username}"
+          : "${DOCKERHUB_TOKEN:?Configure protected Docker Hub token}"
+          printf '%s' "$DOCKERHUB_TOKEN" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+      - name: Publish existing approved candidates without rebuilding
+        env:
+          COMMIT: ${{ github.sha }}
+        run: |
+          node tooling/image-candidate.mjs publish backend "$COMMIT"
+          node tooling/image-candidate.mjs publish frontend "$COMMIT"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: published-digests-${{ github.sha }}
+          path: image-artifacts/*-published.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Remove runner registry session
+        if: always()
+        run: docker logout
   required:
     name: Monorepo required
     if: always()
-    needs: [quality, security, dependencies, migration-replay, authz-tests]
+    needs: [quality, security, dependencies, migration-replay, authz-tests, images, publish]
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -141,12 +246,14 @@ jobs:
         env:
           RESULTS: ${{ toJson(needs) }}
           EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref }}
         shell: bash
         run: |
           node --input-type=module <<'NODE'
           const jobs = JSON.parse(process.env.RESULTS);
           for (const [name, job] of Object.entries(jobs)) {
             if (name === 'dependencies' && process.env.EVENT_NAME !== 'pull_request' && job.result === 'skipped') continue;
+            if (name === 'publish' && (process.env.EVENT_NAME !== 'push' || process.env.REF_NAME !== 'refs/heads/development') && job.result === 'skipped') continue;
             if (job.result !== 'success') throw new Error(name + ': ' + job.result);
           }
           NODE

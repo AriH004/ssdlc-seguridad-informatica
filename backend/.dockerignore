@@ -1,0 +1,15 @@
+.git
+.github
+.husky
+node_modules
+dist
+coverage
+logs
+*.log
+.env
+.env.*
+.certs
+*.pem
+*.key
+*.tsbuildinfo
+test-results
