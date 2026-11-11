@@ -1,0 +1,522 @@
+==> lint
+
+> resdigital-ssdlc@ lint C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto
+> pnpm --dir backend lint && pnpm --dir frontend lint
+
+
+> backend@0.0.1 lint C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> oxlint --type-aware src/ test/
+
+src/sanitary/entities/medicamento.entity.ts:5:3: warning eslint(no-unused-vars): Identifier 'ManyToOne' is imported but never used. help: Consider removing this import.
+src/sanitary/entities/medicamento.entity.ts:6:3: warning eslint(no-unused-vars): Identifier 'JoinColumn' is imported but never used. help: Consider removing this import.
+src/animales/tests/animales.service.spec.ts:19:25: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:325:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:337:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:360:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:380:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:380:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:387:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:404:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:404:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:411:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:427:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:427:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:434:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:443:67: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:444:67: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:461:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:485:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:485:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:492:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:526:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:526:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:533:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:565:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:578:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:578:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:585:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:600:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:600:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:607:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:624:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:641:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:665:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:684:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:711:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:711:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:719:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:755:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:755:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:764:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:790:77: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:790:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:797:22: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:823:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:839:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:859:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:886:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:909:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:933:20: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:957:20: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:981:20: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:998:23: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:999:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1000:25: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1001:29: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1010:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1037:37: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1061:20: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1118:20: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1147:67: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1157:67: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1191:41: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1231:41: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1265:41: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1389:31: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1389:42: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/animales.service.spec.ts:1390:31: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/potreros/tests/potreros.service.spec.ts:93:70: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/potreros/tests/potreros.service.spec.ts:189:70: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/entities/animal.entity.ts:9:3: warning eslint(no-unused-vars): Identifier 'Unique' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.service.spec.ts:14:10: warning eslint(no-unused-vars): Identifier 'EventoServicio' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.service.spec.ts:15:10: warning eslint(no-unused-vars): Identifier 'EventoDiagnostico' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.service.spec.ts:16:10: warning eslint(no-unused-vars): Identifier 'EventoParto' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.service.spec.ts:17:10: warning eslint(no-unused-vars): Identifier 'EventoSecado' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.service.spec.ts:41:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.service.spec.ts:55:10: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.service.spec.ts:834:29: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.service.spec.ts:854:29: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.service.spec.ts:875:29: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.service.spec.ts:940:38: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/tests/dto-validations.spec.ts:8:3: warning eslint(no-unused-vars): Identifier 'DatosNuevaCriaPartoDto' is imported but never used. help: Consider removing this import.
+src/animales/tests/dto-validations.spec.ts:12:51: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/database/migrations/1789730000000-DropServicioReproductivo.ts:22:21: warning eslint(no-unused-vars): Parameter 'queryRunner' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/reproductivo/tests/reproductive.controller.spec.ts:3:3: warning eslint(no-unused-vars): Identifier 'ForbiddenException' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.controller.spec.ts:20:10: warning eslint(no-unused-vars): Identifier 'RegistrarPartoDto' is imported but never used. help: Consider removing this import.
+src/reproductivo/tests/reproductive.controller.spec.ts:348:15: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.controller.spec.ts:366:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.controller.spec.ts:380:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive.controller.spec.ts:398:39: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:101:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:138:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:165:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:206:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:233:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:269:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:297:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:321:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:360:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:387:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:410:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:447:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:474:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:497:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:525:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:553:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:592:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:619:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-state.service.spec.ts:667:27: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-calculation.service.spec.ts:118:64: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/reproductivo/tests/reproductive-calculation.service.spec.ts:122:58: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:461:61: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:478:16: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:499:18: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:517:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:535:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:554:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:573:91: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/produccion/produccion-leche.service.spec.ts:587:99: warning typescript(no-explicit-any): Unexpected `any`. Specify a different type. help: Use `unknown` instead, this will force you to explicitly, and safely, assert the type is correct.
+src/animales/animales.service.ts:26:3: warning eslint(no-unused-vars): Identifier 'DatosNuevaCriaPartoDto' is imported but never used. help: Consider removing this import.
+src/auth/services/invitations.service.ts:179:15: warning typescript(no-base-to-string): 'untrustedClientPayload['invitacionId'] ?? ''' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/auth/services/invitations.service.ts:200:15: warning typescript(no-base-to-string): 'untrustedClientPayload['nombreCompleto'] ?? ''' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/animales.controller.ts:48:40: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/animales/animales.service.ts:165:48: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/animales/animales.service.ts:370:63: warning typescript(no-base-to-string): 'normalizado.areteInterno' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/animales.service.ts:370:63: warning typescript(restrict-template-expressions): Invalid type used in template literal expression.
+src/animales/animales.service.ts:385:74: warning typescript(no-base-to-string): 'normalizado.numeroOficialDiio' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/animales.service.ts:385:74: warning typescript(restrict-template-expressions): Invalid type used in template literal expression.
+src/animales/animales.service.ts:469:65: warning typescript(no-base-to-string): 'normalizado.areteInterno' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/animales.service.ts:469:65: warning typescript(restrict-template-expressions): Invalid type used in template literal expression.
+src/animales/animales.service.ts:498:74: warning typescript(no-base-to-string): 'normalizado.numeroOficialDiio' will use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/animales.service.ts:498:74: warning typescript(restrict-template-expressions): Invalid type used in template literal expression.
+src/potreros/potreros.service.ts:51:7: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/potreros/potreros.service.ts:314:13: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/potreros/potreros.service.ts:371:7: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/animales/tests/animales.service.spec.ts:55:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:144:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:148:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:149:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:160:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:172:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:185:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:189:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:220:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:235:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:248:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:253:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:263:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:282:23: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:283:23: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:287:23: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:288:23: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/auth/tests/rls-transaction.interceptor.spec.ts:137:19: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/auth/tests/rls-transaction.interceptor.spec.ts:146:22: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/auth/tests/rls-transaction.interceptor.spec.ts:159:19: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:292:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/auth/tests/role-matrix.spec.ts:93:54: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:296:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:306:23: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:311:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/auth/tests/mass-assignment.spec.ts:217:30: warning typescript(no-base-to-string): 'options.body' may use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/auth/tests/mass-assignment.spec.ts:218:30: warning typescript(no-base-to-string): 'options.body' may use Object's default stringification format ('[object Object]') when stringified. help: Consider picking a property (e.g. `user.name`), using a formatter (or `JSON.stringify`), or implementing a custom `toString()`/`toLocaleString()` on the type.
+src/animales/tests/animales.service.spec.ts:348:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:371:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:380:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:404:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:427:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:443:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:444:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:448:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:459:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:474:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:485:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:499:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:509:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:519:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:526:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:545:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:578:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:600:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:622:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:639:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:663:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:682:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:711:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:755:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:790:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:810:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:857:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:871:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:884:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:907:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:931:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:955:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:979:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:991:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1059:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1116:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1140:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1170:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1221:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1255:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1285:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1291:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1302:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1327:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1337:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1346:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1351:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1352:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1445:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1459:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1460:7: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/animales/tests/animales.service.spec.ts:1477:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1491:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1513:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1535:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1563:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1582:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1595:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1613:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1619:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1633:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1649:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1671:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1694:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1717:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1739:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1760:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1777:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1781:35: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/animales/tests/animales.service.spec.ts:1802:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:72:63: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/potreros/tests/potreros.controller.spec.ts:76:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:81:41: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/potreros/tests/potreros.controller.spec.ts:89:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:102:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:121:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:139:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:158:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:187:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/potreros/tests/potreros.controller.spec.ts:212:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:43:34: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:47:43: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:48:46: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:52:37: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:53:37: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:54:37: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:65:43: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:66:43: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:70:34: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:71:34: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:75:37: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion.controllers.spec.ts:76:37: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/produccion/produccion-leche.service.spec.ts:442:23: warning typescript(no-misused-spread): Using the spread operator on class instances will lose their class prototype.
+src/reproductivo/tests/reproductive.controller.spec.ts:90:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:101:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:109:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:115:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:123:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:129:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:135:20: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:149:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:173:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:195:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:295:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:314:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:347:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:305:22: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:427:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.controller.spec.ts:321:22: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:458:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:503:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:528:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:552:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:601:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:609:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:625:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:626:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:643:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:659:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:720:30: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:40:57: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:721:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:729:33: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:747:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:47:57: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:48:57: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:779:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:802:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:53:64: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/reproductivo/tests/reproductive.service.spec.ts:922:32: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:56:64: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:63:18: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:64:18: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.controller.spec.ts:65:18: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+src/tratamientos/tratamientos.service.spec.ts:766:22: warning typescript(unbound-method): Avoid referencing unbound methods which may cause unintentional scoping of `this`. help: If your function does not access `this`, you can annotate it with `this: void`, or consider using an arrow function instead.
+
+> frontend@0.1.0 lint C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend
+> eslint
+
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\hato\[id]\page.tsx
+    9:34  warning  'Pesaje' is defined but never used                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   76:3   warning  'ETIQUETA_DISPOSICION' is defined but never used                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+   77:3   warning  'ETIQUETA_TURNO' is defined but never used                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+  113:8   warning  'DescendenciaRegistrada' is defined but never used                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  129:33  warning  'setDiagnosticoServicioId' is assigned a value but never used                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  480:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\hato\nuevo\page.tsx
+   90:40  warning  'loadingRazas' is assigned a value but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  336:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\hato\page.tsx
+    7:28  warning  'Potrero' is defined but never used                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  427:27  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\potreros\[id]\page.tsx
+    7:21  warning  'Edit2' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+    7:34  warning  'ArrowRightLeft' is defined but never used                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   17:9   warning  'router' is assigned a value but never used                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+  247:25  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\potreros\asignar\page.tsx
+    6:47  warning  'Potrero' is defined but never used                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+   25:43  warning  'loadingPotreros' is assigned a value but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+  167:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\produccion\page.tsx
+  119:58  warning  'retiro' is defined but never used    @typescript-eslint/no-unused-vars
+  144:16  warning  'registro' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\app\(dashboard)\reportes\page.tsx
+   4:8   warning  'Link' is defined but never used            @typescript-eslint/no-unused-vars
+   6:3   warning  'FileText' is defined but never used        @typescript-eslint/no-unused-vars
+  14:3   warning  'ChevronRight' is defined but never used    @typescript-eslint/no-unused-vars
+  23:20  warning  'formatearFecha' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\tests\dashboard-real-contract.test.ts
+  1:32  warning  'vi' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\tests\potreros-movimientos.test.tsx
+  3:26  warning  'waitFor' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\tests\rf003-rf007-hato-catalogos.test.tsx
+  10:3  warning  'CATEGORIAS_ANIMAL' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend\tests\selector-animal-reporte.test.tsx
+  8:10  warning  '_animalId' is defined but never used     @typescript-eslint/no-unused-vars
+  8:30  warning  '_nombreFinca' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 28 problems (0 errors, 28 warnings)
+
+==> typecheck
+
+> resdigital-ssdlc@ typecheck C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto
+> pnpm --dir backend typecheck && pnpm --dir frontend typecheck
+
+
+> backend@0.0.1 typecheck C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> tsc --noEmit
+
+
+> frontend@0.1.0 typecheck C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend
+> tsc --noEmit
+
+==> pruebas
+
+> resdigital-ssdlc@ test C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto
+> pnpm --dir backend test && pnpm --dir frontend test
+
+
+> backend@0.0.1 test C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> vitest run
+
+[33mThe plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the [1mresolve.tsconfigPaths[22m option. You can remove the plugin and set [1mresolve.tsconfigPaths: true[22m in your Vite config instead.[39m
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+[95m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [95m  DEBUG[39m [38;5;3m[AuthGuard] [39m[95mPetición sin Bearer token en el encabezado Authorization.[39m
+[95m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [95m  DEBUG[39m [38;5;3m[AuthGuard] [39m[95mPetición sin Bearer token en el encabezado Authorization.[39m
+[33m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mVerificación de JWT fallida: token expired[39m
+[33m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mJWT sin claims de tenant_id o rol.[39m
+[33m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mJWT sin claims de tenant_id o rol.[39m
+[33m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mJWT sin claims de tenant_id o rol.[39m
+[33m[Nest] 37412  - [39m10/11/2026, 4:46:54 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mJWT sin claims de tenant_id o rol.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[31m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [31m  ERROR[39m [38;5;3m[InvitationsService] [39m[31mSupabase Auth rechazó el envío de invitación (HTTP 503).[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ENVIADA.[39m
+[33m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [33m   WARN[39m [38;5;3m[InvitationsService] [39m[33mSe descartó un intento de asignar el rol desde el payload del cliente.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: CAMBIO_ROL.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[RolesService] [39m[32mSe actualizó el rol asignado: peon.[39m
+[32m[Nest] 33580  - [39m10/11/2026, 4:46:55 p. m. [32m    LOG[39m [38;5;3m[AuditAuthService] [39m[32mEvento de autenticación persistido: INVITACION_ACEPTADA.[39m
+[32m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mRateLimitTestModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mRateLimitedController {/}:[39m[38;5;3m +27ms[39m
+[32m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/data, GET} route[39m[38;5;3m +5ms[39m
+[32m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[95m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [95m  DEBUG[39m [38;5;3m[AuthGuard] [39m[95mPetición sin Bearer token en el encabezado Authorization.[39m
+[33m[Nest] 23952  - [39m10/11/2026, 4:46:57 p. m. [33m   WARN[39m [38;5;3m[AuthGuard] [39m[33mVerificación de JWT fallida: Invalid Compact JWS[39m
+[32m[Nest] 28836  - [39m10/11/2026, 4:46:59 p. m. [32m    LOG[39m [38;5;3m[SupabaseJwtService] [39m[32mSupabase JWKS inicializado contra: https://demo.supabase.co/auth/v1/.well-known/jwks.json (Algoritmo esperado: ES256)[39m
+
+ Test Files  36 passed (36)
+      Tests  467 passed (467)
+   Start at  16:46:51
+   Duration  10.40s (transform 3.69s, setup 0ms, import 102.33s, tests 9.17s, environment 5ms)
+
+
+> frontend@0.1.0 test C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/frontend
+
+Not implemented: HTMLMediaElement's pause() method
+Not implemented: HTMLMediaElement's pause() method
+Not implemented: HTMLMediaElement's pause() method
+Not implemented: HTMLMediaElement's pause() method
+Not implemented: HTMLMediaElement's pause() method
+Not implemented: HTMLMediaElement's pause() method
+
+ Test Files  60 passed (60)
+      Tests  369 passed (369)
+   Start at  16:47:03
+   Duration  26.37s (environment 58%, import 31%, tests 8%, transform 2%, worker 1%)
+
+Environment  jsdom was created 60 times · 209.05s total, 58% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+==> build
+
+> resdigital-ssdlc@ build C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto
+> pnpm --dir backend build && pnpm --dir frontend build
+
+
+> backend@0.0.1 build C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> nest build
+
+
+> frontend@0.1.0 build C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\frontend
+> next build
+
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 171ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1571ms
+  Running TypeScript ...
+  Finished TypeScript in 2.4s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/16) ...
+  Generating static pages using 15 workers (4/16) 
+  Generating static pages using 15 workers (8/16) 
+  Generating static pages using 15 workers (12/16) 
+✓ Generating static pages using 15 workers (16/16) in 491ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /aceptar-invitacion
+├ ƒ /actualizar-password
+├ ○ /dashboard
+├ ○ /equipo
+├ ○ /hato
+├ ƒ /hato/[id]
+├ ○ /hato/nuevo
+├ ƒ /login
+├ ○ /potreros
+├ ƒ /potreros/[id]
+├ ƒ /potreros/[id]/asignar
+├ ○ /potreros/asignar
+├ ○ /privacidad
+├ ○ /produccion
+├ ○ /qr
+├ ƒ /recuperar-password
+├ ƒ /registro
+├ ○ /reportes
+├ ○ /reproductivo
+└ ○ /terminos
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+==> gitleaks
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+[90m4:47PM[0m [32mINF[0m [1m8 commits scanned.[0m
+[90m4:47PM[0m [32mINF[0m [1mscanned ~6338108 bytes (6.34 MB) in 491ms[0m
+[90m4:47PM[0m [33mWRN[0m [1mleaks found: 2[0m
+Herramienta de seguridad bloqueó la operación: Command failed: C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\.git\.codex-tools\8.27.2\gitleaks.exe git --redact --exit-code=1 --config .gitleaks.toml .
+
+===== Resumen =====
+OK          lint
+OK          typecheck
+OK          pruebas
+OK          build
+FALLÓ       gitleaks
+RESULTADO: NO APROBADO (hay pasos fallidos o incompletos)
