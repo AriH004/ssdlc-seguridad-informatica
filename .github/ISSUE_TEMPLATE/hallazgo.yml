@@ -1,0 +1,81 @@
+name: Hallazgo SSDLC
+description: Registro único de calidad, seguridad u operación (7.5).
+title: "[HALLAZGO] "
+labels: [hallazgo]
+body:
+  - type: markdown
+    attributes:
+      value: No incluir secretos, datos de producción ni información sensible. Los detalles restringidos deben mantenerse fuera del repositorio público y referenciarse de forma sanitizada.
+  - type: input
+    id: origen
+    attributes:
+      label: Origen e ítem SSDLC
+      description: Herramienta, prueba o revisión que lo detectó; etapa e ítem.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión o alcance afectado
+      description: SHA completo, rama y digest si existe; indicar explícitamente cuando no aplica.
+    validations:
+      required: true
+  - type: dropdown
+    id: clasificacion
+    attributes:
+      label: Clasificación
+      options:
+        - Pendiente de investigación
+        - Problema confirmado
+        - Falso positivo
+    validations:
+      required: true
+  - type: dropdown
+    id: severidad
+    attributes:
+      label: Severidad
+      options: [Baja, Media, Alta, Crítica]
+    validations:
+      required: true
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto y justificación de severidad
+      description: Explicar el impacto observado y sus límites; no presentar una hipótesis como ataque confirmado.
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia y reproducción
+      description: Enlaces a ejecución, líneas, PR o artefactos; comandos y resultados esperados/observados. Comprobaciones ausentes son incompletas.
+    validations:
+      required: true
+  - type: input
+    id: responsable
+    attributes:
+      label: Responsable y revisor
+      description: Usuario GitHub responsable y otro integrante revisor. Su designación no implica aprobación.
+    validations:
+      required: true
+  - type: dropdown
+    id: estado
+    attributes:
+      label: Estado del tratamiento
+      options: [Abierto, En tratamiento, Bloqueado, Pendiente de revisión, Verificado]
+    validations:
+      required: true
+  - type: textarea
+    id: tratamiento
+    attributes:
+      label: Tratamiento y criterio de cierre
+      description: Acción, PR correctivo y nueva comprobación. Si se acepta el riesgo, indicar aprobación humana y fecha de revisión; no marcar como corregido.
+    validations:
+      required: true
+  - type: textarea
+    id: relaciones
+    attributes:
+      label: Amenazas y excepciones relacionadas
+      description: Enlazar IDs existentes o indicar ninguna identificada; no duplicar registros.
+    validations:
+      required: true
