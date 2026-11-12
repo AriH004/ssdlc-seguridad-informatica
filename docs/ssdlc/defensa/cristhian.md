@@ -2,6 +2,41 @@
 
 > Borrador de la IA; reescribir con tus palabras antes de la defensa individual.
 
+## Ítems 1.8 y 2.1: Contexto de gobernanza y directrices en AGENTS.md
+
+**Qué se hizo**
+- Se configuró [`AGENTS.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/AGENTS.md) como la fuente canónica de instrucciones para el agente y desarrolladores:
+  - Definición explícita de arquitectura monorepositorio sin workspace y comandos de compilación/prueba independientes.
+  - Sección de consulta obligatoria (`docs/kb/flujos.md`, `docs/kb/arquitectura-y-acceso.md`, `docs/kb/amenazas.md`, `docs/kb/dudas.md` y `docs/kb/terceros-y-secretos.md`) antes de alterar cualquier flujo crítico.
+  - Reglas de codificación segura para acceso a datos (Ítem 7.8) prohibiendo queries SQL raw concatenadas.
+  - Instrucciones para ejecutar las comprobaciones locales obligatorias (`scripts/verify.sh` y `tooling/agent-wrapper.mjs`).
+
+**Por qué así**
+- El estándar SSDLC exige que los agentes de IA no operen en el vacío; deben contar con un contexto claro de los límites arquitectónicos, las políticas de seguridad y las fuentes de requisitos de negocio para prevenir desviaciones y alucinaciones.
+
+**Cómo se demuestra**
+- Abrir [`AGENTS.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/AGENTS.md) y verificar las secciones operativas, de consulta de base de conocimiento y de codificación segura.
+
+---
+
+## Ítem 2.3: Herramientas locales de seguridad (Semgrep y Gitleaks)
+
+**Qué se hizo**
+- Se integraron herramientas de análisis de seguridad ejecutables en la máquina del desarrollador a través de `tooling/security-tools.mjs`:
+  - **Gitleaks:** Escaneo de secretos en todo el árbol de trabajo y staging (`gitleaks-tree`), con reglas personalizadas en `.gitleaks.toml` y excepciones en `.gitleaksignore`.
+  - **Semgrep CE:** Escaneo de código estático SAST local mediante CLI o contenedor Docker con reglas propias (`resdigital-sql-concatenation`, `resdigital-unsafe-innerhtml`, `resdigital-hardcoded-jwt-secret`).
+  - **OSV-Scanner:** Escaneo de vulnerabilidades conocidas en dependencias sobre `backend/pnpm-lock.yaml` y `frontend/pnpm-lock.yaml`.
+- Ambas herramientas se incluyeron dentro del script unificado `scripts/verify.sh` y en los comandos de `package.json` (`check:gitleaks`, `check:semgrep`, `check:security`).
+
+**Por qué así**
+- **Enfoque Shift-Left:** Detectar vulnerabilidades y secretos en la estación de trabajo evita que lleguen a GitHub.
+- **Falla cerrado:** Si una herramienta no está instalada o no puede ejecutarse localmente, emite `INCOMPLETO` con código 2, impidiendo que el desarrollador asuma una falsa aprobación.
+
+**Cómo se demuestra**
+- Ejecutar `pnpm check:gitleaks` y `node tooling/security-tools.mjs osv-scanner` mostrando el escaneo y el reporte en limpio.
+
+---
+
 ## Ítem 2.4: Hook / Wrapper que conecta al agente y limita reintentos
 
 **Qué se hizo**
@@ -47,6 +82,36 @@
 **Por qué así**
 - Los lineamientos exigen que los límites del agente se respalden mediante configuraciones técnicas ejecutables en el harness y no únicamente mediante texto consultivo en `AGENTS.md`. El agente no puede modificar sus propios controles ni publicar cambios sin revisión cruzada.
 
+---
+
+## Ítem 3.1: Pipeline de Integración Continua (CI) en GitHub Actions
+
+**Qué se hizo**
+- Se diseñó y puso en producción el workflow principal `.github/workflows/ci.yml` en la raíz del monorepositorio:
+  - Disparadores en cada Pull Request y push hacia `development` y `main`.
+  - Matriz de calidad (`quality`) ejecutando linting, typechecking y 836 pruebas unitarias independientes para `backend` y `frontend` con `pnpm` y versiones fijadas.
+  - Job agregador obligatorio `monorepo-required` que comprueba que todos los jobs requeridos (`Quality`, `Security gates`, `Authz tests`, `Dependency review`, `Candidate image`) hayan finalizado en éxito (`needs: [...]`).
+  - Validación sintáctica y de gobernanza con Actionlint (`check:workflows`).
+
+**Por qué así**
+- **Agregación estricta:** Un PR solo puede integrarse si el check `Monorepo required` pasa; si un solo job falla, se cancela o queda incompleto, la integración se bloquea automáticamente.
+
+**Cómo se demuestra**
+- Mostrar las ejecuciones exitosas en GitHub Actions (por ejemplo [Run 43151695616](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43151695616)) en el [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31).
+
+---
+
+## Ítem 3.5: Protección de ramas y permisos de pipeline
+
+**Qué se hizo**
+- Se implementó el script de protección de ramas [`scripts/setup/branch-protection.sh`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/scripts/setup/branch-protection.sh):
+  - Protege `development` y `main` exigiendo PR, checks de CI requeridos (`Monorepo required`, `Security gates`, `Quality`, `Dependency review`) y al menos 1 aprobación humana de otro integrante del equipo.
+  - Bloquea push directo, borrado de ramas y force pushes.
+  - Establece permisos mínimos de ejecución en `ci.yml` (`permissions: contents: read`).
+  - Documentación de activación manual para la administradora en [`docs/ssdlc/PASOS_MANUALES.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/docs/ssdlc/PASOS_MANUALES.md) y evidencia en [`docs/ssdlc/evidencia/3.5/README.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/docs/ssdlc/evidencia/3.5/README.md).
+
+**Por qué así**
+- Las reglas de CI/CD carecen de fuerza vinculante si cualquier desarrollador o agente puede hacer push directo a `development`. La protección de ramas garantiza que el pipeline sea la única vía de entrada al código integrado.
 
 ---
 
