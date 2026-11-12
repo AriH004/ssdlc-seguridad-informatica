@@ -13,3 +13,10 @@ blob-report/
 image-artifacts/
 .claude/
 docs/
+.github/
+backend/src/database/migrations/
+backend/src/test-utils/
+**/*.spec.ts
+**/*.spec.js
+**/*.test.ts
+**/*.test.js

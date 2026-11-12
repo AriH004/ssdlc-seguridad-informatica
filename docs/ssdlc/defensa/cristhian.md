@@ -79,3 +79,37 @@
 **Qué NO comprueba / Limitaciones**
 - No detecta vulnerabilidades zero-day no divulgadas en bases de datos públicas de CVE/OSV.
 - No realiza análisis dinámico DAST sobre servidores en vivo; se enfoca en la fase de construcción e integración (SAST + SCA + Secrets).
+
+---
+
+## Ítem 3.6: Demostración de bloqueo de integración (Demo D2)
+
+**Qué se hizo**
+- Se diseñó y ejecutó de forma controlada la **Demostración D2** de bloqueo del pipeline de CI:
+  1. Se creó la rama `demo/cris-d2` y se abrió el [Pull Request #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) hacia `development`.
+  2. En el commit `092d567`, se inyectó una vulnerabilidad intencional de inyección SQL mediante concatenación directa de cadenas en `backend/src/animales/animales.service.ts` (`demoInyeccionSqlConcatenada`).
+  3. Se verificó que el pipeline remoto de GitHub Actions (Run `43148785557`) falló en los gates de seguridad (`Security gates`), bloqueando el job `Monorepo required` y deshabilitando la fusión en el Pull Request.
+  4. En el commit `60142d2`, se implementó la remediación utilizando consultas parametrizadas con parámetros vinculados (`$1`), eliminando la concatenación insegura.
+  5. Se reevaluó el PR en CI (Run `43149844208`), verificando que Semgrep CE y todos los gates pasaron a verde (`APROBADO`).
+  6. Toda la evidencia, enlaces a runs remotos, diffs y artefactos SARIF quedaron documentados en `docs/ssdlc/evidencia/3.6/README.md`.
+
+**Por qué así**
+- **Verificación empírica del SSDLC:** No basta con declarar reglas y herramientas; es un requisito fundamental de seguridad demostrar que un defecto real es detectado y bloqueado efectivamente antes de tocar código de producción.
+- **Trazabilidad completa:** La demostración vive en un Pull Request independiente (#32) con historial inmutable en GitHub Actions, vinculando el commit con defecto, el commit de corrección y los artefactos SARIF generados.
+- **Integración con reglas de protección:** La demostración se apoya en el script de branch protection (`scripts/setup/branch-protection.sh`, Ítem 3.5), garantizando que las ramas `development` y `main` rechacen fusiones directas o PRs con checks no aprobados.
+
+**Cómo se demuestra**
+1. **Pull Request en GitHub:** Mostrar el [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) en GitHub.
+2. **Historial de ejecuciones:** Mostrar la ejecución inicial fallida `43148785557` (cruz roja en `Security gates` y `Monorepo required`) y la ejecución posterior exitosa tras la remediación.
+3. **Inspección de código:** Mostrar el diff en `backend/src/animales/animales.service.ts` donde la concatenación `"SELECT ... '" + idFinca + "'"` es sustituida por parámetros `$1` con `[idFinca]`.
+4. **Reporte SARIF:** Descargar el artefacto `security-reports-${{ github.sha }}` generado por el pipeline y revisar los resultados de Semgrep CE.
+
+**Qué comprueba**
+- Que las reglas SAST personalizadas de Semgrep CE (`resdigital-sql-concatenation`) detectan patrones de concatenación insegura en queries SQL.
+- Que un fallo en cualquier herramienta de seguridad detiene la cadena de integración continua (`fail closed`).
+- Que los checks requeridos de GitHub Actions impiden la fusión a `development` cuando el estado no es exitoso.
+- Que la remediación con prácticas de codificación segura restaura el estado verde sin degradar los controles.
+
+**Qué NO comprueba / Limitaciones**
+- No simula un ataque activo de explotación en tiempo de ejecución (payload malicioso contra base de datos activa); se comprueba a nivel de análisis estático en la compuerta de integración (SAST shift-left).
+- La exigencia obligatoria de aprobación de branch protection en GitHub depende de la ejecución del script por el dueño del repositorio (`@AriH004`) debido a permisos administrativos del token.
