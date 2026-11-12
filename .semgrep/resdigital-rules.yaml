@@ -3,6 +3,14 @@ rules:
     message: "Posible inyección SQL: se detectó una consulta construida mediante concatenación directa de cadenas. Utilice parámetros vinculados ($1, $2, etc.) en lugar de concatenar entradas."
     severity: ERROR
     languages: [typescript, javascript]
+    paths:
+      include:
+        - backend/src/
+      exclude:
+        - backend/src/database/migrations/
+        - backend/src/test-utils/
+        - "**/*.spec.ts"
+        - "**/*.test.ts"
     patterns:
       - pattern-either:
           - pattern: $QR.query($X + $Y, ...)

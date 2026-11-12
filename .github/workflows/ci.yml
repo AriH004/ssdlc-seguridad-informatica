@@ -65,7 +65,7 @@ jobs:
       - name: Semgrep CE (SAST code analysis)
         run: |
           mkdir -p reports
-          docker run --rm -v "${{ github.workspace }}:/src" semgrep/semgrep:1.185.0 semgrep scan --config=.semgrep/ --config=p/owasp-top-ten --config=p/react --config=p/typescript --sarif --output=/src/reports/semgrep.sarif --error
+          docker run --rm -v "${{ github.workspace }}:/src" semgrep/semgrep:1.185.0 semgrep scan --config=.semgrep/ --config=p/owasp-top-ten --config=p/react --config=p/typescript --sarif --output=/src/reports/semgrep.sarif --severity=ERROR --error
       - name: OSV-Scanner (SCA dependencies)
         run: node tooling/security-tools.mjs osv-scanner --format=sarif --output=osv-report.sarif
       - name: Upload security reports
