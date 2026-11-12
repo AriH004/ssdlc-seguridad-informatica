@@ -13,3 +13,290 @@
 # id = "GHSA-xxxx-xxxx-xxxx"
 # ignoreUntil = 2026-12-31
 # reason = "E-01: Sin ruta de explotación en backend/frontend; paquete utilizado únicamente en tooling offline."
+
+# Excepciones base de dependencias heredadas del monorepo (Ítem 3.2 / 7.5)
+
+[[IgnoredVulns]]
+id = "GHSA-qxg6-89mg-rqv8"
+ignoreUntil = 2026-12-31
+reason = "E-01: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-xp26-3454-mjgp"
+ignoreUntil = 2026-12-31
+reason = "E-02: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-27r3-jxmh-p828"
+ignoreUntil = 2026-12-31
+reason = "E-03: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-6j4f-fj2g-mc7p"
+ignoreUntil = 2026-12-31
+reason = "E-04: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-q2hr-2g5m-vwhr"
+ignoreUntil = 2026-12-31
+reason = "E-05: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-qhr7-859c-m2p7"
+ignoreUntil = 2026-12-31
+reason = "E-06: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-333x-w4r6-6crp"
+ignoreUntil = 2026-12-31
+reason = "E-07: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-hrr3-gc8f-f4qj"
+ignoreUntil = 2026-12-31
+reason = "E-08: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-w74x-v6f9-j3xg"
+ignoreUntil = 2026-12-31
+reason = "E-09: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-wjr9-j795-jxcr"
+ignoreUntil = 2026-12-31
+reason = "E-10: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-xhq7-xmqj-769h"
+ignoreUntil = 2026-12-31
+reason = "E-11: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+ignoreUntil = 2026-12-31
+reason = "E-12: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-3pph-fpjx-jg34"
+ignoreUntil = 2026-12-31
+reason = "E-13: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-q7qp-rjg7-q26m"
+ignoreUntil = 2026-12-31
+reason = "E-14: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-6pq8-jhm2-2vcw"
+ignoreUntil = 2026-12-31
+reason = "E-15: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-68fv-2mgg-jv7q"
+ignoreUntil = 2026-12-31
+reason = "E-16: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-52f5-9888-hmc6"
+ignoreUntil = 2026-12-31
+reason = "E-17: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-ph9p-34f9-6g65"
+ignoreUntil = 2026-12-31
+reason = "E-18: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-2m5v-pch6-74hx"
+ignoreUntil = 2026-12-31
+reason = "E-19: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-2mjp-6q6p-2qxm"
+ignoreUntil = 2026-12-31
+reason = "E-20: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-35p6-xmwp-9g52"
+ignoreUntil = 2026-12-31
+reason = "E-21: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-4992-7rv2-5pvq"
+ignoreUntil = 2026-12-31
+reason = "E-22: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-4qv8-2p9j-2685"
+ignoreUntil = 2026-12-31
+reason = "E-23: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-8xcm-r25x-g524"
+ignoreUntil = 2026-12-31
+reason = "E-24: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-9fm3-97px-rjf6"
+ignoreUntil = 2026-12-31
+reason = "E-25: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-c76h-2ccp-4975"
+ignoreUntil = 2026-12-31
+reason = "E-26: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-cxrh-j4jr-qwg3"
+ignoreUntil = 2026-12-31
+reason = "E-27: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-f269-vfmq-vjvj"
+ignoreUntil = 2026-12-31
+reason = "E-28: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-g8m3-5g58-fq7m"
+ignoreUntil = 2026-12-31
+reason = "E-29: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-g9mf-h72j-4rw9"
+ignoreUntil = 2026-12-31
+reason = "E-30: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-m8rv-5g2x-5cg5"
+ignoreUntil = 2026-12-31
+reason = "E-31: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-p88m-4jfj-68fv"
+ignoreUntil = 2026-12-31
+reason = "E-32: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-qrxm-fqhp-jwvm"
+ignoreUntil = 2026-12-31
+reason = "E-33: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-r53p-7pc4-xj5r"
+ignoreUntil = 2026-12-31
+reason = "E-34: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-rfgv-xxqx-mfg5"
+ignoreUntil = 2026-12-31
+reason = "E-35: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-v3r7-h72x-cjcm"
+ignoreUntil = 2026-12-31
+reason = "E-36: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-v9p9-hfj2-hcw8"
+ignoreUntil = 2026-12-31
+reason = "E-37: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-vrm6-8vpv-qv8q"
+ignoreUntil = 2026-12-31
+reason = "E-38: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-vxpw-j846-p89q"
+ignoreUntil = 2026-12-31
+reason = "E-39: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-587h-7wmj-h5pm"
+ignoreUntil = 2026-12-31
+reason = "E-40: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-698v-4r3x-3vcv"
+ignoreUntil = 2026-12-31
+reason = "E-41: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-9jrq-w75r-8gcw"
+ignoreUntil = 2026-12-31
+reason = "E-42: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-r825-w8mm-5pxw"
+ignoreUntil = 2026-12-31
+reason = "E-43: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-rq7h-c2jc-7f22"
+ignoreUntil = 2026-12-31
+reason = "E-44: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-vfpm-58rq-9qcg"
+ignoreUntil = 2026-12-31
+reason = "E-45: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-6688-9rhm-gjv2"
+ignoreUntil = 2026-12-31
+reason = "E-46: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-c6gr-qvv4-5v3f"
+ignoreUntil = 2026-12-31
+reason = "E-47: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-cg2g-xh64-v4q7"
+ignoreUntil = 2026-12-31
+reason = "E-48: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-mrv2-3pqr-j5jr"
+ignoreUntil = 2026-12-31
+reason = "E-49: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-p98j-92pf-mc4p"
+ignoreUntil = 2026-12-31
+reason = "E-50: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-2464-fhr4-w9xw"
+ignoreUntil = 2026-12-31
+reason = "E-51: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-673q-mjm6-r5xr"
+ignoreUntil = 2026-12-31
+reason = "E-52: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-p3m5-59mp-jv5r"
+ignoreUntil = 2026-12-31
+reason = "E-53: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-4w7w-5xrc-9h26"
+ignoreUntil = 2026-12-31
+reason = "E-54: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-55wc-3pg8-jfw6"
+ignoreUntil = 2026-12-31
+reason = "E-55: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-f72v-6w45-q472"
+ignoreUntil = 2026-12-31
+reason = "E-56: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
+
+[[IgnoredVulns]]
+id = "GHSA-xjj6-f33q-929c"
+ignoreUntil = 2026-12-31
+reason = "E-57: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot"
