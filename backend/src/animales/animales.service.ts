@@ -41,14 +41,15 @@ export class AnimalesService {
 
   /**
    * Método para demostración de defecto controlado D2 (Ítem 3.6).
-   * Introduce concatenación directa de cadenas en SQL para activar la regla resdigital-sql-concatenation de Semgrep CE.
+   * Remediación: se utilizan parámetros vinculados ($1) eliminando la concatenación directa de cadenas.
    */
   async demoInyeccionSqlConcatenada(
     manager: EntityManager,
     idFinca: string,
   ): Promise<Animal[]> {
     return manager.query(
-      "SELECT * FROM animal WHERE \"tenantId\" = '" + idFinca + "'",
+      'SELECT * FROM animal WHERE "tenantId" = $1',
+      [idFinca],
     );
   }
 
