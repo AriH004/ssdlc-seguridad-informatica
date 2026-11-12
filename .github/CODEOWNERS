@@ -1,0 +1,45 @@
+# Matriz de Gobernanza y Revisión Cruzada (SSDLC)
+# Regla: Ariana (A: @AriH004) revisa a Cristhian (B: @crissXcoder)
+#        Cristhian (B: @crissXcoder) revisa a Danny (C: @DannyOr94)
+#        Danny (C: @DannyOr94) revisa a Ariana (A: @AriH004)
+
+# Regla general por defecto: revisión cruzada del equipo
+* @AriH004 @crissXcoder @DannyOr94
+
+# Componentes de Planificación, Modelo de Amenazas y Pruebas de Autorización (Persona A - Ariana)
+# Revisor asignado: Danny (@DannyOr94)
+/docs/kb/                 @DannyOr94
+/backend/test/authz/      @DannyOr94
+/docs/ssdlc/defensa/ariana.md @DannyOr94
+
+# Componentes de Desarrollo, Harness Agéntico, CI y SAST/SCA (Persona B - Cristhian)
+# Revisor asignado: Ariana (@AriH004)
+/.github/workflows/ci.yml @AriH004
+/.github/workflows/security.yml @AriH004
+/.semgrep/                @AriH004
+/.gitleaks.toml           @AriH004
+/.gitleaksignore         @AriH004
+/osv-scanner.toml         @AriH004
+/.claude/                 @AriH004
+/CLAUDE.md                @AriH004
+/AGENTS.md                @AriH004
+/tooling/                 @AriH004
+/scripts/verify.sh        @AriH004
+/scripts/setup/branch-protection.sh @AriH004
+/docs/ssdlc/politica-de-bloqueo.md @AriH004
+/docs/ssdlc/aprendizaje-siguiente-ciclo.md @AriH004
+/docs/ssdlc/defensa/cristhian.md @AriH004
+
+# Componentes de Versión, Imágenes, Despliegue y Registro de Hallazgos (Persona C - Danny)
+# Revisor asignado: Cristhian (@crissXcoder)
+/.github/workflows/release.yml @crissXcoder
+/.github/ISSUE_TEMPLATE/  @crissXcoder
+/Dockerfile*              @crissXcoder
+/deploy/                  @crissXcoder
+/scripts/release/         @crissXcoder
+/scripts/setup/labels.sh  @crissXcoder
+/docs/ssdlc/registro.md   @crissXcoder
+/docs/ssdlc/despliegue.md @crissXcoder
+/docs/ssdlc/version-de-recuperacion.md @crissXcoder
+/docs/ssdlc/REGISTRO-HALLAZGOS.md @crissXcoder
+/docs/ssdlc/defensa/danny.md @crissXcoder

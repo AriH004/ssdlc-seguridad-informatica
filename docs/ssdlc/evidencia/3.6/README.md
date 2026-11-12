@@ -76,8 +76,8 @@ Adicionalmente, se actualizaron las excepciones base en `osv-scanner.toml` confo
 
 Tras subir el parche correctivo a `origin demo/cris-d2`, GitHub Actions reevaluó automáticamente el Pull Request:
 
-- **ID de Ejecución Remota:** `43149844208`
-- **URL de Ejecución:** [https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43149844208](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43149844208)
+- **ID de Ejecución Remota:** `43150246422`
+- **URL de Ejecución:** [https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43150246422](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43150246422)
 - **Resultado del Job `Security gates`:** `SUCCESS` (código `0`).
   - Gitleaks: 0 secretos.
   - Actionlint: 0 errores de workflows.

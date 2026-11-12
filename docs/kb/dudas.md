@@ -11,7 +11,7 @@ Las dudas **no se asumen**: se resuelven con la persona responsable. Los casos d
 | D-03 | `POST /auth/confirmar-invitacion` no tiene `@Roles`. ¿Qué impide que cualquier usuario autenticado intente confirmar una invitación ajena? (Se espera que la invitación esté ligada al correo del token.) | `auth.controller.ts`, `invitations.service.ts` | Ariana | abierta |
 | D-04 | El `peon` puede editar (`PATCH`) un registro de producción de leche pero no anularlo. ¿Debe poder editarlo? | `produccion-leche.controller.ts` | Ariana | abierta |
 | D-05 | ¿Todas las acciones sensibles (invitar, anular, corregir, dar de baja) dejan registro con usuario y fecha? Hay `evento_auth` y tablas `evento_*`, pero no se confirmó la cobertura completa. | Migraciones y servicios | Ariana | abierta |
-| D-06 | ¿Swagger queda habilitado en producción? Depende de la variable `SWAGGER_ENABLED`. | `config/swagger.js`, `.env.example` | Cristhian | abierta |
+| D-06 | ¿Swagger queda habilitado en producción? En `backend/src/config/swagger.ts` se validó que por defecto se deshabilita en producción (`NODE_ENV === 'production'` retorna `false`) a menos que `SWAGGER_ENABLED=true` se configure explícitamente. Para producción debe mantenerse deshabilitado (`false` o no declarada). | `backend/src/config/swagger.ts`, `.env.example` | Cristhian | resuelta |
 
 ## Casos límite y de abuso sugeridos por la IA (`sugerido`)
 

@@ -97,7 +97,7 @@
 - **Agregación estricta:** Un PR solo puede integrarse si el check `Monorepo required` pasa; si un solo job falla, se cancela o queda incompleto, la integración se bloquea automáticamente.
 
 **Cómo se demuestra**
-- Mostrar las ejecuciones exitosas en GitHub Actions (por ejemplo [Run 43151695616](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43151695616)) en el [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31).
+- Mostrar las ejecuciones exitosas en GitHub Actions (por ejemplo [Run 43152744516](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43152744516)) en el [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31).
 
 ---
 

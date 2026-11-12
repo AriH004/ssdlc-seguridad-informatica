@@ -59,8 +59,8 @@ El job `security` en CI fue actualizado para ejecutar de forma secuencial y obli
 1. `Gitleaks secret scan`
 2. `Workflows validation (actionlint)`
 3. `Tooling release-gate tests`
-4. `OSV-Scanner (SCA dependencies)` con generación de `osv-report.sarif`
-5. `Semgrep CE (SAST code analysis)` vía Docker con generación de `semgrep.sarif`
+4. `Semgrep CE (SAST code analysis)` vía Docker con generación de `reports/semgrep.sarif`
+5. `OSV-Scanner (SCA dependencies)` con generación de `osv-report.sarif`
 6. `Upload security reports` para preservar los reportes SARIF durante 30 días asociados al commit (`security-reports-${{ github.sha }}`)
 
 ---
