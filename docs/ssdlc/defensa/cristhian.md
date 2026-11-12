@@ -113,3 +113,34 @@
 **Qué NO comprueba / Limitaciones**
 - No simula un ataque activo de explotación en tiempo de ejecución (payload malicioso contra base de datos activa); se comprueba a nivel de análisis estático en la compuerta de integración (SAST shift-left).
 - La exigencia obligatoria de aprobación de branch protection en GitHub depende de la ejecución del script por el dueño del repositorio (`@AriH004`) debido a permisos administrativos del token.
+
+---
+
+## Ítem 7.8: Aprendizaje al siguiente ciclo de desarrollo (Demo D6)
+
+**Qué se hizo**
+- Se cerró el ciclo de mejora continua (Demostración D6) a partir del hallazgo real de inyección SQL (Demo D2):
+  1. Se registró formalmente el hallazgo en GitHub como [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) (`[HALLAZGO] Inyección SQL por concatenación en consultas directas a base de datos (Demo D2 / D6)`), categorizado como `tipo:confirmado`, `severidad:alta` y `estado:verificado`.
+  2. Se redactó el documento formal de aprendizaje en [`docs/ssdlc/aprendizaje-siguiente-ciclo.md`](../aprendizaje-siguiente-ciclo.md), desarrollando un análisis de causa raíz con el método de los Cinco Porqués (5 Whys) y su impacto en la arquitectura multitenant.
+  3. Se alimentó la gobernanza del repositorio actualizando [`AGENTS.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/AGENTS.md) con una directriz obligatoria de codificación segura para el agente y desarrolladores (prohibición de consultas SQL raw concatenadas y exigencia de parámetros vinculados `$1`).
+  4. Se fortaleció la medida **M-01** en el modelo de amenazas ([`docs/kb/amenazas.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/docs/kb/amenazas.md)), asociando la regla de análisis estático `resdigital-sql-concatenation` como salvaguarda preventiva contra la evasión de aislamiento de datos (Amenaza **T-01**).
+  5. Se documentó la evidencia completa en [`docs/ssdlc/evidencia/7.8/README.md`](../evidencia/7.8/README.md).
+
+**Por qué así**
+- **Cumplimiento de estándares internacionales:** Alineado con OWASP SAMM v2 (*Defect Management - Stream B*) y NIST SSDF v1.1 (*RV.3.2*), un defecto no debe resolverse únicamente con un parche reactivo en código; debe transferir conocimiento al sistema para evitar que el mismo error se repita en futuros desarrollos.
+- **Enfoque Shift-Left:** Al colocar la restricción en `AGENTS.md`, el agente de programación y el equipo reciben la instrucción antes de escribir código nuevo, previniendo la introducción de vulnerabilidades en etapas iniciales.
+- **Trazabilidad cerrada:** El Issue #33 conecta el defecto (D2), el commit vulnerable (`092d567`), el PR correctivo ([#32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32)), el commit de remediación (`60142d2`), las ejecuciones de CI y las mejoras permanentes del repositorio.
+
+**Cómo se demuestra**
+1. **Issue en GitHub:** Mostrar el [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) con sus etiquetas, trazabilidad y estado verificado.
+2. **Documento de Causa Raíz:** Abrir [`docs/ssdlc/aprendizaje-siguiente-ciclo.md`](../aprendizaje-siguiente-ciclo.md) y exponer el análisis de los 5 Porqués y la correlación con la amenaza multitenant T-01.
+3. **Instrucción en AGENTS.md:** Mostrar la sección agregada en [`AGENTS.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/AGENTS.md) que norma la codificación segura de consultas SQL.
+4. **Modelo de amenazas:** Mostrar la actualización de la medida M-01 en [`docs/kb/amenazas.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/docs/kb/amenazas.md).
+
+**Qué comprueba**
+- Que el equipo cuenta con un proceso formal para analizar causas raíz de vulnerabilidades detectadas.
+- Que las lecciones aprendidas se traducen en directivas técnicas ejecutables y comprobaciones automatizadas en CI.
+- Que el ciclo de vida SSDLC es iterativo y se mejora continuamente con cada iteración de desarrollo.
+
+**Qué NO comprueba / Limitaciones**
+- No garantiza por sí solo que un desarrollador humano no intente eludir las instrucciones si no ejecuta los linters locales antes de hacer commit (por ello la compuerta de CI es obligatoria e infranqueable).
