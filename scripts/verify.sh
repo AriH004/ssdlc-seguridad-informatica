@@ -40,8 +40,15 @@ paso() {
     fallo=1
     return
   fi
-  if "$@"; then
+  set +e
+  "$@"
+  local codigo=$?
+  set -e
+  if [ "$codigo" -eq 0 ]; then
     resultados+=("OK          $nombre")
+  elif [ "$codigo" -eq 2 ]; then
+    resultados+=("INCOMPLETO  $nombre")
+    fallo=1
   else
     resultados+=("FALLÓ       $nombre")
     fallo=1
@@ -61,7 +68,11 @@ paso "typecheck" corepack pnpm typecheck
 paso "pruebas"   corepack pnpm test
 paso "build"     corepack pnpm build
 # Gitleaks lo descarga y verifica por checksum tooling/security-tools.mjs.
-paso "gitleaks"  node node tooling/security-tools.mjs gitleaks-tree
+paso "gitleaks"    node node tooling/security-tools.mjs gitleaks-tree
+# OSV-Scanner analiza vulnerabilidades en lockfiles (ítem 3.2).
+paso "osv-scanner" node node tooling/security-tools.mjs osv-scanner
+# Semgrep CE evalúa reglas estáticas SAST locales y packs de seguridad (ítem 3.2).
+paso "semgrep"     node node tooling/security-tools.mjs semgrep
 
 echo
 echo "===== Resumen ====="

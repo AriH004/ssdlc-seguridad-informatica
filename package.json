@@ -13,6 +13,9 @@
     "build": "pnpm --dir backend build && pnpm --dir frontend build",
     "dev:backend": "pnpm --dir backend start:dev",
     "dev:frontend": "pnpm --dir frontend dev",
-    "check:workflows": "node tooling/security-tools.mjs actionlint"
+    "check:workflows": "node tooling/security-tools.mjs actionlint",
+    "check:security": "node tooling/security-tools.mjs osv-scanner",
+    "check:semgrep": "node tooling/security-tools.mjs semgrep",
+    "agent:verify": "node tooling/agent-wrapper.mjs"
   }
 }

@@ -6,6 +6,7 @@ coverage/
 .env.*
 !.env.example
 *.log
+!docs/ssdlc/evidencia/**/*.log
 .DS_Store
 Thumbs.db
 .idea/
@@ -21,3 +22,4 @@ blob-report/
 .codex-tools/
 logs/
 image-artifacts/
+.claude/.verify-retries

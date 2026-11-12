@@ -1,0 +1,15 @@
+# Configuración de OSV-Scanner para ResDigital SSDLC (Ítem 3.2).
+#
+# Regla de gobernanza: las vulnerabilidades en dependencias bloquean la integración
+# a menos que exista una excepción documentada y aprobada por el equipo.
+# Cada excepción en [[IgnoredVulns]] debe contener:
+#   - id: identificador oficial (GHSA, CVE o similar).
+#   - ignoreUntil: fecha límite de vigencia de la excepción (formato YYYY-MM-DD).
+#   - reason: justificación técnica y referencia obligatoria al identificador E-xx
+#     del registro único de hallazgos (docs/ssdlc/REGISTRO-HALLAZGOS.md).
+
+# Ejemplo de estructura de excepción:
+# [[IgnoredVulns]]
+# id = "GHSA-xxxx-xxxx-xxxx"
+# ignoreUntil = 2026-12-31
+# reason = "E-01: Sin ruta de explotación en backend/frontend; paquete utilizado únicamente en tooling offline."

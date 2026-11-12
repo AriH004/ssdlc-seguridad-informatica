@@ -1,0 +1,15 @@
+# Semgrep ignore rules for ResDigital SSDLC
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+*.log
+.codex-tools/
+playwright-report/
+test-results/
+blob-report/
+image-artifacts/
+.claude/
+docs/
