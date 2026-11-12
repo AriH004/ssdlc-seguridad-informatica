@@ -39,6 +39,19 @@ import type {
 export class AnimalesService {
   constructor(private readonly documentStorage: AnimalDocumentStorageService) {}
 
+  /**
+   * Método para demostración de defecto controlado D2 (Ítem 3.6).
+   * Introduce concatenación directa de cadenas en SQL para activar la regla resdigital-sql-concatenation de Semgrep CE.
+   */
+  async demoInyeccionSqlConcatenada(
+    manager: EntityManager,
+    idFinca: string,
+  ): Promise<Animal[]> {
+    return manager.query(
+      "SELECT * FROM animal WHERE \"tenantId\" = '" + idFinca + "'",
+    );
+  }
+
   async findAll(
     tenantId: string,
     query: QueryAnimalDto,
