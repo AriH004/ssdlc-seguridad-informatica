@@ -1,0 +1,56 @@
+rules:
+  - id: resdigital-sql-concatenation
+    message: "Posible inyección SQL: se detectó una consulta construida mediante concatenación directa de cadenas. Utilice parámetros vinculados ($1, $2, etc.) en lugar de concatenar entradas."
+    severity: ERROR
+    languages: [typescript, javascript]
+    paths:
+      include:
+        - backend/src/
+      exclude:
+        - backend/src/database/migrations/
+        - backend/src/test-utils/
+        - "**/*.spec.ts"
+        - "**/*.test.ts"
+    patterns:
+      - pattern-either:
+          - pattern: $QR.query($X + $Y, ...)
+          - pattern: $QR.query(`...${$X}...`, ...)
+          - pattern: $EM.query($X + $Y, ...)
+          - pattern: $EM.query(`...${$X}...`, ...)
+          - pattern: $REPO.query($X + $Y, ...)
+          - pattern: $REPO.query(`...${$X}...`, ...)
+    metadata:
+      cwe: "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+      owasp: "A03:2021 - Injection"
+      category: security
+      demo: "D2 - Defecto de código controlado"
+
+  - id: resdigital-unsafe-innerhtml
+    message: "Uso potencial de XSS: renderizado con dangerouslySetInnerHTML detectado. Verifique que el contenido esté sanitizado mediante DOMPurify antes de renderizar."
+    severity: WARNING
+    languages: [typescript, javascript]
+    pattern: |
+      < $TAG ... dangerouslySetInnerHTML={{ __html: $CONTENT }} ... />
+    metadata:
+      cwe: "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+      owasp: "A03:2021 - Injection"
+      category: security
+
+  - id: resdigital-hardcoded-jwt-secret
+    message: "Secreto embebido: se detectó una clave secreta JWT o contraseña en el código fuente. Utilice variables de entorno (.env)."
+    severity: ERROR
+    languages: [typescript, javascript]
+    patterns:
+      - pattern-either:
+          - pattern: |
+              jwt.sign(..., "...", ...)
+          - pattern: |
+              jwt.verify(..., "...", ...)
+      - pattern-not: |
+          jwt.sign(..., process.env.$SECRET, ...)
+      - pattern-not: |
+          jwt.verify(..., process.env.$SECRET, ...)
+    metadata:
+      cwe: "CWE-798: Use of Hard-coded Credentials"
+      owasp: "A07:2021 - Identification and Authentication Failures"
+      category: security

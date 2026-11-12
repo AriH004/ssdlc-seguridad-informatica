@@ -1,0 +1,3 @@
+# Registro de bloqueos de agentes por exceso de reintentos (Ítem 2.4 / Demo D3)
+# Formato: [TIMESTAMP] COMMIT: <hash> | REINTENTOS: <actual>/<max> | ESTADO: BLOQUEADO | MOTIVO: <resumen>
+[2026-11-11T20:55:00.000Z] COMMIT: cded475 | REINTENTOS: 3/3 | ESTADO: BLOQUEADO | MOTIVO: Comprobaciones no superadas (Simulación controlada demo D3: fallo inducido sin resolver)
