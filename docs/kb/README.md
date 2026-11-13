@@ -34,7 +34,7 @@ Cada prueba de autorización lleva en el nombre los IDs que cubre, por ejemplo `
 | `observado` | Visto en el código; falta que Ariana lo apruebe |
 | `sugerido` | Propuesta de la IA pendiente de validar |
 
-**Estado actual de este borrador:** todo está en `observado` o `sugerido`. Nada está `aprobado` hasta que Ariana lo revise contra el código y lo marque.
+**Estado actual de este borrador:** las reglas están en `observado` o `sugerido`; nada está `aprobado` hasta que Ariana lo revise contra el código y lo marque. Las medidas M-02 y M-08 están `verificada` con evidencia de ejecución (`docs/ssdlc/evidencia/`).
 
 ## Estados de una medida
 

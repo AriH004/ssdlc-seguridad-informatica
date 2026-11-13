@@ -1,0 +1,4 @@
+
+> resdigital-ssdlc@ check:workflows C:\Users\crisa\Cursos\Cursos\IV Año\II Ciclo\Seguridad Informática\Proyecto final
+> node tooling/security-tools.mjs actionlint
+

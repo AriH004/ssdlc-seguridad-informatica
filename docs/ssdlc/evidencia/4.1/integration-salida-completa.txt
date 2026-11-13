@@ -1,0 +1,69 @@
+
+> backend@0.0.1 test:integration C:\Users\ari20\OneDrive\Documents\U\Seguridad informática\Proyecto\backend
+> node tooling/integration-tests.mjs
+
+Replay confirmado: 41 migraciones aplicadas; cero pendientes.
+Arranque HTTP medido: 4827 ms; autenticación anónima 401 confirmada.
+HTTP 429 confirmado con CORS para origen permitido, Retry-After y rechazo de origen ajeno.
+Transporte HTTP local confirmado: lote 220 KiB -> 401; exceso de lote y ruta general -> 413.
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+(node:7680) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+ Test Files  7 passed (7)
+      Tests  40 passed (40)
+   Start at  15:41:08
+   Duration  26.98s (transform 1.20s, setup 0ms, import 19.94s, tests 4.05s, environment 1ms)
+
+Cleanup SQL confirmado: cero tenants, usuarios, animales, potreros y eventos.
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.   ERROR [InvitationsService] Supabase Auth rechazó el envío de invitación (HTTP 503).
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ENVIADA.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.    WARN [InvitationsService] Se descartó un intento de asignar el rol desde el payload del cliente.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: CAMBIO_ROL.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [RolesService] Se actualizó el rol asignado: peon.
+[Nest] 17888  - 12/11/2026, 3:41:41 p. m.     LOG [AuditAuthService] Evento de autenticación persistido: INVITACION_ACEPTADA.
+[Nest] 29236  - 12/11/2026, 3:41:41 p. m.     LOG [NestFactory] Starting Nest application...
+[Nest] 29236  - 12/11/2026, 3:41:41 p. m.     LOG [InstanceLoader] RateLimitTestModule dependencies initialized +15ms
+[Nest] 29236  - 12/11/2026, 3:41:41 p. m.     LOG [RoutesResolver] RateLimitedController {/}: +31ms
+[Nest] 29236  - 12/11/2026, 3:41:41 p. m.     LOG [RouterExplorer] Mapped {/data, GET} route +4ms
+[Nest] 29236  - 12/11/2026, 3:41:41 p. m.     LOG [NestApplication] Nest application successfully started +2ms
+[Nest] 29236  - 12/11/2026, 3:41:42 p. m.   DEBUG [AuthGuard] Petición sin Bearer token en el encabezado Authorization.
+[Nest] 29236  - 12/11/2026, 3:41:42 p. m.    WARN [AuthGuard] Verificación de JWT fallida: Invalid Compact JWS
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.   DEBUG [AuthGuard] Petición sin Bearer token en el encabezado Authorization.
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.   DEBUG [AuthGuard] Petición sin Bearer token en el encabezado Authorization.
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.    WARN [AuthGuard] Verificación de JWT fallida: token expired
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.    WARN [AuthGuard] JWT sin claims de tenant_id o rol.
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.    WARN [AuthGuard] JWT sin claims de tenant_id o rol.
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.    WARN [AuthGuard] JWT sin claims de tenant_id o rol.
+[Nest] 21072  - 12/11/2026, 3:41:43 p. m.    WARN [AuthGuard] JWT sin claims de tenant_id o rol.
+[Nest] 31196  - 12/11/2026, 3:41:44 p. m.     LOG [SupabaseJwtService] Supabase JWKS inicializado contra: https://demo.supabase.co/auth/v1/.well-known/jwks.json (Algoritmo esperado: ES256)
+
+ Test Files  36 passed (36)
+      Tests  467 passed (467)
+   Start at  15:41:36
+   Duration  12.00s (transform 3.79s, setup 0ms, import 118.41s, tests 5.52s, environment 7ms)
+
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  15:41:49
+   Duration  6.02s (transform 1.06s, setup 0ms, import 5.19s, tests 500ms, environment 0ms)
+
+Cleanup Docker confirmado: contenedor y BD descartable eliminados.
+exit=0

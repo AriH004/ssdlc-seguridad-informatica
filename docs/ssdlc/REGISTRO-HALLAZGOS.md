@@ -41,6 +41,6 @@ Este repositorio es público: usar datos ficticios y logs sanitizados. Nunca adj
 
 Abrir el filtro de Issues, comprobar responsables y etiquetas, y entrar en cada registro para seguir origen → evidencia → tratamiento. El bloqueo de CI, los instaladores de hooks heredados y la publicación pendiente son registros separados porque tienen causas y soluciones distintas.
 
-Registros iniciales: [H-2](https://github.com/AriiH08/ssdlc-seguridad-informatica/issues/2), [H-3](https://github.com/AriiH08/ssdlc-seguridad-informatica/issues/3) y [H-4](https://github.com/AriiH08/ssdlc-seguridad-informatica/issues/4). Consultar sus fichas para conocer el estado actualizado.
+Registros iniciales: [H-2](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/2), [H-3](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/3), [H-4](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/4) y [H-33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) (Demostración D2/D6 de inyección SQL y aprendizaje de ciclo 7.8). Consultar sus fichas para conocer el estado actualizado.
 
 La plantilla se ofrece automáticamente en la interfaz de creación cuando esté integrada en la rama predeterminada. Mientras el PR esté pendiente, los Issues ya creados y el filtro funcionan, y se puede reutilizar el formulario como referencia sin afirmar que ya está activo en `main`.

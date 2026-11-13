@@ -1,0 +1,30 @@
+# Comando: pnpm exec vitest run src/auth/tests/role-matrix.spec.ts
+# Fecha: 2026-11-11T05:43:55Z
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+ RUN  v4.1.11 C:/Users/ari20/OneDrive/Documents/U/Seguridad informática/Proyecto/backend
+
+ ❯ src/auth/tests/role-matrix.spec.ts (6 tests | 1 failed) 11ms
+     × distingue tratamientos nuevos, correcciones y eventos reproductivos 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/auth/tests/role-matrix.spec.ts > Matriz de roles en rutas de escritura > distingue tratamientos nuevos, correcciones y eventos reproductivos
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ src/auth/tests/role-matrix.spec.ts:49:69
+     47|       'peon',
+     48|     );
+     49|     expect(rolesOf(TratamientosController.prototype, 'anular')).not.to…
+       |                                                                     ^
+     50|       'peon',
+     51|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  23:43:57
+   Duration  6.54s (transform 1.04s, setup 0ms, import 6.13s, tests 11ms, environment 0ms)
+
+# Código de salida: 1

@@ -1,0 +1,28 @@
+commit 60142d2623205d1d3b1a64257002246e04b015ee
+Author: crissXcoder <cristhian.altamirano.montes@est.una.ac.cr>
+Date:   Wed Nov 11 21:35:10 2026 -0600
+
+    fix(d2): corregir defecto de inyeccion SQL utilizando parametros vinculados
+
+diff --git a/backend/src/animales/animales.service.ts b/backend/src/animales/animales.service.ts
+index 64f2825..fd18d60 100644
+--- a/backend/src/animales/animales.service.ts
++++ b/backend/src/animales/animales.service.ts
+@@ -41,14 +41,15 @@ export class AnimalesService {
+ 
+   /**
+    * Método para demostración de defecto controlado D2 (Ítem 3.6).
+-   * Introduce concatenación directa de cadenas en SQL para activar la regla resdigital-sql-concatenation de Semgrep CE.
++   * Remediación: se utilizan parámetros vinculados ($1) eliminando la concatenación directa de cadenas.
+    */
+   async demoInyeccionSqlConcatenada(
+     manager: EntityManager,
+     idFinca: string,
+   ): Promise<Animal[]> {
+     return manager.query(
+-      "SELECT * FROM animal WHERE \"tenantId\" = '" + idFinca + "'",
++      'SELECT * FROM animal WHERE "tenantId" = $1',
++      [idFinca],
+     );
+   }
+ 

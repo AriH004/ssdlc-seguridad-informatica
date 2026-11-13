@@ -1,0 +1,10 @@
+base=8446fce
+seguridad_defecto=8c19c11
+seguridad_correccion=fb8a74a
+funcional_defecto=09e0546
+funcional_correccion=475d9bb
+475d9bb Revert "demo(4.9): defecto funcional, un evento del mismo dia de referencia deja de contar"
+09e0546 demo(4.9): defecto funcional, un evento del mismo dia de referencia deja de contar
+fb8a74a Revert "demo(4.9): defecto de seguridad, se quita @Roles de anular tratamiento"
+8c19c11 demo(4.9): defecto de seguridad, se quita @Roles de anular tratamiento
+terminado
