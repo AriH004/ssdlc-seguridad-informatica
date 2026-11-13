@@ -4,9 +4,27 @@
 **Repositorio Público:** [https://github.com/AriH004/ssdlc-seguridad-informatica](https://github.com/AriH004/ssdlc-seguridad-informatica)  
 **Institución:** Universidad Nacional de Costa Rica (UNA)  
 **Curso:** Seguridad Informática  
-**Fecha:** 2026-11-12  
+**Fecha:** 2026-11-13
 
 ---
+
+## Estado verificable al 13/nov/2026
+
+Esta entrega sigue **parcial**. La matriz histórica de Cristhian conserva afirmaciones de sus evidencias previas; no equivale a una nueva auditoría ni aprobación humana de este PR.
+
+| Ítem seleccionado | Estado y evidencia disponible | Falta para cierre |
+|---|---|---|
+| 1.3 / 1.4 | [Nueve amenazas y medidas](../kb/amenazas.md), [borrador estructurado](../threat-model/threat-model.draft.json), [revisión pendiente](../threat-model/REVISION.md) | Modelo e imagen oficiales de Threat Dragon, validación humana; revisar T-09 vencida |
+| 4.5 / 4.9 | [Evidencia 4.5](evidencia/4.5/README.md), [4.9](evidencia/4.9/README.md) | Conservar alcance: no demuestra todos los servicios externos ni RLS real |
+| 2.4 / 3.2 / 3.6 / 7.8 | Evidencias históricas enlazadas en matriz B | Validación cruzada del integrante revisor |
+| 5.1 | [Registro de candidato](release-record.md) con SHA y dos digests | SBOM y Trivy de imágenes, aprobación humana |
+| 6.2 | [Procedimiento](despliegue.md) y [Compose](../../deploy/compose.yaml) propuestos | Plataforma real confirmada y reproducción por operador/revisor |
+| 7.5 | [Registro de hallazgos](REGISTRO-HALLAZGOS.md) y plantillas | Validación de estados y revisión humana |
+| 5.5 | [Dos registros publicados](evidencia/5.5/README.md) del CI de development | Verificar identidad remota actual, revisión y brecha del gate descrita en release-record.md |
+
+La consigna indica equipos de **4 a 5**; aquí solo figuran **3**. Los 12 ítems distribuidos cubren siete etapas, pero no prueban conformidad del tamaño del equipo. Confirmar integrante faltante o autorización docente; no se inventan nombres ni excepciones. Las D-01 a D-05 siguen abiertas.
+
+PR #37 sigue abierto hacia main y requiere revisión; CI verde no sustituye aprobación. PR #32 es demostración SQLi separada y no debe fusionarse automáticamente. Este PR documental debe revisarse e integrarse a development antes de actualizar la entrega final.
 
 ## 1. Integrantes, Roles y Matriz de Revisión Cruzada
 
@@ -25,7 +43,7 @@ El equipo seleccionó un total de 12 ítems (9 de núcleo + 3 extras, 4 ítems e
 ### Persona A: Ariana
 - **Núcleo:**
   - **1.3:** Modelo de amenazas STRIDE (`docs/kb/amenazas.md`).
-  - **1.4:** Medidas de seguridad y comprobaciones verificadas.
+  - **1.4:** Medidas de seguridad y comprobaciones con estados diferenciados.
   - **4.5:** Pruebas de autorización directo a la API (`backend/test/authz/`).
 - **Extra:**
   - **4.9:** Defecto funcional y de seguridad detectados y corregidos (Demo D4 en `docs/ssdlc/evidencia/4.9/`).
@@ -46,11 +64,11 @@ El equipo seleccionó un total de 12 ítems (9 de núcleo + 3 extras, 4 ítems e
 
 ### Persona C: Danny
 - **Núcleo:**
-  - **5.1:** Registro de versión candidata (`release-record.md` / `.json`).
+  - **5.1:** Registro de versión candidata ([`release-record.md`](release-record.md) / [JSON](release-record.json)).
   - **6.2:** Ambiente de despliegue documentado (`docs/ssdlc/despliegue.md`, `deploy/`).
   - **7.5:** Registro único de hallazgos mediante GitHub Issues y templates estandarizados (`.github/ISSUE_TEMPLATE/`, `docs/ssdlc/REGISTRO-HALLAZGOS.md`).
 - **Extra:**
-  - **5.5:** Publicación en Docker Hub de imágenes aprobadas con SBOM CycloneDX y análisis Trivy (`.github/workflows/release.yml`).
+  - **5.5:** Publicación en Docker Hub de imágenes aprobadas con SBOM CycloneDX y análisis Trivy (`.github/workflows/ci.yml`).
 
 ---
 
@@ -62,7 +80,7 @@ El equipo seleccionó un total de 12 ítems (9 de núcleo + 3 extras, 4 ítems e
 | **2.3** | Herramientas locales SAST / Secrets / SCA | [`tooling/security-tools.mjs`](../../tooling/security-tools.mjs), [Evidencia 2.3](./evidencia/2.3/README.md) (volcados: `gitleaks-local-salida.txt`, `osv-scanner-local-salida.txt`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Local: `pnpm check:gitleaks`, `pnpm check:security` | **Cumple** |
 | **2.4** | Hook y Wrapper del agente (Circuit Breaker) | [`.claude/hooks/stop-verify.sh`](../../.claude/hooks/stop-verify.sh), [`tooling/agent-wrapper.mjs`](../../tooling/agent-wrapper.mjs), [Evidencia 2.4](./evidencia/2.4/README.md) (capturas: `01-agent-wrapper-unit-tests.png`, `02-circuit-breaker-bloqueo.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Unit tests: 5/5 pass | **Cumple** |
 | **2.5** | Límites y contención del agente | [`.claude/settings.json`](../../.claude/settings.json), [`CLAUDE.md`](../../CLAUDE.md) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Configuración técnica activa | **Cumple** |
-| **3.1** | Monorepo CI Pipeline | [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml), [`tooling/migration-replay.mjs`](../../tooling/migration-replay.mjs) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) (Verde) | **Cumple** |
+| **3.1** | Monorepo CI Pipeline | [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml), [`tooling/migration-replay.mjs`](../../backend/tooling/migration-replay.mjs) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) (Verde) | **Cumple** |
 | **3.2** | Semgrep CE, Gitleaks y OSV-Scanner en CI | [`.semgrep/resdigital-rules.yaml`](../../.semgrep/resdigital-rules.yaml), [`osv-scanner.toml`](../../osv-scanner.toml), [`politica-de-bloqueo.md`](./politica-de-bloqueo.md), [Evidencia 3.2](./evidencia/3.2/README.md) (capturas: `01-pr-31-checks-completos.png`, `02-ci-run-43154081375-monorepo-ci-verde.png`, `03-ci-security-gates-job-detalle.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) (SARIF preservado) | **Cumple** |
 | **3.5** | Protección de Ramas | [`scripts/setup/branch-protection.sh`](../../scripts/setup/branch-protection.sh), [`PASOS_MANUALES.md`](./PASOS_MANUALES.md), [Evidencia 3.5](./evidencia/3.5/README.md) (captura: `01-ramas-development-main.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Configuración vía GitHub API REST | **Cumple** |
 | **3.6** | Demostración de Bloqueo en CI (Demo D2) | [`backend/src/animales/animales.service.ts`](../../backend/src/animales/animales.service.ts), [Evidencia 3.6](./evidencia/3.6/README.md) (capturas: `01-pr-32-bloqueo-sqli.png`, `02-run-43148785557-bloqueo-ci-falla.png`, `03-run-43150246422-remediacion-ci-verde.png`) | [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) | Falla: `092d567`<br>Verde: `60142d2` | Falla: [Run 43148785557](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43148785557)<br>Verde: [Run 43150246422](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43150246422) | **Cumple** |

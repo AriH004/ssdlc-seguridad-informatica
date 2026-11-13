@@ -1,0 +1,29 @@
+# Propuesta para VPS Linux de pruebas; ejecución remota pendiente.
+services:
+  backend:
+    image: ${BACKEND_IMAGE:?Defina imagen backend por digest aprobado}
+    user: "1000:1000"
+    restart: unless-stopped
+    env_file:
+      - ${BACKEND_ENV_FILE:?Ruta absoluta al archivo protegido fuera de Git}
+    environment:
+      NODE_ENV: production
+      PORT: "3001"
+      SWAGGER_ENABLED: "false"
+    ports:
+      - "127.0.0.1:3001:3001"
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  frontend:
+    image: ${FRONTEND_IMAGE:?Defina imagen frontend por digest aprobado}
+    user: "1000:1000"
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "127.0.0.1:3000:3000"
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+

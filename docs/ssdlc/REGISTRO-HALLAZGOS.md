@@ -6,7 +6,7 @@ Base acordada: importación de Ari en PR #7 y CI raíz de Danny en PR #8. El PR 
 
 ## Fuente única
 
-[GitHub Issues con etiqueta hallazgo](https://github.com/AriiH08/ssdlc-seguridad-informatica/issues?q=is%3Aissue%20label%3Ahallazgo) es el registro único para calidad, seguridad y operación de todas las etapas. Los datos del hallazgo y su estado se mantienen en el Issue, no se copian aquí.
+[GitHub Issues con etiqueta hallazgo](https://github.com/AriH004/ssdlc-seguridad-informatica/issues?q=is%3Aissue%20label%3Ahallazgo) es el registro único para calidad, seguridad y operación de todas las etapas. Los datos del hallazgo y su estado se mantienen en el Issue, no se copian aquí.
 
 El número del Issue es su identificador estable: `H-<número>`. Una amenaza o excepción se relaciona mediante un enlace a su registro existente. No se inventan IDs de amenazas o aprobaciones.
 

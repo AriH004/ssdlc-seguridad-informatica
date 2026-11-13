@@ -1,0 +1,13 @@
+{
+  "app": "frontend",
+  "commit": "cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "image": "resdigital-frontend:cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "imageId": "sha256:60ea2cdccf08d96273ccfb2c89b252cb57dada54b1674e5dea4e9a60469f39f5",
+  "user": "node",
+  "archiveSha256": "7fa6e427924664c90aaca5394b3aad2bb743b9414f3e8a6b573f08997528e912",
+  "smoke": "passed",
+  "scope": "Public page HTTP 200; no authenticated end-to-end flow",
+  "localDemo": false,
+  "tag": "dannyor94/resdigital-frontend:cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "digest": "dannyor94/resdigital-frontend@sha256:163fd9f65caaa3684aa0bea82f03be104d8a82575c570c5c6a5f6f1db7230158"
+}
