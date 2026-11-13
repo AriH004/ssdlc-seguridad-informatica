@@ -18,7 +18,7 @@
 **Cómo se demuestra**: correr `bash scripts/verify.sh` y mostrar el resumen; quitar Gitleaks/dependencias y mostrar `INCOMPLETO`; romper una expectativa y ver `FALLÓ`.
 
 **Qué comprueba**: que el código local pasa calidad estática, pruebas unitarias, compila y no tiene secretos versionados.
-**Qué NO comprueba**: integración con BD/RLS, e2e, replay de migraciones, ni nada remoto. Hoy el resultado es NO APROBADO por 2 hallazgos históricos de Gitleaks (ver `evidencia/2.2/README.md`).
+**Qué NO comprueba**: integración con BD/RLS, e2e, replay de migraciones, ni nada remoto. El 2026-11-10 dio NO APROBADO por 2 hallazgos históricos de Gitleaks; tras la excepción acotada del PR #14 (aprobación de Danny pendiente), la ejecución del 2026-11-12 dio APROBADO (ver `evidencia/2.2/README.md`).
 
 ## Ítem 4.5: pruebas de autorización directo a la API
 
