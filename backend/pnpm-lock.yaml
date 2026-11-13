@@ -70,8 +70,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.1(@types/node@24.13.4)(prettier@3.9.6)
       '@nestjs/mau':
-        specifier: ^0.2.6
-        version: 0.2.6
+        specifier: ^0.2.9
+        version: 0.2.9
       '@nestjs/schematics':
         specifier: ^12.0.0
         version: 12.0.2(chokidar@5.0.0)(prettier@3.9.6)(typescript@6.0.3)
@@ -573,8 +573,8 @@ packages:
       class-validator:
         optional: true
 
-  '@nestjs/mau@0.2.6':
-    resolution: {integrity: sha512-fp+zZbvKka7ntnT+97jhxYk6JzUwTd/LrI4TRW1Ncczb7ZUzNScmZBJcbifOow4PwWpE+GP4pr8s8yn2J/8tzw==}
+  '@nestjs/mau@0.2.9':
+    resolution: {integrity: sha512-VDrolWI8sAt1Z2HzQ+6uNtedK6+ZWmtp5bahuiu9HnJz9CgLUu5cN5WfR3kleMFPZWinSaExSFyUWtK8PBJp6Q==}
     engines: {node: '>= 20.0.0'}
     hasBin: true
 
@@ -1066,8 +1066,8 @@ packages:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
 
-  ansi-regex@6.3.0:
-    resolution: {integrity: sha512-WpDfL7NO6j7tH88IDBNVdUJxDh9nmCteAVW9dsep846XdwF4naCBK+/tGLX3KJgcpgMRXCFlTM2hKGoK9FsdrQ==}
+  ansi-regex@6.6.0:
+    resolution: {integrity: sha512-XZ5apbzreCbXSKwPjJstu8R0zOi247w3XYwWxtwBXgpZrCyc1Ka7p9/xY0A9/diMewmHbEKz+FIraWaEWjlN5g==}
     engines: {node: '>=12'}
 
   ansi-styles@4.3.0:
@@ -2801,7 +2801,7 @@ snapshots:
       class-transformer: 0.5.1
       class-validator: 0.15.1
 
-  '@nestjs/mau@0.2.6':
+  '@nestjs/mau@0.2.9':
     dependencies:
       chalk: 4.1.2
       cli-progress: 3.12.0
@@ -3198,7 +3198,7 @@ snapshots:
 
   ansi-regex@5.0.1: {}
 
-  ansi-regex@6.3.0: {}
+  ansi-regex@6.6.0: {}
 
   ansi-styles@4.3.0:
     dependencies:
@@ -4246,7 +4246,7 @@ snapshots:
 
   strip-ansi@7.2.0:
     dependencies:
-      ansi-regex: 6.3.0
+      ansi-regex: 6.6.0
 
   strip-bom@3.0.0: {}
 
