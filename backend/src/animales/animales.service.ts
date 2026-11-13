@@ -39,6 +39,20 @@ import type {
 export class AnimalesService {
   constructor(private readonly documentStorage: AnimalDocumentStorageService) {}
 
+  /**
+   * Método para demostración de defecto controlado D2 (Ítem 3.6).
+   * Remediación: se utilizan parámetros vinculados ($1) eliminando la concatenación directa de cadenas.
+   */
+  async demoInyeccionSqlConcatenada(
+    manager: EntityManager,
+    idFinca: string,
+  ): Promise<Animal[]> {
+    return manager.query(
+      'SELECT * FROM animal WHERE "tenantId" = $1',
+      [idFinca],
+    );
+  }
+
   async findAll(
     tenantId: string,
     query: QueryAnimalDto,
