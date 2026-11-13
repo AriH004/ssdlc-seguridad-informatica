@@ -14,8 +14,8 @@ Equipo de tres integrantes autorizado por el docente según confirmación de Ari
 
 | Integrante | GitHub | Revisor asignado |
 |---|---|---|
-| Ariana | AriH004 | Danny |
-| Cristhian | crissXcoder | Ariana |
+| Ariana Hernández Peña | AriH004 | Danny |
+| Cristhian Altamirano Montes | crissXcoder | Ariana |
 | Danny Orlando Abarca Alvarado | DannyOr94 | Cristhian |
 
 ## Selección y evidencia
