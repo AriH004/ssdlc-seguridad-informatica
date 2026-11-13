@@ -71,3 +71,6 @@ EOF
 ```
 
 Las instrucciones para que la administradora del repositorio (`@AriH004`) aplique el script quedaron registradas en `docs/ssdlc/PASOS_MANUALES.md`.
+
+### Captura de Ramas del Repositorio (`development` y `main`)
+![Ramas development y main](./capturas/01-ramas-development-main.png)

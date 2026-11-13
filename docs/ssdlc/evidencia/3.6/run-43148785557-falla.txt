@@ -1,0 +1,107 @@
+
+X demo/cris-d2 Monorepo CI AriH004/ssdlc-seguridad-informatica#32 · 43148785557
+Triggered via pull_request about 23 hours ago
+
+JOBS
+X Security gates (SAST, SCA, Secrets) in 14s (ID 130952794696)
+  ✓ Set up job
+  ✓ Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+  ✓ Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+  ✓ Gitleaks secret scan
+  ✓ Workflows validation (actionlint)
+  ✓ Tooling release-gate tests
+  X OSV-Scanner (SCA dependencies)
+  - Semgrep CE (SAST code analysis)
+  ✓ Upload security reports
+  - Post Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+  ✓ Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+  ✓ Complete job
+✓ Quality (frontend) in 1m43s (ID 130952794905)
+✓ Backend migration replay in 38s (ID 130952794948)
+✓ Dependency review in 5s (ID 130952794959)
+✓ Candidate image (backend) in 51s (ID 130952794996)
+✓ Authz tests in 20s (ID 130952795033)
+✓ Quality (backend) in 46s (ID 130952795083)
+✓ Candidate image (frontend) in 54s (ID 130952795127)
+X Monorepo required in 5s (ID 130953429953)
+  ✓ Set up job
+  X Require successful checks
+  ✓ Complete job
+- Publish tested images (ID 130953431880)
+
+ANNOTATIONS
+X Process completed with exit code 1.
+Security gates (SAST, SCA, Secrets): .github#8
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/page.tsx#427
+
+! 'Potrero' is defined but never used                                                                                                                                                                                                                                                    
+Quality (frontend): frontend/app/(dashboard)/hato/page.tsx#7
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/nuevo/page.tsx#336
+
+! 'loadingRazas' is assigned a value but never used                                                                                                                                                                                                                                      
+Quality (frontend): frontend/app/(dashboard)/hato/nuevo/page.tsx#90
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#480
+
+! 'setDiagnosticoServicioId' is assigned a value but never used                                                                                                                                                                                                                          
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#129
+
+! 'DescendenciaRegistrada' is defined but never used                                                                                                                                                                                                                                     
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#113
+
+! 'ETIQUETA_TURNO' is defined but never used                                                                                                                                                                                                                                             
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#77
+
+! 'ETIQUETA_DISPOSICION' is defined but never used                                                                                                                                                                                                                                       
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#76
+
+! 'Pesaje' is defined but never used                                                                                                                                                                                                                                                     
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#9
+
+! src/reproductivo/tests/reproductive.service.spec.ts:854:29: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#854
+
+! src/reproductivo/tests/reproductive.service.spec.ts:834:29: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#834
+
+! src/reproductivo/tests/reproductive.service.spec.ts:55:10: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#55
+
+! src/reproductivo/tests/reproductive.service.spec.ts:41:10: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#41
+
+! src/reproductivo/tests/reproductive.service.spec.ts:17:10: Identifier 'EventoSecado' is imported but never used.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#17
+
+! src/reproductivo/tests/reproductive.service.spec.ts:16:10: Identifier 'EventoParto' is imported but never used.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#16
+
+! src/reproductivo/tests/reproductive.service.spec.ts:15:10: Identifier 'EventoDiagnostico' is imported but never used.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#15
+
+! src/reproductivo/tests/reproductive.service.spec.ts:14:10: Identifier 'EventoServicio' is imported but never used.
+Quality (backend): src/reproductivo/tests/reproductive.service.spec.ts#14
+
+! src/reproductivo/tests/reproductive-calculation.service.spec.ts:122:58: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive-calculation.service.spec.ts#122
+
+! src/reproductivo/tests/reproductive-calculation.service.spec.ts:118:64: Unexpected `any`. Specify a different type.
+Quality (backend): src/reproductivo/tests/reproductive-calculation.service.spec.ts#118
+
+X Process completed with exit code 1.
+Monorepo required: .github#58
+
+
+ARTIFACTS
+authz-report-8427b0f7b9aece011767a63b88206c804672ce60
+candidate-frontend-8427b0f7b9aece011767a63b88206c804672ce60
+security-reports-8427b0f7b9aece011767a63b88206c804672ce60
+candidate-backend-8427b0f7b9aece011767a63b88206c804672ce60
+
+To see what failed, try: gh run view 43148785557 --log-failed
+View this run on GitHub: https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43148785557

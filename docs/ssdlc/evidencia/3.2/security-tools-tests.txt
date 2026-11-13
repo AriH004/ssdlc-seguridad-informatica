@@ -1,0 +1,15 @@
+✔ resolveScanRange calcula rango correcto en pull_request (1.2747ms)
+✔ resolveScanRange calcula rango en push válido (0.2764ms)
+✔ resolveScanRange rechaza rangos maliciosos o mal formateados (0.3689ms)
+✔ osv-scanner.toml existe y contiene estructura de excepciones [[IgnoredVulns]] (0.8918ms)
+✔ .semgrep/resdigital-rules.yaml existe y define reglas para demo D2 y seguridad (2.5729ms)
+✔ .semgrepignore excluye carpetas de compilación y librerías externas (1.7818ms)
+✔ docs/ssdlc/politica-de-bloqueo.md define criterios de severidad y códigos de salida (1.6387ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136.2429

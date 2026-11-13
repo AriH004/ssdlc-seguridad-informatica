@@ -56,8 +56,8 @@
 
 **Cómo se demuestra**
 1. **Ejecución normal en limpio:** Ejecutar `pnpm run agent:verify` o `node tooling/agent-wrapper.mjs` y mostrar la salida `RESULTADO: APROBADO` con código de salida `0` y contador reseteado.
-2. **Pruebas unitarias automatizadas:** Ejecutar `node --test tooling/tests/agent-wrapper.test.mjs` mostrando que los 5 escenarios (éxito inicial, fallo intento 1 con exit 2, fallo intento 2 con exit 2, bloqueo en intento 3 con exit 0 y registro en log, y reseteo tras corrección) pasan en menos de 200 ms.
-3. **Demostración D3:** Provocar un fallo intencional (un error sintáctico o prueba rota); observar cómo el hook devuelve el control al agente con código 2; tras 3 intentos, mostrar el bloqueo y la entrada agregada a `bloqueos.log`.
+2. **Pruebas unitarias automatizadas:** Ejecutar `node --test tooling/tests/agent-wrapper.test.mjs` mostrando que los 5 escenarios (éxito inicial, fallo intento 1 con exit 2, fallo intento 2 con exit 2, bloqueo en intento 3 con exit 0 y registro en log, y reseteo tras corrección) pasan en menos de 200 ms (ver captura [`01-agent-wrapper-unit-tests.png`](../evidencia/2.4/capturas/01-agent-wrapper-unit-tests.png) y volcado [`agent-wrapper-tests-salida.txt`](../evidencia/2.4/agent-wrapper-tests-salida.txt)).
+3. **Demostración D3:** Provocar un fallo intencional (un error sintáctico o prueba rota); observar cómo el hook devuelve el control al agente con código 2; tras 3 intentos, mostrar el bloqueo y la entrada agregada a `bloqueos.log` (ver captura [`02-circuit-breaker-bloqueo.png`](../evidencia/2.4/capturas/02-circuit-breaker-bloqueo.png) y simulación [`circuit-breaker-simulacion.txt`](../evidencia/2.4/circuit-breaker-simulacion.txt)).
 
 **Qué comprueba**
 - Que ningún cambio propuesto por el agente sea aceptado si rompe linting, typechecking, pruebas unitarias (836 tests), compilación o introduce secretos versionados.
@@ -97,7 +97,7 @@
 - **Agregación estricta:** Un PR solo puede integrarse si el check `Monorepo required` pasa; si un solo job falla, se cancela o queda incompleto, la integración se bloquea automáticamente.
 
 **Cómo se demuestra**
-- Mostrar las ejecuciones exitosas en GitHub Actions (por ejemplo [Run 43152744516](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43152744516)) en el [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31).
+- Mostrar las ejecuciones exitosas en GitHub Actions (por ejemplo [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375)) en el [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31), con evidencia en capturas [`01-pr-31-checks-completos.png`](../evidencia/3.2/capturas/01-pr-31-checks-completos.png) y [`02-ci-run-43154081375-monorepo-ci-verde.png`](../evidencia/3.2/capturas/02-ci-run-43154081375-monorepo-ci-verde.png), y volcado [`ci-run-43154081375-view.txt`](../evidencia/3.2/ci-run-43154081375-view.txt).
 
 ---
 
@@ -164,9 +164,9 @@
 - **Integración con reglas de protección:** La demostración se apoya en el script de branch protection (`scripts/setup/branch-protection.sh`, Ítem 3.5), garantizando que las ramas `development` y `main` rechacen fusiones directas o PRs con checks no aprobados.
 
 **Cómo se demuestra**
-1. **Pull Request en GitHub:** Mostrar el [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) en GitHub.
-2. **Historial de ejecuciones:** Mostrar la ejecución inicial fallida `43148785557` (cruz roja en `Security gates` y `Monorepo required`) y la ejecución posterior exitosa tras la remediación.
-3. **Inspección de código:** Mostrar el diff en `backend/src/animales/animales.service.ts` donde la concatenación `"SELECT ... '" + idFinca + "'"` es sustituida por parámetros `$1` con `[idFinca]`.
+1. **Pull Request en GitHub:** Mostrar el [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) en GitHub (ver captura [`01-pr-32-bloqueo-sqli.png`](../evidencia/3.6/capturas/01-pr-32-bloqueo-sqli.png)).
+2. **Historial de ejecuciones:** Mostrar la ejecución inicial fallida `43148785557` (cruz roja en `Security gates` y `Monorepo required`, ver captura [`02-run-43148785557-bloqueo-ci-falla.png`](../evidencia/3.6/capturas/02-run-43148785557-bloqueo-ci-falla.png) y volcado [`run-43148785557-falla.txt`](../evidencia/3.6/run-43148785557-falla.txt)) y la ejecución posterior exitosa tras la remediación `43150246422` (ver captura [`03-run-43150246422-remediacion-ci-verde.png`](../evidencia/3.6/capturas/03-run-43150246422-remediacion-ci-verde.png) y volcado [`run-43150246422-verde.txt`](../evidencia/3.6/run-43150246422-verde.txt)).
+3. **Inspección de código:** Mostrar el diff en `backend/src/animales/animales.service.ts` donde la concatenación `"SELECT ... '" + idFinca + "'"` es sustituida por parámetros `$1` con `[idFinca]` (ver [`pr-32-diff.txt`](../evidencia/3.6/pr-32-diff.txt)).
 4. **Reporte SARIF:** Descargar el artefacto `security-reports-${{ github.sha }}` generado por el pipeline y revisar los resultados de Semgrep CE.
 
 **Qué comprueba**
@@ -197,7 +197,7 @@
 - **Trazabilidad cerrada:** El Issue #33 conecta el defecto (D2), el commit vulnerable (`092d567`), el PR correctivo ([#32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32)), el commit de remediación (`60142d2`), las ejecuciones de CI y las mejoras permanentes del repositorio.
 
 **Cómo se demuestra**
-1. **Issue en GitHub:** Mostrar el [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) con sus etiquetas, trazabilidad y estado verificado.
+1. **Issue en GitHub:** Mostrar el [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) con sus etiquetas, trazabilidad y estado verificado (ver captura [`01-issue-33-hallazgo-sqli-d6.png`](../evidencia/7.8/capturas/01-issue-33-hallazgo-sqli-d6.png)).
 2. **Documento de Causa Raíz:** Abrir [`docs/ssdlc/aprendizaje-siguiente-ciclo.md`](../aprendizaje-siguiente-ciclo.md) y exponer el análisis de los 5 Porqués y la correlación con la amenaza multitenant T-01.
 3. **Instrucción en AGENTS.md:** Mostrar la sección agregada en [`AGENTS.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/AGENTS.md) que norma la codificación segura de consultas SQL.
 4. **Modelo de amenazas:** Mostrar la actualización de la medida M-01 en [`docs/kb/amenazas.md`](file:///c:/Users/crisa/Cursos/Cursos/IV%20Año/II%20Ciclo/Seguridad%20Informática/Proyecto%20final/docs/kb/amenazas.md).

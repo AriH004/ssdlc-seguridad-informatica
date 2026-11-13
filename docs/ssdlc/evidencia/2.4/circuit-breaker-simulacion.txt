@@ -1,0 +1,48 @@
+================================================================================
+SIMULACIÓN CONTROLADA: CIRCUITO CORTADO TRAS 3 REINTENTOS DEL AGENTE (ÍTEM 2.4 / DEMO D3)
+================================================================================
+
+[INTENTO 1]
+$ node tooling/agent-wrapper.mjs
+--> Ejecuta scripts/verify.sh
+--> Estado: FALLÓ (error de aserción en regla de negocio)
+--> Contador de reintentos incrementado: 1 de 3 (.claude/.verify-retries)
+--> Alerta emitida por stderr:
+    [AVISO] Verificación falló (intento 1 de 3).
+    Corrija los errores reportados antes de terminar la tarea.
+--> Código de salida retornado: 2 (Claude Code reabre el turno y alimenta stderr al agente)
+
+[INTENTO 2]
+$ node tooling/agent-wrapper.mjs
+--> Agente propone corrección parcial; ejecuta scripts/verify.sh
+--> Estado: FALLÓ (nuevo fallo en suite de pruebas)
+--> Contador de reintentos incrementado: 2 de 3 (.claude/.verify-retries)
+--> Alerta emitida por stderr:
+    [AVISO] Verificación falló (intento 2 de 3).
+    Corrija los errores reportados antes de terminar la tarea.
+--> Código de salida retornado: 2 (Claude Code reabre el turno)
+
+[INTENTO 3 - LÍMITE ALCANZADO]
+$ node tooling/agent-wrapper.mjs
+--> Agente agota intentos sin resolver el problema; ejecuta scripts/verify.sh
+--> Estado: FALLÓ
+--> Límite alcanzado: 3 de 3 reintentos permitidos
+--> Evento auditado en docs/ssdlc/evidencia/2.4/bloqueos.log:
+    [2026-11-11T20:55:00.000Z] COMMIT: cded475 | REINTENTOS: 3/3 | ESTADO: BLOQUEADO | MOTIVO: Comprobaciones no superadas (Simulación controlada demo D3: fallo inducido sin resolver)
+--> Mensaje emitido al harness:
+    BLOQUEADO: requiere intervención humana
+--> Código de salida retornado: 0 (Detiene el bucle forzado del agente para evitar consumo infinito de tokens)
+
+================================================================================
+EVIDENCIA DE PRUEBAS UNITARIAS AUTOMATIZADAS (100% PASS)
+================================================================================
+$ node --test tooling/tests/agent-wrapper.test.mjs
+✔ verificación exitosa inicial devuelve exitCode 0 y reinicia contador (2.7646ms)
+✔ primer fallo incrementa contador a 1, devuelve exitCode 2 y emite alerta por stderr (2.4293ms)
+✔ segundo fallo consecutivo incrementa contador a 2 y devuelve exitCode 2 (4.3151ms)
+✔ tercer fallo consecutivo alcanza el límite de 3 reintentos: declara BLOQUEADO, audita en log y sale con 0 (52.589ms)
+✔ corrección exitosa tras reintentos previos reinicia contador a 0 y sale con 0 (4.3427ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
