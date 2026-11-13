@@ -37,6 +37,11 @@ Ejecución de análisis de código (Semgrep CE), secretos (Gitleaks) y dependenc
 
 ## 3. Evidencias de Ejecución
 
+Archivos de volcado disponibles:
+- [actionlint-salida.txt](./actionlint-salida.txt)
+- [security-tools-tests.txt](./security-tools-tests.txt)
+- [ci-run-43154081375-view.txt](./ci-run-43154081375-view.txt)
+
 ### A. Escaneo de Dependencias con OSV-Scanner
 - Comando ejecutado: `node tooling/security-tools.mjs osv-scanner`
 - Binario verificado por hash SHA-256 (`c041e84d...` en Windows / `d6af4b67...` en Linux).
@@ -62,6 +67,15 @@ El job `security` en CI fue actualizado para ejecutar de forma secuencial y obli
 4. `Semgrep CE (SAST code analysis)` vía Docker con generación de `reports/semgrep.sarif`
 5. `OSV-Scanner (SCA dependencies)` con generación de `osv-report.sarif`
 6. `Upload security reports` para preservar los reportes SARIF durante 30 días asociados al commit (`security-reports-${{ github.sha }}`)
+
+### Captura de CI Remoto (Run 43154081375 - Todos los checks en verde)
+![CI Run 43154081375 Monorepo CI Verde](./capturas/02-ci-run-43154081375-monorepo-ci-verde.png)
+
+### Captura del Job Security Gates (Gitleaks, Actionlint, Semgrep CE y OSV-Scanner)
+![Detalle del Job Security Gates](./capturas/03-ci-security-gates-job-detalle.png)
+
+### Captura de Checks en Pull Request #31
+![PR #31 Checks Aprobados](./capturas/01-pr-31-checks-completos.png)
 
 ---
 

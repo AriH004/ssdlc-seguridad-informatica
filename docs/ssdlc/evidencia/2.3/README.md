@@ -32,10 +32,14 @@ El ítem 2.3 exige incorporar análisis de seguridad estático y escaneo de secr
 
 ## 2. Salida de Comprobación Local
 
+Archivos de volcado de salida disponibles:
+- [gitleaks-local-salida.txt](./gitleaks-local-salida.txt)
+- [osv-scanner-local-salida.txt](./osv-scanner-local-salida.txt)
+
 ```text
 > node tooling/security-tools.mjs gitleaks-tree
-38 commits scanned.
-scanned ~6.79 MB in 707ms
+40 commits scanned.
+scanned ~6.82 MB in 693ms
 no leaks found
 
 > node tooling/security-tools.mjs osv-scanner

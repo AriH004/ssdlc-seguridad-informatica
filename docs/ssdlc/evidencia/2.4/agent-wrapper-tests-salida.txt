@@ -1,0 +1,13 @@
+✔ verificación exitosa inicial devuelve exitCode 0 y reinicia contador (3.754ms)
+✔ primer fallo incrementa contador a 1, devuelve exitCode 2 y emite alerta por stderr (4.8714ms)
+✔ segundo fallo consecutivo incrementa contador a 2 y devuelve exitCode 2 (5.6661ms)
+✔ tercer fallo consecutivo alcanza el límite de 3 reintentos: declara BLOQUEADO, audita en log y sale con 0 (67.6863ms)
+✔ corrección exitosa tras reintentos previos reinicia contador a 0 y sale con 0 (4.3373ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 236.1048

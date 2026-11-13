@@ -44,6 +44,11 @@ Conexión del agente con las comprobaciones locales mediante hook y wrapper auto
 
 ## 3. Pruebas Automatizadas del Wrapper
 
+Archivos de volcado y simulación disponibles:
+- [agent-wrapper-tests-salida.txt](./agent-wrapper-tests-salida.txt)
+- [circuit-breaker-simulacion.txt](./circuit-breaker-simulacion.txt)
+- [bloqueos.log](./bloqueos.log)
+
 Comando ejecutado: `node --test tooling/tests/agent-wrapper.test.mjs`
 
 ```
@@ -57,6 +62,9 @@ Comando ejecutado: `node --test tooling/tests/agent-wrapper.test.mjs`
 ℹ pass 5
 ℹ fail 0
 ```
+
+### Captura de Pruebas Unitarias (5/5 PASS)
+![Pruebas Unitarias del Wrapper](./capturas/01-agent-wrapper-unit-tests.png)
 
 ## 4. Evidencia de Ejecución en Vivo
 
@@ -82,7 +90,7 @@ Comando ejecutado: `node --test tooling/tests/agent-wrapper.test.mjs`
      - Sale con código `2`.
      - Claude Code intercepta el código `2` y reinyecta la salida de error en el contexto del modelo obligándolo a autocorregirse.
 
-3. **Simulación de Bloqueo tras 3 reintentos:**
+3. **Simulación de Bloqueo tras 3 reintentos (Demo D3):**
    - Si tras 3 intentos consecutivos el fallo persiste:
      - El wrapper emite:
        ```
@@ -91,6 +99,9 @@ Comando ejecutado: `node --test tooling/tests/agent-wrapper.test.mjs`
        ```
      - Sale con código `0` para que el agente se detenga e informe al desarrollador, previniendo bucles infinitos.
      - Añade la entrada correspondiente a `bloqueos.log`.
+
+### Captura de Auditoría de Bloqueo (Circuit Breaker)
+![Log de Auditoría Circuit Breaker](./capturas/02-circuit-breaker-bloqueo.png)
 
 ## 5. Qué comprueba y qué NO comprueba
 

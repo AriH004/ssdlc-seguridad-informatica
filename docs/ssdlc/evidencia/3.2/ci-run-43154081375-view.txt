@@ -1,0 +1,86 @@
+
+✓ feature/Cris Monorepo CI AriH004/ssdlc-seguridad-informatica#31 · 43154081375
+Triggered via pull_request about 23 hours ago
+
+JOBS
+✓ Candidate image (backend) in 40s (ID 130969838723)
+✓ Quality (backend) in 34s (ID 130969838887)
+✓ Quality (frontend) in 1m43s (ID 130969838905)
+✓ Dependency review in 6s (ID 130969838936)
+✓ Backend migration replay in 44s (ID 130969838940)
+✓ Authz tests in 22s (ID 130969838971)
+✓ Security gates (SAST, SCA, Secrets) in 35s (ID 130969839006)
+✓ Candidate image (frontend) in 54s (ID 130969839099)
+✓ Monorepo required in 3s (ID 130970458571)
+- Publish tested images in 0s (ID 130970459627)
+
+ANNOTATIONS
+! src/produccion/produccion-leche.service.spec.ts:517:91: Unexpected `any`. Specify a different type.
+Quality (backend): src/produccion/produccion-leche.service.spec.ts#517
+
+! src/produccion/produccion-leche.service.spec.ts:499:18: Unexpected `any`. Specify a different type.
+Quality (backend): src/produccion/produccion-leche.service.spec.ts#499
+
+! src/produccion/produccion-leche.service.spec.ts:478:16: Unexpected `any`. Specify a different type.
+Quality (backend): src/produccion/produccion-leche.service.spec.ts#478
+
+! src/produccion/produccion-leche.service.spec.ts:461:61: Unexpected `any`. Specify a different type.
+Quality (backend): src/produccion/produccion-leche.service.spec.ts#461
+
+! src/database/migrations/1789730000000-DropServicioReproductivo.ts:22:21: Parameter 'queryRunner' is declared but never used. Unused parameters should start with a '_'.
+Quality (backend): src/database/migrations/1789730000000-DropServicioReproductivo.ts#22
+
+! src/sanitary/entities/medicamento.entity.ts:6:3: Identifier 'JoinColumn' is imported but never used.
+Quality (backend): src/sanitary/entities/medicamento.entity.ts#6
+
+! src/sanitary/entities/medicamento.entity.ts:5:3: Identifier 'ManyToOne' is imported but never used.
+Quality (backend): src/sanitary/entities/medicamento.entity.ts#5
+
+! src/potreros/tests/potreros.service.spec.ts:189:70: Unexpected `any`. Specify a different type.
+Quality (backend): src/potreros/tests/potreros.service.spec.ts#189
+
+! src/potreros/tests/potreros.service.spec.ts:93:70: Unexpected `any`. Specify a different type.
+Quality (backend): src/potreros/tests/potreros.service.spec.ts#93
+
+! src/animales/entities/animal.entity.ts:9:3: Identifier 'Unique' is imported but never used.
+Quality (backend): src/animales/entities/animal.entity.ts#9
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/page.tsx#427
+
+! 'Potrero' is defined but never used                                                                                                                                                                                                                                                    
+Quality (frontend): frontend/app/(dashboard)/hato/page.tsx#7
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/nuevo/page.tsx#336
+
+! 'loadingRazas' is assigned a value but never used                                                                                                                                                                                                                                      
+Quality (frontend): frontend/app/(dashboard)/hato/nuevo/page.tsx#90
+
+! Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#480
+
+! 'setDiagnosticoServicioId' is assigned a value but never used                                                                                                                                                                                                                          
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#129
+
+! 'DescendenciaRegistrada' is defined but never used                                                                                                                                                                                                                                     
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#113
+
+! 'ETIQUETA_TURNO' is defined but never used                                                                                                                                                                                                                                             
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#77
+
+! 'ETIQUETA_DISPOSICION' is defined but never used                                                                                                                                                                                                                                       
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#76
+
+! 'Pesaje' is defined but never used                                                                                                                                                                                                                                                     
+Quality (frontend): frontend/app/(dashboard)/hato/[id]/page.tsx#9
+
+
+ARTIFACTS
+candidate-frontend-75dcee81c0f78956881ae994689d50ec355f5cbb
+candidate-backend-75dcee81c0f78956881ae994689d50ec355f5cbb
+authz-report-75dcee81c0f78956881ae994689d50ec355f5cbb
+security-reports-75dcee81c0f78956881ae994689d50ec355f5cbb
+
+For more information about a job, try: gh run view --job=<job-id>
+View this run on GitHub: https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375

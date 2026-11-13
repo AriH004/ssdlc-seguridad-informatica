@@ -1,0 +1,75 @@
+Scanned C:\Users\crisa\Cursos\Cursos\IV Año\II Ciclo\Seguridad Informática\Proyecto final\backend\pnpm-lock.yaml file and found 475 packages
+Scanned C:\Users\crisa\Cursos\Cursos\IV Año\II Ciclo\Seguridad Informática\Proyecto final\frontend\pnpm-lock.yaml file and found 739 packages
+GHSA-qxg6-89mg-rqv8 and 1 alias have been filtered out because: E-01: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-xp26-3454-mjgp and 1 alias have been filtered out because: E-02: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-27r3-jxmh-p828 and 1 alias have been filtered out because: E-03: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-6j4f-fj2g-mc7p and 1 alias have been filtered out because: E-04: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-q2hr-2g5m-vwhr and 1 alias have been filtered out because: E-05: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-qhr7-859c-m2p7 and 1 alias have been filtered out because: E-06: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-333x-w4r6-6crp and 1 alias have been filtered out because: E-07: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-hrr3-gc8f-f4qj and 1 alias have been filtered out because: E-08: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-w74x-v6f9-j3xg and 1 alias have been filtered out because: E-09: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-wjr9-j795-jxcr and 1 alias have been filtered out because: E-10: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-xhq7-xmqj-769h and 1 alias have been filtered out because: E-11: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-g3hv-75wg-m249 and 1 alias have been filtered out because: E-12: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-3pph-fpjx-jg34 and 1 alias have been filtered out because: E-13: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-q7qp-rjg7-q26m and 1 alias have been filtered out because: E-14: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-6pq8-jhm2-2vcw and 1 alias have been filtered out because: E-15: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-68fv-2mgg-jv7q and 1 alias have been filtered out because: E-16: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-52f5-9888-hmc6 and 1 alias have been filtered out because: E-17: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-ph9p-34f9-6g65 and 1 alias have been filtered out because: E-18: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-2m5v-pch6-74hx and 1 alias have been filtered out because: E-19: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-2mjp-6q6p-2qxm and 1 alias have been filtered out because: E-20: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-35p6-xmwp-9g52 and 1 alias have been filtered out because: E-21: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-4992-7rv2-5pvq and 1 alias have been filtered out because: E-22: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-4qv8-2p9j-2685 and 1 alias have been filtered out because: E-23: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-8xcm-r25x-g524 and 1 alias have been filtered out because: E-24: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-9fm3-97px-rjf6 and 1 alias have been filtered out because: E-25: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-c76h-2ccp-4975 and 1 alias have been filtered out because: E-26: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-cxrh-j4jr-qwg3 and 1 alias have been filtered out because: E-27: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-f269-vfmq-vjvj and 1 alias have been filtered out because: E-28: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-g8m3-5g58-fq7m and 1 alias have been filtered out because: E-29: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-g9mf-h72j-4rw9 and 1 alias have been filtered out because: E-30: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-m8rv-5g2x-5cg5 and 1 alias have been filtered out because: E-31: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-p88m-4jfj-68fv and 1 alias have been filtered out because: E-32: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-qrxm-fqhp-jwvm and 1 alias have been filtered out because: E-33: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-r53p-7pc4-xj5r and 1 alias have been filtered out because: E-34: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-rfgv-xxqx-mfg5 and 1 alias have been filtered out because: E-35: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-v3r7-h72x-cjcm and 1 alias have been filtered out because: E-36: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-v9p9-hfj2-hcw8 and 1 alias have been filtered out because: E-37: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-vrm6-8vpv-qv8q and 1 alias have been filtered out because: E-38: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-vxpw-j846-p89q and 1 alias have been filtered out because: E-39: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-587h-7wmj-h5pm and 1 alias have been filtered out because: E-40: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-698v-4r3x-3vcv and 1 alias have been filtered out because: E-41: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-9jrq-w75r-8gcw and 1 alias have been filtered out because: E-42: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-r825-w8mm-5pxw and 1 alias have been filtered out because: E-43: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-rq7h-c2jc-7f22 and 1 alias have been filtered out because: E-44: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-vfpm-58rq-9qcg and 1 alias have been filtered out because: E-45: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-6j4f-fj2g-mc7p and 1 alias have been filtered out because: E-04: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-q2hr-2g5m-vwhr and 1 alias have been filtered out because: E-05: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-qhr7-859c-m2p7 and 1 alias have been filtered out because: E-06: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-6688-9rhm-gjv2 and 1 alias have been filtered out because: E-46: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-c6gr-qvv4-5v3f and 1 alias have been filtered out because: E-47: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-cg2g-xh64-v4q7 and 1 alias have been filtered out because: E-48: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-mrv2-3pqr-j5jr and 1 alias have been filtered out because: E-49: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-p98j-92pf-mc4p and 1 alias have been filtered out because: E-50: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-g3hv-75wg-m249 and 1 alias have been filtered out because: E-12: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-2464-fhr4-w9xw has been filtered out because: E-51: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-673q-mjm6-r5xr has been filtered out because: E-52: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-p3m5-59mp-jv5r and 1 alias have been filtered out because: E-53: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-2m5v-pch6-74hx and 1 alias have been filtered out because: E-19: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-4qv8-2p9j-2685 and 1 alias have been filtered out because: E-23: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-4w7w-5xrc-9h26 and 1 alias have been filtered out because: E-54: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-55wc-3pg8-jfw6 and 1 alias have been filtered out because: E-55: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-9fm3-97px-rjf6 and 1 alias have been filtered out because: E-25: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-f72v-6w45-q472 and 1 alias have been filtered out because: E-56: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-qrxm-fqhp-jwvm and 1 alias have been filtered out because: E-33: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-xjj6-f33q-929c and 1 alias have been filtered out because: E-57: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-587h-7wmj-h5pm and 1 alias have been filtered out because: E-40: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-698v-4r3x-3vcv and 1 alias have been filtered out because: E-41: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-9jrq-w75r-8gcw and 1 alias have been filtered out because: E-42: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-r825-w8mm-5pxw and 1 alias have been filtered out because: E-43: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-rq7h-c2jc-7f22 and 1 alias have been filtered out because: E-44: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+GHSA-vfpm-58rq-9qcg and 1 alias have been filtered out because: E-45: Vulnerabilidad heredada en lockfile base sin ruta de explotacion comprobada; gestionada bajo Dependabot
+Filtered 71 vulnerabilities from output
+No issues found

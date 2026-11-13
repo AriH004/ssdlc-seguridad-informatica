@@ -29,6 +29,9 @@ en D2 (Commit 092d567)     etiqueta:verificado        Run 43150246422 (Verde)   
 - **Título:** `[HALLAZGO] Inyección SQL por concatenación en consultas directas a base de datos (Demo D2 / D6)`
 - **Etiquetas asignadas:** `hallazgo`, `tipo:confirmado`, `severidad:alta`, `estado:verificado`.
 
+#### Captura de Issue #33 en GitHub (Estado Verificado y Etiquetas)
+![Issue #33 en GitHub](./capturas/01-issue-33-hallazgo-sqli-d6.png)
+
 ### 2.2 Trazabilidad de Remediación
 - **Pull Request:** [https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32)
 - **Commit defectuoso:** `092d567` (inyección SQL por concatenación).

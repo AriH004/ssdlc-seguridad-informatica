@@ -40,6 +40,11 @@ async demoInyeccionSqlConcatenada(
 
 ## 3. Evidencia de Bloqueo en CI (Ejecución Fallida)
 
+Archivos de volcado disponibles:
+- [run-43148785557-falla.txt](./run-43148785557-falla.txt)
+- [run-43150246422-verde.txt](./run-43150246422-verde.txt)
+- [pr-32-diff.txt](./pr-32-diff.txt)
+
 Al abrir el [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32), GitHub Actions disparó el workflow `Monorepo CI` asociado al commit `092d567`:
 
 - **ID de Ejecución Remota:** `43148785557`
@@ -47,6 +52,12 @@ Al abrir el [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull
 - **Resultado del Job `Security gates (SAST, SCA, Secrets)`:** `FAILURE` (código de salida `1`).
 - **Resultado del Job `Monorepo required`:** `FAILURE` (código de salida `1` al no cumplirse la totalidad de los checks obligatorios).
 - **Estado del Pull Request:** **BLOQUEADO**. El botón de merge queda deshabilitado por fallo en los checks requeridos según la política de branch protection configurada en `scripts/setup/branch-protection.sh`.
+
+### Captura de CI Remoto Fallido (Run 43148785557 - Bloqueo de Integración)
+![Ejecución de CI Fallida Run 43148785557](./capturas/02-run-43148785557-bloqueo-ci-falla.png)
+
+### Captura de Pull Request #32 (Botón de Fusión Bloqueado)
+![Pull Request #32 Bloqueado por Defecto SQLi](./capturas/01-pr-32-bloqueo-sqli.png)
 
 ---
 
@@ -86,6 +97,9 @@ Tras subir el parche correctivo a `origin demo/cris-d2`, GitHub Actions reevalu�
   - OSV-Scanner: 0 dependencias no autorizadas.
 - **Resultado del Job `Monorepo required`:** `SUCCESS` (`APROBADO`).
 - **Artefactos Preservados:** `security-reports-${{ github.sha }}` conteniendo `semgrep.sarif` y `osv-report.sarif` con retención de 30 días para fines de auditoría.
+
+### Captura de CI Remoto Aprobado tras Remediación (Run 43150246422 - 100% Verde)
+![Ejecución de CI Aprobada tras Remediación Run 43150246422](./capturas/03-run-43150246422-remediacion-ci-verde.png)
 
 ---
 
