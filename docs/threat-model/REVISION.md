@@ -1,9 +1,9 @@
-# Revisión pendiente del modelo
+# Revisión final del modelo
 
-El [catálogo estructurado](threat-model.draft.json) conserva las nueve amenazas y medidas de [la base de conocimiento](../kb/amenazas.md), sin elevar estados ni atribuir aprobación. Es un borrador de IA, **no un archivo importable ni un export de Threat Dragon**. Según el README de esta carpeta, Ariana dibuja y exporta el modelo oficial. No se fabrica esa evidencia.
+Se preparó threat-model.candidate.json en la estructura legacy v1 documentada por OWASP, con seis componentes, siete flujos, tres límites de confianza y nueve amenazas. Es un candidato generado con asistencia de IA por solicitud de completar la entrega, no un export desde Threat Dragon ni una aprobación humana.
 
-Validar arquitectura, prioridades y medidas; representar navegador, frontend, API, Auth, PostgreSQL y Storage con tres zonas de confianza y los siete flujos de arquitectura-y-acceso.md. Asociar T-01 a base/API, T-02 a T-04 y T-06 a API, T-05 a API/credenciales, T-07 a Storage, T-08 a Auth/API y T-09 a auditoría.
+Para cerrar 1.3, abrir/importar el candidato en OWASP Threat Dragon, revisar su migración/representación, corregir si hace falta y guardar como threat-model.json; exportar el diagrama desde la herramienta. La imagen explicativa de la entrega no sustituye esa comprobación. Registrar versión utilizada y revisión de Danny sobre la propuesta de Ariana. No se declara esa operación realizada.
 
-Para cerrar 1.3, guardar threat-model.json desde OWASP Threat Dragon y su imagen exportada, comprobar apertura y registrar versión de herramienta, commit y revisor. Para 1.4, revisar D-01 a D-05 y la aceptación de riesgo T-09: la fecha previa (12/nov/2026) venció y no demuestra aprobación; responsable debe registrar decisión y nueva fecha.
+T-01 a T-09 mantienen la priorización de docs/kb/amenazas.md. Todas las amenazas se dejan abiertas en el candidato para no equiparar evidencia parcial de medidas con eliminación del riesgo. M-02 y M-08 conservan evidencia histórica en 4.5/4.9; las otras medidas conservan sus límites. D-01 a D-05 y T-09 no se resuelven por inferencia; requieren decisión de Ariana y revisión.
 
-Referencia de formato oficial: [esquemas de OWASP Threat Dragon](https://github.com/OWASP/threat-dragon/tree/main/td.vue/src/assets/schema).
+Formato consultado: https://github.com/OWASP/threat-dragon/blob/main/td.vue/src/assets/schema/threat-dragon-v1.schema.json y modelo de ejemplo oficial ThreatDragonModels/demo-threat-model.json. Compatibilidad de apertura no verificada en esta sesión.

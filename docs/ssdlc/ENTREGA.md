@@ -1,106 +1,75 @@
-# Documento de Entrega SSDLC — ResDigital
+# Entrega final SSDLC de ResDigital
 
-**Proyecto:** Ciclo de Vida de Desarrollo Seguro (SSDLC) con IA, Programación Agéntica y DevSecOps  
-**Repositorio Público:** [https://github.com/AriH004/ssdlc-seguridad-informatica](https://github.com/AriH004/ssdlc-seguridad-informatica)  
-**Institución:** Universidad Nacional de Costa Rica (UNA)  
-**Curso:** Seguridad Informática  
-**Fecha:** 2026-11-13
+Fecha: 13 de noviembre de 2026. Universidad Nacional de Costa Rica. Curso Seguridad Informática.
 
----
+## Contexto y alcance
 
-## Estado verificable al 13/nov/2026
+Se reutilizó ResDigital, un proyecto existente desplegado con frontend en Vercel, API en Railway y PostgreSQL en Supabase. Los controles SSDLC se trabajaron en una copia independiente: https://github.com/AriH004/ssdlc-seguridad-informatica. Repos originales: https://github.com/crissXcoder/ResDigital_frontend y https://github.com/crissXcoder/ResDigital_backend. Aplicación: https://res-digital-frontend.vercel.app/login.
 
-Esta entrega sigue **parcial**. La matriz histórica de Cristhian conserva afirmaciones de sus evidencias previas; no equivale a una nueva auditoría ni aprobación humana de este PR.
+La existencia de la aplicación original no acredita que los cambios o imágenes de la copia SSDLC estén instalados allí. El commit desplegado del proyecto original y la URL del backend no se aportaron en esta sesión. Se conserva la distinción en las evidencias.
 
-| Ítem seleccionado | Estado y evidencia disponible | Falta para cierre |
+Equipo de tres integrantes autorizado por el docente según confirmación de Ariana. No se adjunta resolución docente. Se consolidan 12 ítems distintos, cuatro por integrante, repartidos entre las siete etapas. La selección no implica que todos estén completos: cada estado se presenta con su límite y evidencia. Los revisores son asignaciones; no se atribuye aprobación por el mero hecho de figurar en esta matriz.
+
+## Personas y revisión cruzada
+
+| Integrante | GitHub | Revisor asignado |
 |---|---|---|
-| 1.3 / 1.4 | [Nueve amenazas y medidas](../kb/amenazas.md), [borrador estructurado](../threat-model/threat-model.draft.json), [revisión pendiente](../threat-model/REVISION.md) | Modelo e imagen oficiales de Threat Dragon, validación humana; revisar T-09 vencida |
-| 4.5 / 4.9 | [Evidencia 4.5](evidencia/4.5/README.md), [4.9](evidencia/4.9/README.md) | Conservar alcance: no demuestra todos los servicios externos ni RLS real |
-| 2.4 / 3.2 / 3.6 / 7.8 | Evidencias históricas enlazadas en matriz B | Validación cruzada del integrante revisor |
-| 5.1 | [Registro de candidato](release-record.md) con SHA y dos digests | SBOM y Trivy de imágenes, aprobación humana |
-| 6.2 | [Procedimiento](despliegue.md) y [Compose](../../deploy/compose.yaml) propuestos | Plataforma real confirmada y reproducción por operador/revisor |
-| 7.5 | [Registro de hallazgos](REGISTRO-HALLAZGOS.md) y plantillas | Validación de estados y revisión humana |
-| 5.5 | [Dos registros publicados](evidencia/5.5/README.md) del CI de development | Verificar identidad remota actual, revisión y brecha del gate descrita en release-record.md |
+| Ariana Hernández Peña | AriH004 | Danny |
+| Cristhian Altamirano Montes | crissXcoder | Ariana |
+| Danny Orlando Abarca Alvarado | DannyOr94 | Cristhian |
 
-La consigna indica equipos de **4 a 5**; aquí solo figuran **3**. Los 12 ítems distribuidos cubren siete etapas, pero no prueban conformidad del tamaño del equipo. Confirmar integrante faltante o autorización docente; no se inventan nombres ni excepciones. Las D-01 a D-05 siguen abiertas.
+## Selección y evidencia
 
-PR #37 sigue abierto hacia main y requiere revisión; CI verde no sustituye aprobación. PR #32 es demostración SQLi separada y no debe fusionarse automáticamente. Este PR documental debe revisarse e integrarse a development antes de actualizar la entrega final.
+El ítem 3.1 se cuenta una sola vez bajo responsabilidad de Danny, con aportes compartidos de integración y seguridad. 5.1 queda como documentación de apoyo, no como un ítem adicional seleccionado. El alcance de 6.2 corresponde a documentar el ambiente existente, no a afirmar un nuevo despliegue automático.
 
-## 1. Integrantes, Roles y Matriz de Revisión Cruzada
+| Responsable | Ítem | Entregable | Revisor | Estado y límite | Evidencia |
+|---|---|---|---|---|---|
+| Ariana | 1.3 | Amenazas STRIDE | Danny | Parcial: candidato; falta apertura y export de Threat Dragon | [docs/threat-model/REVISION.md](../../docs/threat-model/REVISION.md) |
+| Ariana | 1.4 | Medidas y comprobaciones | Danny | Documentado; validación humana y T-09 pendientes | [docs/ssdlc/evidencia/1.4/README.md](../../docs/ssdlc/evidencia/1.4/README.md) |
+| Ariana | 4.5 | Autorización directa API | Danny | Evidencia disponible; servicios simulados, RLS real fuera de suite | [docs/ssdlc/evidencia/4.5/README.md](../../docs/ssdlc/evidencia/4.5/README.md) |
+| Ariana | 4.9 | Defecto y corrección | Danny | Evidencia local; no confundir con demo remota | [docs/ssdlc/evidencia/4.9/README.md](../../docs/ssdlc/evidencia/4.9/README.md) |
+| Cristhian | 2.4 | Wrapper y reintentos | Ariana | Implementado y pruebas conservadas | [docs/ssdlc/evidencia/2.4/README.md](../../docs/ssdlc/evidencia/2.4/README.md) |
+| Cristhian | 3.2 | SAST SCA y secretos | Ariana | CI ejecutado; excepciones requieren revisión vigente | [docs/ssdlc/evidencia/3.2/README.md](../../docs/ssdlc/evidencia/3.2/README.md) |
+| Cristhian | 3.6 | Bloqueo de integración | Ariana | Bloqueo por SCA verificado; detección SQLi no probada por ese run | [docs/ssdlc/evidencia/3.6/ACLARACION.md](../../docs/ssdlc/evidencia/3.6/ACLARACION.md) |
+| Cristhian | 7.8 | Aprendizaje del ciclo | Ariana | Instrucciones de parametrización y trazabilidad; revisar relato demo | [docs/ssdlc/evidencia/7.8/README.md](../../docs/ssdlc/evidencia/7.8/README.md) |
+| Danny | 3.1 | CI reproducible | Cristhian | Workflow y ejecuciones verificables; aporte compartido | [.github/workflows/ci.yml](../../.github/workflows/ci.yml) |
+| Danny | 5.5 | Publicación de candidatos | Cristhian | Publicación con digests; despliegue original no vinculado | [docs/ssdlc/evidencia/5.5/README.md](../../docs/ssdlc/evidencia/5.5/README.md) |
+| Danny | 6.2 | Ambiente y configuración | Cristhian | Plataformas y procedimiento documentados; falta reproducción revisada | [docs/ssdlc/despliegue.md](../../docs/ssdlc/despliegue.md) |
+| Danny | 7.5 | Registro único | Cristhian | Issues y procedimiento; no se exige cerrar todos para este ítem | [docs/ssdlc/REGISTRO-HALLAZGOS.md](../../docs/ssdlc/REGISTRO-HALLAZGOS.md) |
 
-| Persona | Miembro | Usuario GitHub | Etapas Asignadas | Revisor Asignado |
-|---|---|---|---|---|
-| **A** | Ariana | `@AriH004` | Planificación, Pruebas | Danny (`@DannyOr94`) |
-| **B** | Cristhian | `@crissXcoder` | Desarrollo, Construcción e integración, Operación | Ariana (`@AriH004`) |
-| **C** | Danny | `@DannyOr94` | Versión, Despliegue, Operación | Cristhian (`@crissXcoder`) |
+## Demostración integrada
 
----
+1. Mostrar los tres flujos F-01 autenticación/invitaciones, F-02 tratamientos y F-03 aislamiento entre fincas, su matriz de permisos y amenazas.
+2. Mostrar el wrapper de verificación y sus reintentos; explicar resultado aprobado frente a incompleto y bloqueo que requiere intervención humana.
+3. Abrir el workflow y sus ejecuciones. Para la demo 3.6, indicar que el fallo verificado fue SCA y no atribuir a Semgrep un análisis omitido. No fusionar #32.
+4. Mostrar evidencia 4.5 (182 pruebas de autorización) y los resultados locales fallidos/corregidos de 4.9. La suite de autorización simula servicios: no demuestra por sí sola RLS en PostgreSQL.
+5. Abrir el registro candidato y ambos JSON de publicación; explicar SHA del código frente a digest de imagen. Mostrar ambiente Vercel/Railway/Supabase por separado.
+6. Abrir un hallazgo, sus relaciones y el aprendizaje incorporado en AGENTS.md. El registro puede contener hallazgos abiertos sin dejar de cumplir su función.
 
-## 2. Alcance del Proyecto y Reparto de Responsabilidades
+## Versiones y resultados comprobados
 
-El equipo seleccionó un total de 12 ítems (9 de núcleo + 3 extras, 4 ítems evaluables por persona) cubriendo las 7 etapas del ciclo de vida de desarrollo de software seguro:
+- PR #12: integrado, commit 508e957995ff349eea2a222465dff31f8e00fe13. Run 43085152364 success, publicación incluida. Respalda el informe individual de Danny del 12/nov.
+- Commit cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50 de development: run 43477589260 success. Ambos registros publicados se conservan en evidencia/5.5. Ver release-record.md para digests y límites.
+- PR #38: run 43480453407 aprobado; fusionado a development en d80ff9e5af2a278f82586014011e951413e2addb. PR #37 fue fusionado a main en 1bf7d8ed9b090394acb582ad3c43a8fd1adff94c. No se atribuye a main contenido incorporado después a development.
+- El PR final que incorpora este documento exige nueva revisión y CI del SHA actual. No hereda la aprobación del PR #38.
 
-### Persona A: Ariana
-- **Núcleo:**
-  - **1.3:** Modelo de amenazas STRIDE (`docs/kb/amenazas.md`).
-  - **1.4:** Medidas de seguridad y comprobaciones con estados diferenciados.
-  - **4.5:** Pruebas de autorización directo a la API (`backend/test/authz/`).
-- **Extra:**
-  - **4.9:** Defecto funcional y de seguridad detectados y corregidos (Demo D4 en `docs/ssdlc/evidencia/4.9/`).
+## Limitaciones y cierre humano
 
-### Persona B: Cristhian
-- **Núcleo:**
-  - **2.4:** Hook / Wrapper que conecta al agente con comprobaciones locales y limita reintentos (`.claude/hooks/stop-verify.sh`, `tooling/agent-wrapper.mjs`).
-  - **3.2:** Semgrep CE, Gitleaks y OSV-Scanner en CI con política de bloqueo y exportación SARIF (`.semgrep/`, `.gitleaks.toml`, `osv-scanner.toml`, `docs/ssdlc/politica-de-bloqueo.md`).
-  - **3.6:** Demostración de bloqueo de integración ante defectos de seguridad (Demo D2 en [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32)).
-- **Extra:**
-  - **7.8:** Aprendizaje al siguiente ciclo de desarrollo con análisis de causa raíz y retroalimentación a la gobernanza (Demo D6 en [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) y `AGENTS.md`).
-- **Requisitos previos implementados:**
-  - **1.8 & 2.1:** Directrices de gobernanza y consulta obligatoria en `AGENTS.md`.
-  - **2.3:** Comprobaciones locales unificadas de seguridad (`tooling/security-tools.mjs`, `pnpm check:gitleaks`, `pnpm check:security`).
-  - **2.5:** Límites restrictivos del harness del agente en `.claude/settings.json` y `CLAUDE.md`.
-  - **3.1:** Pipeline de CI en `.github/workflows/ci.yml` con job agregador `monorepo-required`.
-  - **3.5:** Protección de ramas y mínimos privilegios (`scripts/setup/branch-protection.sh`, `docs/ssdlc/PASOS_MANUALES.md`).
+- Abrir, revisar y guardar el candidato en Threat Dragon y exportar diagrama; mientras no se haga, 1.3 permanece parcial.
+- Validar las decisiones D-01 a D-05 y registrar tratamiento vigente de T-09; no se inventa aceptación del riesgo.
+- Confirmar configuración efectiva y commit activo de Vercel/Railway. El ambiente existente no se modifica ni se prueba destructivamente para esta entrega.
+- No se encontró SBOM/Trivy de las imágenes en el workflow inspeccionado; no se declara 3.3 implementado ni se completa 5.1 por tener solo digests.
+- Las excepciones de dependencias y Gitleaks deben conservar responsable, revisión y vencimiento. CI verde no implica ausencia de vulnerabilidades ni aprobación humana de todas las excepciones.
+- El gate de publicación se reforzó en el PR final para esperar authz-tests; necesita revisión humana y verificación del mismo commit.
 
-### Persona C: Danny
-- **Núcleo:**
-  - **5.1:** Registro de versión candidata ([`release-record.md`](release-record.md) / [JSON](release-record.json)).
-  - **6.2:** Ambiente de despliegue documentado (`docs/ssdlc/despliegue.md`, `deploy/`).
-  - **7.5:** Registro único de hallazgos mediante GitHub Issues y templates estandarizados (`.github/ISSUE_TEMPLATE/`, `docs/ssdlc/REGISTRO-HALLAZGOS.md`).
-- **Extra:**
-  - **5.5:** Publicación en Docker Hub de imágenes aprobadas con SBOM CycloneDX y análisis Trivy (`.github/workflows/ci.yml`).
+## Enlaces de revisión
 
----
+- Repositorio: https://github.com/AriH004/ssdlc-seguridad-informatica
+- PR #12: https://github.com/AriH004/ssdlc-seguridad-informatica/pull/12
+- PR #32 de demostración, sin fusionar automáticamente: https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32
+- PR #37: https://github.com/AriH004/ssdlc-seguridad-informatica/pull/37
+- PR #38: https://github.com/AriH004/ssdlc-seguridad-informatica/pull/38
+- CI documentación: https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43480453407
+- Registro de hallazgos: https://github.com/AriH004/ssdlc-seguridad-informatica/issues
 
-## 3. Matriz de Evidencia de Cristhian (Persona B)
-
-| Ítem | Descripción | Artefactos / Código Fuente | PR / Issue | Commits | Ejecución de CI | Estado |
-|---|---|---|---|---|---|---|
-| **1.8 & 2.1** | Contexto y gobernanza del agente | [`AGENTS.md`](../../AGENTS.md) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) | **Cumple** |
-| **2.3** | Herramientas locales SAST / Secrets / SCA | [`tooling/security-tools.mjs`](../../tooling/security-tools.mjs), [Evidencia 2.3](./evidencia/2.3/README.md) (volcados: `gitleaks-local-salida.txt`, `osv-scanner-local-salida.txt`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Local: `pnpm check:gitleaks`, `pnpm check:security` | **Cumple** |
-| **2.4** | Hook y Wrapper del agente (Circuit Breaker) | [`.claude/hooks/stop-verify.sh`](../../.claude/hooks/stop-verify.sh), [`tooling/agent-wrapper.mjs`](../../tooling/agent-wrapper.mjs), [Evidencia 2.4](./evidencia/2.4/README.md) (capturas: `01-agent-wrapper-unit-tests.png`, `02-circuit-breaker-bloqueo.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Unit tests: 5/5 pass | **Cumple** |
-| **2.5** | Límites y contención del agente | [`.claude/settings.json`](../../.claude/settings.json), [`CLAUDE.md`](../../CLAUDE.md) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Configuración técnica activa | **Cumple** |
-| **3.1** | Monorepo CI Pipeline | [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml), [`tooling/migration-replay.mjs`](../../backend/tooling/migration-replay.mjs) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) (Verde) | **Cumple** |
-| **3.2** | Semgrep CE, Gitleaks y OSV-Scanner en CI | [`.semgrep/resdigital-rules.yaml`](../../.semgrep/resdigital-rules.yaml), [`osv-scanner.toml`](../../osv-scanner.toml), [`politica-de-bloqueo.md`](./politica-de-bloqueo.md), [Evidencia 3.2](./evidencia/3.2/README.md) (capturas: `01-pr-31-checks-completos.png`, `02-ci-run-43154081375-monorepo-ci-verde.png`, `03-ci-security-gates-job-detalle.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | [Run 43154081375](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43154081375) (SARIF preservado) | **Cumple** |
-| **3.5** | Protección de Ramas | [`scripts/setup/branch-protection.sh`](../../scripts/setup/branch-protection.sh), [`PASOS_MANUALES.md`](./PASOS_MANUALES.md), [Evidencia 3.5](./evidencia/3.5/README.md) (captura: `01-ramas-development-main.png`) | [PR #31](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/31) | `8ca7c41` | Configuración vía GitHub API REST | **Cumple** |
-| **3.6** | Demostración de Bloqueo en CI (Demo D2) | [`backend/src/animales/animales.service.ts`](../../backend/src/animales/animales.service.ts), [Evidencia 3.6](./evidencia/3.6/README.md) (capturas: `01-pr-32-bloqueo-sqli.png`, `02-run-43148785557-bloqueo-ci-falla.png`, `03-run-43150246422-remediacion-ci-verde.png`) | [PR #32](https://github.com/AriH004/ssdlc-seguridad-informatica/pull/32) | Falla: `092d567`<br>Verde: `60142d2` | Falla: [Run 43148785557](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43148785557)<br>Verde: [Run 43150246422](https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43150246422) | **Cumple** |
-| **7.8** | Aprendizaje al siguiente ciclo (Demo D6) | [`aprendizaje-siguiente-ciclo.md`](./aprendizaje-siguiente-ciclo.md), [`AGENTS.md`](../../AGENTS.md), [Evidencia 7.8](./evidencia/7.8/README.md) (captura: `01-issue-33-hallazgo-sqli-d6.png`) | [Issue #33](https://github.com/AriH004/ssdlc-seguridad-informatica/issues/33) | `8ca7c41` | Trazabilidad completa D2 -> Issue #33 -> AGENTS.md | **Cumple** |
-
----
-
-## 4. Limitaciones Conocidas y Excepciones Abiertas
-
-1. **Excepciones en Dependencias Heredadas (`osv-scanner.toml`):**
-   - El lockfile heredado del repositorio base (`pnpm-lock.yaml`) contiene 57 vulnerabilidades conocidas en paquetes transitivos antiguos.
-   - Conforme a la política de bloqueo documentada en `docs/ssdlc/politica-de-bloqueo.md`, cada vulnerabilidad fue formalmente registrada como una excepción temporal identificada con el prefijo `E-01` a `E-57` y una fecha límite de revisión (`ignoreUntil = 2026-12-31`). Cualquier paquete nuevo o actualización que introduzca una vulnerabilidad no exceptuada causará un fallo inmediato en el gate de CI (`exit 1`).
-
-2. **Permisos de Branch Protection en GitHub:**
-   - La API de protección de ramas (`branch-protection.sh`) exige privilegios de administrador sobre el repositorio remoto (`@AriH004`). Los pasos operativos están completamente documentados en `docs/ssdlc/PASOS_MANUALES.md`.
-
----
-
-## 5. Documentos de Defensa Individual
-
-- **Persona A (Ariana):** [`docs/ssdlc/defensa/ariana.md`](./defensa/ariana.md)
-- **Persona B (Cristhian):** [`docs/ssdlc/defensa/cristhian.md`](./defensa/cristhian.md) (y alias [`persona-B.md`](./defensa/persona-B.md))
-- **Persona C (Danny):** [`docs/ssdlc/defensa/danny.md`](./defensa/danny.md)
+El informe individual de Danny complementa la entrega grupal. Sus referencias locales no publicadas no se presentan aquí como archivos disponibles en el repositorio. Las capturas generales de Docker Hub no sustituyen los registros de digest conservados.

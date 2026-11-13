@@ -207,7 +207,7 @@ jobs:
   publish:
     name: Publish tested images
     if: always() && !cancelled() && github.event_name == 'push' && github.ref == 'refs/heads/development'
-    needs: [quality, security, dependencies, migration-replay, images]
+    needs: [quality, security, dependencies, migration-replay, authz-tests, images]
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:

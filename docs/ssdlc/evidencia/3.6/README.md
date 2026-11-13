@@ -1,3 +1,5 @@
+> Corrección de evidencia: leer primero [ACLARACION.md](ACLARACION.md). El fallo del run 43148785557 fue OSV-Scanner; Semgrep no se ejecutó. Las atribuciones distintas del relato histórico de abajo no se consideran verificadas.
+
 # Evidencia: Demostración de Bloqueo de Integración (Ítem 3.6 — Demo D2)
 
 **Responsable:** Cristhian (`crissXcoder`)  
