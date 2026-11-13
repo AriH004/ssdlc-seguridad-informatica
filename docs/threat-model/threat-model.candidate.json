@@ -1,0 +1,534 @@
+{
+  "version": "1.0.0",
+  "summary": {
+    "title": "ResDigital STRIDE candidato de revisión",
+    "owner": "Equipo ResDigital",
+    "description": "Modelo preparado con asistencia de IA por solicitud del equipo. Nueve amenazas y tres límites de confianza. Alojamiento según información aportada; apertura y guardado en Threat Dragon y aprobación humana pendientes. No es export de una sesión de la herramienta."
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "Asistencia de IA; revisión humana pendiente"
+      }
+    ],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "ResDigital flujos críticos",
+        "diagramType": "STRIDE",
+        "version": "1.0.0",
+        "size": {
+          "width": 1100,
+          "height": 560
+        },
+        "thumbnail": "",
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "id": "cc4e0339-918f-579f-8b1c-4bed311fd6a8",
+              "position": {
+                "x": 30,
+                "y": 190
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "Usuario navegador"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            {
+              "type": "tm.Process",
+              "id": "4a1971e8-7df1-56c6-a7d1-00a1975d472d",
+              "position": {
+                "x": 260,
+                "y": 190
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "Frontend Next.js Vercel"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            {
+              "type": "tm.Process",
+              "id": "8e3a19e7-2bca-5363-bf2c-a72f6a3fc84d",
+              "position": {
+                "x": 540,
+                "y": 190
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "API NestJS Railway"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "threatId": "21f2724d-b4b5-56d6-b51e-00bcf2ebb410",
+                  "number": 2,
+                  "title": "T-02 Un `peon` o `administrador` ejecuta acciones reservadas a roles superiores (por ejemplo anular un tratamiento)",
+                  "type": "Elevation of privilege",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: F-01 · `POST /auth/invitar`, rutas con `@Roles`. Impacto: Datos sanitarios o de usuarios alterados. Prioridad: **Alta**: afecta integridad sanitaria y control de acceso. Estado de medida: **verificada** (evidencia 4.5 y 4.9). Validación humana pendiente.",
+                  "mitigation": "M-02 `RolesGuard` global con `@Roles` por ruta. Componente: `roles.guard.ts`, controladores. Comprobación: `role-matrix.spec.ts` (metadatos, existe) más pruebas directas a la API por rol. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                },
+                {
+                  "threatId": "bb34bc58-6473-59da-9df6-d80ad1bf7e38",
+                  "number": 3,
+                  "title": "T-03 El invitado inyecta un rol o un `tenant_id` distinto al fijado por el propietario",
+                  "type": "Elevation of privilege",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: F-01 · `confirmar-invitacion`. Impacto: Alta de un usuario con privilegios indebidos. Prioridad: **Alta**: da acceso a una finca ajena. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-03 El rol y la finca salen de la invitación guardada, no del cuerpo; `whitelist` y `forbidNonWhitelisted`. Componente: `invitations.service.ts`, `main.ts`, `mass-assignment.spec.ts`. Comprobación: Prueba directa que envíe `rol` y `tenantId` extra y confirme que no cambian el resultado. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                },
+                {
+                  "threatId": "07aedf45-38d1-5f3d-aeac-70f09b0877f8",
+                  "number": 4,
+                  "title": "T-04 Se asignan campos protegidos (mass assignment) o se altera un tratamiento o retiro sin trazabilidad",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: F-02 · tratamientos. Impacto: Retiro de leche o carne alterado. Prioridad: **Alta**: impacto sanitario y comercial. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-04 DTO con lista blanca, correcciones y anulaciones como eventos, `peon` sin permiso de corregir. Componente: DTO de tratamientos, `tratamientos.controller.ts`. Comprobación: `mass-assignment.spec.ts` (existe) y prueba directa: el peón recibe 403 y el tratamiento queda igual. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                },
+                {
+                  "threatId": "730ea066-8756-595d-adb2-e03e49582110",
+                  "number": 5,
+                  "title": "T-05 Una credencial real queda en el repo o el historial (ya ocurrió una vez en el proyecto base)",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: Credenciales · `service_role`, `DATABASE_URL`. Impacto: Acceso total a la base, salta RLS. Prioridad: **Alta**: acceso completo. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-05 Gitleaks con reglas propias en local y CI, `.env*` ignorados, rotación documentada. Componente: `.gitleaks.toml`, `scripts/verify.sh`, CI. Comprobación: Demo D1 con secreto ficticio; `gitleaks` sobre el árbol y el historial. Responsable: Cristhian. Decisión: Mitigar; rotar si se confirma exposición. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                },
+                {
+                  "threatId": "f87cbd3d-cea2-578c-9f4b-e4f2f3631667",
+                  "number": 6,
+                  "title": "T-06 Fuerza bruta, enumeración de correos o inundación de peticiones",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "severity": "Medium",
+                  "status": "Open",
+                  "description": "Recurso: `/auth` y toda la API. Impacto: Indisponibilidad o abuso de invitaciones. Prioridad: **Media**: afecta disponibilidad, no confidencialidad. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-06 `express-rate-limit`: 120/min general y 10/min en `/auth`, con clave por usuario. Componente: `main.ts`, `rate-limit-key.ts`. Comprobación: `rate-limit-key.spec.ts` (existe) y prueba que supere el límite y reciba 429. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                }
+              ]
+            },
+            {
+              "type": "tm.Process",
+              "id": "dd7911ee-482b-5338-9f73-fd0ff5cda6bd",
+              "position": {
+                "x": 820,
+                "y": 40
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "Supabase Auth JWKS"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "threatId": "bf1e6df3-5159-513f-a250-52c0ad2df9ce",
+                  "number": 8,
+                  "title": "T-08 Un token falsificado, vencido o de otro emisor es aceptado",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: F-01 · autenticación. Impacto: Suplantación de cualquier usuario. Prioridad: **Alta**: rompe la identidad. Estado de medida: **verificada** (evidencia 4.5). Validación humana pendiente.",
+                  "mitigation": "M-08 Verificación del JWT contra JWKS (ES256) con `jose`; sin detalle del fallo en la respuesta. Componente: `supabase-jwt.service.ts`, `auth.guard.ts`. Comprobación: `auth.guard.spec.ts` y `supabase-jwt.service.spec.ts` (existen); prueba con token manipulado. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                }
+              ]
+            },
+            {
+              "type": "tm.Store",
+              "id": "6809be99-951f-5fa3-b21f-d2e0e6603ef6",
+              "position": {
+                "x": 820,
+                "y": 210
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "PostgreSQL RLS Supabase"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "threatId": "e41278bc-e5ab-5f59-87ef-507aa57520de",
+                  "number": 1,
+                  "title": "T-01 Un usuario de la finca A lee o modifica datos de la finca B (salto del aislamiento)",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "severity": "High",
+                  "status": "Open",
+                  "description": "Recurso: F-03 · todas las tablas de dominio. Impacto: Fuga de datos entre clientes. Prioridad: **Alta**: es el riesgo central del sistema. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-01 RLS por `tenant_id` con rol `resdigital_app` sin `BYPASSRLS` y parametrización obligatoria de queries raw (Semgrep `resdigital-sql-concatenation`); fallo cerrado al arrancar. Componente: `rls-transaction.interceptor.ts`, migraciones `ForceRLS*`, `.semgrep/resdigital-rules.yaml`. Comprobación: Pruebas de integración RLS por módulo, `test/authz/` directo a la API y gate SAST de Semgrep en CI. Responsable: Ariana / Cristhian. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                },
+                {
+                  "threatId": "38b36069-f01a-5c5f-a175-d5a5f351a2e4",
+                  "number": 9,
+                  "title": "T-09 No queda registro de quién invitó, anuló o corrigió",
+                  "type": "Repudiation",
+                  "modelType": "STRIDE",
+                  "severity": "Medium",
+                  "status": "Open",
+                  "description": "Recurso: F-01, F-02 · acciones sensibles. Impacto: No se puede atribuir una acción. Prioridad: **Media**: afecta auditoría. Estado de medida: propuesta. Validación humana pendiente.",
+                  "mitigation": "M-09 Tabla `evento_auth` y eventos por acción. Componente: Migración `CreateInvitacionAndEventoAuth`, tablas `evento_*`. Comprobación: Prueba que verifique que la acción deja el evento con usuario y fecha. Responsable: Ariana. Decisión: **Posponer** hasta confirmar cobertura (ver D-05); revisa Ariana. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                }
+              ]
+            },
+            {
+              "type": "tm.Store",
+              "id": "c87e4682-b41c-5625-ac84-dfe27ef7d8e1",
+              "position": {
+                "x": 820,
+                "y": 380
+              },
+              "size": {
+                "width": 190,
+                "height": 85
+              },
+              "angle": 0,
+              "z": 5,
+              "attrs": {
+                "text": {
+                  "text": "Storage privado Supabase"
+                }
+              },
+              "outOfScope": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "threatId": "1b67d628-5f5e-53de-899b-fb870674cc4d",
+                  "number": 7,
+                  "title": "T-07 Acceso a un documento sin permiso o por URL pública",
+                  "type": "Information disclosure",
+                  "modelType": "STRIDE",
+                  "severity": "Medium",
+                  "status": "Open",
+                  "description": "Recurso: Documentos de animales · Storage. Impacto: Fuga de documentos. Prioridad: **Media**: datos de una finca, no de todas. Estado de medida: implementada. Validación humana pendiente.",
+                  "mitigation": "M-07 Bucket privado, políticas públicas revocadas, rutas por finca. Componente: Migración `RevokeAnimalDocsPublicStoragePolicies`, servicio de documentos. Comprobación: Prueba que pida un documento de otra finca y sin sesión. Responsable: Ariana. Decisión: Mitigar. T-09 requiere decisión y fecha actualizadas; no se acepta el riesgo automáticamente."
+                }
+              ]
+            },
+            {
+              "type": "tm.Flow",
+              "id": "f4f455e1-d075-55e5-adf1-24bc49b9a16f",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "cc4e0339-918f-579f-8b1c-4bed311fd6a8"
+              },
+              "target": {
+                "id": "4a1971e8-7df1-56c6-a7d1-00a1975d472d"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "HTTPS interfaz",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "d539c91d-2d30-50d4-82db-6d541a46e59b",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "4a1971e8-7df1-56c6-a7d1-00a1975d472d"
+              },
+              "target": {
+                "id": "8e3a19e7-2bca-5363-bf2c-a72f6a3fc84d"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Bearer JWT HTTPS",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "fb55ada2-9ab0-5ebf-aa90-260d9dd03bf3",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "4a1971e8-7df1-56c6-a7d1-00a1975d472d"
+              },
+              "target": {
+                "id": "dd7911ee-482b-5338-9f73-fd0ff5cda6bd"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Login y sesión",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "22c1a56f-9051-53da-90f8-1875c30baf89",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "8e3a19e7-2bca-5363-bf2c-a72f6a3fc84d"
+              },
+              "target": {
+                "id": "dd7911ee-482b-5338-9f73-fd0ff5cda6bd"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Validación JWKS",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "2be3b129-9f40-50b6-8e9e-ce0a016d5f4b",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "8e3a19e7-2bca-5363-bf2c-a72f6a3fc84d"
+              },
+              "target": {
+                "id": "6809be99-951f-5fa3-b21f-d2e0e6603ef6"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "TLS y RLS por finca",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "9d44201b-42e0-59b8-a8c0-2da4140ecd4f",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "8e3a19e7-2bca-5363-bf2c-a72f6a3fc84d"
+              },
+              "target": {
+                "id": "c87e4682-b41c-5625-ac84-dfe27ef7d8e1"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Subida y firma",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.Flow",
+              "id": "695852e7-27d5-52da-a768-de46e39b3434",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "z": 8,
+              "attrs": {},
+              "source": {
+                "id": "4a1971e8-7df1-56c6-a7d1-00a1975d472d"
+              },
+              "target": {
+                "id": "c87e4682-b41c-5625-ac84-dfe27ef7d8e1"
+              },
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "URL firmada",
+                      "font-size": "12",
+                      "font-weight": "400"
+                    }
+                  }
+                }
+              ],
+              "threats": [],
+              "isEncrypted": true
+            },
+            {
+              "type": "tm.BoundaryBox",
+              "id": "8f55f709-917f-5968-a329-874d6547ce7c",
+              "position": {
+                "x": 10,
+                "y": 130
+              },
+              "size": {
+                "width": 225,
+                "height": 180
+              },
+              "z": 1,
+              "attrs": {
+                "text": {
+                  "text": "Navegador no confiable"
+                }
+              },
+              "isTrustBoundary": true
+            },
+            {
+              "type": "tm.BoundaryBox",
+              "id": "888efc42-67fd-5139-98e4-4f93471108e6",
+              "position": {
+                "x": 245,
+                "y": 125
+              },
+              "size": {
+                "width": 505,
+                "height": 190
+              },
+              "z": 1,
+              "attrs": {
+                "text": {
+                  "text": "Aplicación gestionada"
+                }
+              },
+              "isTrustBoundary": true
+            },
+            {
+              "type": "tm.BoundaryBox",
+              "id": "0e59ccb7-97c8-5fa6-8ae1-9dfc5ab0b47f",
+              "position": {
+                "x": 790,
+                "y": 10
+              },
+              "size": {
+                "width": 240,
+                "height": 470
+              },
+              "z": 1,
+              "attrs": {
+                "text": {
+                  "text": "Servicios Supabase"
+                }
+              },
+              "isTrustBoundary": true
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

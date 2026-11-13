@@ -2,12 +2,12 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { assertReleaseAllowed } from '../release-gate.mjs';
 
-const push = () => Object.fromEntries(['quality', 'security', 'migration-replay', 'images', 'dependencies'].map(name => [name, { result: name === 'dependencies' ? 'skipped' : 'success' }]));
+const push = () => Object.fromEntries(['quality', 'security', 'migration-replay', 'authz-tests', 'images', 'dependencies'].map(name => [name, { result: name === 'dependencies' ? 'skipped' : 'success' }]));
 test('merged commit with complete successful evidence can proceed', () => {
   assert.doesNotThrow(() => assertReleaseAllowed(push(), 'push'));
 });
 test('every required check blocks publication when failed, skipped, cancelled, incomplete or missing', () => {
-  for (const name of ['quality', 'security', 'migration-replay', 'images']) {
+  for (const name of ['quality', 'security', 'migration-replay', 'authz-tests', 'images']) {
     for (const result of ['failure', 'skipped', 'cancelled', 'in_progress', undefined]) {
       const jobs = push(); jobs[name] = { result };
       assert.throws(() => assertReleaseAllowed(jobs, 'push'), new RegExp(name));

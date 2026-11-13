@@ -1,3 +1,3 @@
-# Configuración propuesta de despliegue
+# Configuración alternativa local o VPS
 
-Consultar [ambiente y procedimiento](../docs/ssdlc/despliegue.md). compose.yaml no construye imágenes y solo publica puertos en loopback. Requiere un proxy HTTPS en el host y servicios Supabase separados. No ejecutar en producción como parte de esta entrega documental. Las referencias BACKEND_IMAGE y FRONTEND_IMAGE deben copiarse completas por digest desde un registro aprobado; Compose exige presencia, pero no valida su sintaxis ni aprobación.
+El ambiente real reportado es Vercel + Railway + Supabase. Consultar [documentación de ambiente real](../docs/ssdlc/despliegue.md). compose.yaml conserva únicamente una alternativa de pruebas, no el despliegue activo ni evidencia de su ejecución. No construye imágenes y solo expone puertos en loopback; necesita proxy HTTPS si se usa remotamente. Las referencias de imagen deben copiarse por digest de un registro aprobado; Compose exige presencia, no valida aprobación ni sintaxis del digest.

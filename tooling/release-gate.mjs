@@ -1,6 +1,6 @@
 export function assertReleaseAllowed(jobs, event) {
   if (!['pull_request', 'push', 'workflow_dispatch'].includes(event)) throw Error('Unknown release event');
-  for (const name of ['quality', 'security', 'migration-replay', 'images']) {
+  for (const name of ['quality', 'security', 'migration-replay', 'authz-tests', 'images']) {
     if (jobs[name]?.result !== 'success') throw Error(`Required job ${name} did not succeed`);
   }
   const expected = event === 'pull_request' ? 'success' : 'skipped';
