@@ -1,6 +1,12 @@
 # Publicación de candidatos aprobados — Danny, ítem 5.5
 
-## Base de integración actualizada
+## Actualización verificada — 13/nov/2026
+
+La publicación ya produjo dos registros en la ejecución 43477589260 del commit cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50. Ver [evidencia conservada](evidencia/5.5/README.md) y [registro candidato](release-record.md). Esto supera el estado histórico de configuración pendiente descrito abajo; no prueba Trivy, SBOM ni despliegue. El workflow activo es ci.yml (job publish), no release.yml.
+
+## Contexto histórico (no usar como estado actual)
+
+### Base de integración anterior
 
 Se adopta la importación de Ari (PR #7) y el CI raíz compartido (PR #8). El PR #6 incorpora ambos mediante merge, conserva los Dockerfiles y controles de publicación, y ya no depende de fusionar la importación reemplazada del PR #1. Integrar #7 y #8, cambiar la base de #6 a `development` y obtener revisión de otro integrante antes de fusionar. El bloqueo remoto y los requisitos de configuración siguen pendientes.
 

@@ -1,0 +1,13 @@
+{
+  "app": "backend",
+  "commit": "cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "image": "resdigital-backend:cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "imageId": "sha256:5c3a430e047319cb1b23bd96f9801fcae471ea517490843ea80a9f1c8678895d",
+  "user": "node",
+  "archiveSha256": "f6489f8fdf7bd3c03d6e67c3e2ec66b5148c2f2258dab6a03ff44e0e3f3778d4",
+  "smoke": "passed",
+  "scope": "Production dependencies and artifact presence; no database or HTTP integration",
+  "localDemo": false,
+  "tag": "dannyor94/resdigital-backend:cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "digest": "dannyor94/resdigital-backend@sha256:542f6015a0c39b7e064966846adf85cba1a06ccca122a4cc206dabe8e39dd2b6"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "candidate-not-human-approved",
+  "commit": "cb9fd80ca120f8fd97d4ce7085d601f35fcf5c50",
+  "run": "https://github.com/AriH004/ssdlc-seguridad-informatica/actions/runs/43477589260",
+  "images": [
+    {
+      "app": "backend",
+      "digest": "dannyor94/resdigital-backend@sha256:542f6015a0c39b7e064966846adf85cba1a06ccca122a4cc206dabe8e39dd2b6",
+      "record": "evidencia/5.5/backend-published.json"
+    },
+    {
+      "app": "frontend",
+      "digest": "dannyor94/resdigital-frontend@sha256:163fd9f65caaa3684aa0bea82f03be104d8a82575c570c5c6a5f6f1db7230158",
+      "record": "evidencia/5.5/frontend-published.json"
+    }
+  ],
+  "sbom": null,
+  "imageVulnerabilityReport": null,
+  "deployment": null,
+  "limitations": [
+    "SBOM y Trivy de estas imágenes no encontrados en el workflow inspeccionado.",
+    "Revisión humana y despliegue no demostrados.",
+    "El gate de publicación no incluye authz-tests en needs; el agregador final sí."
+  ]
+}

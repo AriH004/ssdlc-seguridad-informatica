@@ -1,6 +1,6 @@
 # Modelo de amenazas STRIDE y medidas (ítems 1.3 y 1.4)
 
-Estado: borrador `sugerido`/`observado`. Ariana debe validar cada amenaza contra el código y aprobar la prioridad. **Ninguna medida está `verificada`** hasta que exista evidencia de ejecución en `docs/ssdlc/evidencia/`.
+Estado: borrador `sugerido`/`observado`. Ariana debe validar cada amenaza contra el código y aprobar la prioridad. Una medida solo se declara `verificada` con evidencia de ejecución enlazada; T-02 y T-08 tienen evidencia histórica indicada abajo. La aprobación humana del modelo sigue pendiente.
 
 Prioridad: **Alta** = fuga entre fincas, escalada de privilegios o credenciales con acceso total; **Media** = daño limitado a una finca o a un rol; **Baja** = molestia o difícil de explotar.
 
@@ -21,5 +21,5 @@ Prioridad: **Alta** = fuga entre fincas, escalada de privilegios o credenciales 
 - Las amenazas T-01 a T-04 y T-08 son las prioritarias para el ítem 4.5.
 - T-02 (M-02) y T-08 (M-08) están `verificada`: hay ejecución guardada en `docs/ssdlc/evidencia/4.5/` y `4.9/`. T-03 y T-04 quedan `implementada` con verificación parcial (ver `evidencia/1.4/`).
 - Las demás medidas en `implementada` existen en el código, pero **no están verificadas**. Para pasar a `verificada` se necesita la prueba y su ejecución guardada en `docs/ssdlc/evidencia/4.5/`.
-- La decisión de posponer T-09 la aprueba Ariana, con fecha de revisión el jueves 12/nov/2026 antes del congelamiento.
+- T-09: la revisión prevista para 12/nov/2026 está vencida. No se encontró aprobación de aceptación del riesgo en este documento; Ariana debe registrar decisión, revisor y nueva fecha.
 - Las amenazas están pensadas para dibujarse en Threat Dragon (ver `docs/threat-model/README.md`).

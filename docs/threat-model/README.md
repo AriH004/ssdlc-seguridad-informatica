@@ -24,3 +24,7 @@ El dibujo y el archivo JSON los hace **una persona** (Ariana); la IA solo deja e
 ## Borrador del diagrama
 
 Está en Mermaid en `docs/kb/arquitectura-y-acceso.md`. El JSON de Threat Dragon es la versión oficial para la defensa.
+
+## Preparación del 13/nov/2026
+
+Disponible [catálogo de borrador JSON](threat-model.draft.json) y [lista de revisión](REVISION.md). No son export de Threat Dragon y no completan 1.3. Se conserva la autoría humana del modelo oficial requerida arriba.
